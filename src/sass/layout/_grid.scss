@@ -1,0 +1,22 @@
+.background {
+  height: 300vh;
+  position: relative;
+  width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 16, 23, 1),
+    rgba(3, 16, 23, 0.8),
+    rgb(57, 128, 167),
+    rgba(115, 199, 245, 1)
+  );
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
