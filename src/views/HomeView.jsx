@@ -1,6 +1,8 @@
 import React from "react";
 import { stringLiteral } from "@babel/types";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
+import { Link } from "react-router-dom";
+
 import "../sass/app.scss";
 import "../sass/views/_home.scss";
 
@@ -17,9 +19,9 @@ export default function HomeView() {
     <div className="background">
       <section className="container space">
         <div className="planet_container">
-          <img className="planet" src="homepage/consultatie.svg" alt="consultatie" />
-          <img className="planet" src="homepage/opname.svg" alt="opname" />
-          <img className="planet" src="homepage/dagkliniek.svg" alt="dagkliniek" />
+          <Link className="planet" to="/consultatie"><img src="homepage/consultatie.svg" alt="consultatie" /></Link>
+          <Link className="planet" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
+          <Link className="planet" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
         </div>
       </section>
       <section className="container earth">

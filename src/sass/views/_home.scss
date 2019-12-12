@@ -31,7 +31,11 @@
   position: absolute;
   align-self: center;
   width: 16%;
-  padding-bottom: 200px;
+  transform: translateY(-180px);
+
+  &:hover {
+    transform: translateY(-180px) scale(1.1);
+  }
 }
 
 .planet:nth-child(2) {
@@ -48,6 +52,7 @@
 
 .planet:hover {
   transform: scale(1.1);
+  
 }
 
 .planet_container {
