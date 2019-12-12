@@ -5,6 +5,7 @@ import "../sass/app.scss";
 import "../sass/views/_home.scss";
 
 export default function HomeView() {
+
   function scrollBottom() {
     window.scrollTo(0, 99999);
   }
@@ -14,7 +15,13 @@ export default function HomeView() {
 
   return (
     <div className="background">
-      <section className="container space" />
+      <section className="container space">
+        <div className="planet_container">
+          <img className="planet" src="homepage/consultatie.svg" alt="consultatie" />
+          <img className="planet" src="homepage/opname.svg" alt="opname" />
+          <img className="planet" src="homepage/dagkliniek.svg" alt="dagkliniek" />
+        </div>
+      </section>
       <section className="container earth">
         <div className="ground" />
         <img className="skyline" src="homepage/skyline_1.svg" alt="Skyline" />

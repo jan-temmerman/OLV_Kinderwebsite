@@ -23,6 +23,43 @@
   width: 12%;
 }
 
+.planet {
+  transition: all .2s ease-in-out;
+}
+
+.planet:nth-child(1) {
+  position: absolute;
+  align-self: center;
+  width: 16%;
+  padding-bottom: 200px;
+}
+
+.planet:nth-child(2) {
+  position: absolute;
+  align-self: flex-start;
+  width: 20%;
+}
+
+.planet:nth-child(3) {
+  position: absolute;
+  align-self: flex-end;
+  width: 20%;
+}
+
+.planet:hover {
+  transform: scale(1.1);
+}
+
+.planet_container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-self: center;
+  width: 60%;
+  height: 30%;
+  flex-direction: column;
+}
+
 .skyline {
   width: 100%;
   position: absolute;
