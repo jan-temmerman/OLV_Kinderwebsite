@@ -1,5 +1,5 @@
 .ground {
-  background: rgb(42, 119, 42);
+  background: rgb(77, 168, 77);
   height: 200px;
   position: absolute;
   bottom: 0;
@@ -39,9 +39,9 @@
 
 .cloud {
   position: absolute;
-  animation-name: cloudmovement;
-  animation-duration: 180s;
-  animation-iteration-count: infinite;
+  // animation-name: cloudmovement;
+  // animation-duration: 180s;
+  // animation-iteration-count: infinite;
 
   &:nth-child(n) {
     animation-delay: 0.5s;

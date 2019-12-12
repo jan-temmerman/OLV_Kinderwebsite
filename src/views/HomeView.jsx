@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Spring } from 'react-spring/renderprops';
-import { useSpring } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
 import '../sass/app.scss';
 import '../sass/views/_home.scss';
 
 export default function HomeView() {
     const clouds = [];
     const ref = useRef();
+    const calc = (o) => `translateY(${o * 0.05}px)`;
     const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
 
     const handleScroll = () => {
@@ -37,7 +38,7 @@ export default function HomeView() {
             const cloud = Math.floor(Math.random() * (cloudArray.length - 1));
             const size = Math.random() * 25;
             const element = (
-                <img
+                <animated.img
                     src={`homepage/${cloudArray[cloud]}.svg`}
                     alt="Cloud"
                     className="cloud"
@@ -46,6 +47,7 @@ export default function HomeView() {
                         top: `${Math.random() * 100}%`,
                         left: `${Math.random() * 100}%`,
                         opacity: `${size / 20}`,
+                        transform: offset.interpolate(calc),
                     }}
                 />
             );
