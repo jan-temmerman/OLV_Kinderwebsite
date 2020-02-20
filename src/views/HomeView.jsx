@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
 import { Link } from "react-router-dom";
+import Lottie from 'react-lottie';
+import animationData from './rocketANi.json'
 
 import '../sass/app.scss';
 import '../sass/views/_home.scss';
@@ -12,12 +14,29 @@ export default function HomeView() {
     const ref = useRef();
     const calc = (o) => `translateY(${o * 0.05}px)`;
     const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
+    const defaultOptions = {
+        loop: true,
+        autoplay: true, 
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      };
 
-    const handleScroll = () => {
+    const [bottomOffset, setBottomOffset] = useState(12)
+
+
+    const handleScroll = (event) => {
         const posY = ref.current.getBoundingClientRect().top;
         const offset = window.pageYOffset - posY;
         set({ offset });
-    };
+
+        let scrollTop = event.srcElement.body.scrollTop,
+        itemTranslate = Math.min(0, scrollTop/3 - 60);
+        let devider = 10
+        console.log(posY)
+            //setBottomOffset(posY/devider + 12)
+    }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -66,16 +85,18 @@ export default function HomeView() {
               <Link className="planet" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
             </div>
             </section>
-            <Spring from={{ y: 0 }} to={{ y: 100 }}>
-                {(props) => (
-                    <img
-                        src="homepage/raket.svg"
-                        alt="Raket"
-                        className="rocket"
-                        style={props}
-                    />
-                )}
-            </Spring>
+            {/*<img
+                src="homepage/raket.svg"
+                alt="Raket"
+                className="rocket"
+                style={{bottom: bottomOffset + 'vh'}}
+            />*/}
+            <div style={{zIndex: 4}} className="rocket">
+            <Lottie options={defaultOptions}
+                height={400}
+                width={400}
+            />
+            </div>
             <section className="container earth" onLoad={generateClouds(8)}>
                 <div className="ground" />
                 <img className="skyline" src="homepage/skyline_1.svg" alt="Skyline" />
