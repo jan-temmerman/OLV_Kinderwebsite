@@ -4,14 +4,17 @@ import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
 import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
-import animationData from './rocketANi.json'
+import animationData from './rocketAni_v2.json'
+import * as Scroll from 'react-scroll';
+
 
 import '../sass/app.scss';
 import '../sass/views/_home.scss';
 
 export default function HomeView() {
     const clouds = [];
-    const ref = useRef();
+	const ref = useRef();
+	const rocketRef = useRef();
     const calc = (o) => `translateY(${o * 0.05}px)`;
     const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
     const defaultOptions = {
@@ -21,16 +24,21 @@ export default function HomeView() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      };
+	  };
+	  
+	const [pauseAnimation, setPauseAnimation] = useState(false)
 
-    const [bottomOffset, setBottomOffset] = useState(12)
-
+	useEffect(() => {
+		setPauseAnimation(true)
+		document.body.classList.add("no-sroll")
+		return
+	}, [])
 
     const handleScroll = (event) => {
-        const posY = ref.current.getBoundingClientRect().top;
+		const posY = ref.current.getBoundingClientRect().top;	
         const offset = window.pageYOffset - posY;
-        set({ offset });
-
+		set({ offset });
+		
         let scrollTop = event.srcElement.body.scrollTop,
         itemTranslate = Math.min(0, scrollTop/3 - 60);
         let devider = 10
@@ -74,41 +82,141 @@ export default function HomeView() {
             );
             clouds.push(element);
         }
-    }
+	}
+	
+	const handleClick = () => {
+		setPauseAnimation(false)
+		setTimeout(() => {
+			setPauseAnimation(true)
+		}, 5000);
+	}
+
+	const handleClick2 = () => {
+		setPauseAnimation(false)
+		document.getElementById('rocketRef').style.transform = 'rotate(180deg)'; 
+		setTimeout(() => {
+			setPauseAnimation(true)
+			document.getElementById('rocketRef').style.transform = 'rotate(360deg)'; 
+		}, 5000);
+	}
 
     return (
         <div className="background">
-            <section className="container space">
-            <div className="planet_container">
-              <Link className="planet" to="/consultatie"><img src="homepage/consultatie.svg" alt="consultatie" /></Link>
-              <Link className="planet" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
-              <Link className="planet" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
-            </div>
-            </section>
+			<Scroll.Element name="test1" className="element">
+				<section className="container space" id="planets">
+					
+						<img className="logo" src="homepage/logolvp.svg" alt="logo" />
+					
+					<div className="planet_container">
+						<Link className="planet" to="/consultatie">
+							{/*<img src="homepage/consultatie.svg" alt="consultatie" />*/}
+							<animated.img
+								src={'homepage/consultatie.svg'}
+								alt="Cloud"
+								style={{
+									transform: offset.interpolate(calc),
+								}}
+							/>
+						</Link>
+						<Link className="planet" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
+						<Link className="planet" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
+					</div>
+				</section>
+			</Scroll.Element>
             {/*<img
                 src="homepage/raket.svg"
                 alt="Raket"
                 className="rocket"
                 style={{bottom: bottomOffset + 'vh'}}
             />*/}
-            <div style={{zIndex: 4}} className="rocket">
-            <Lottie options={defaultOptions}
-                height={400}
-                width={400}
-            />
-            </div>
-            <section className="container earth" onLoad={generateClouds(8)}>
-                <div className="ground" />
-                <img className="skyline" src="homepage/skyline_1.svg" alt="Skyline" />
-                <img
-                    className="hospital"
-                    src="homepage/ziekenhuis.svg"
-                    alt="Ziekenhuis"
-                />
-                <section className="clouds" id="cloudContainer" ref={ref}>
-                    {clouds}
-                </section>
-            </section>
+			<Scroll.Link activeClass="active" to="test2" smooth="easeInCubic" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
+				<div style={{zIndex: 4}} onClick={handleClick2} id='rocketRef' className="rocket">
+					<Lottie options={defaultOptions}
+						height={400}
+						width={400}
+						
+						isPaused={pauseAnimation}
+					/>
+				</div>
+			</Scroll.Link>
+			
+			<Scroll.Element name="test2" className="element">
+				<section className="container earth" onLoad={generateClouds(8)}>
+					<div className="ground" />
+					<img className="skyline" src="homepage/skyline_1.svg" alt="Skyline" />
+					<img
+						className="hospital"
+						src="homepage/ziekenhuis.svg"
+						alt="Ziekenhuis"
+					/>
+					<a href="#planets" onClick={handleClick}>to infinity</a>
+					<Scroll.Link activeClass="active" to="test1" smooth={"easeInQuart"} onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
+						Test 2 (delay)
+					</Scroll.Link>
+					<section className="clouds" id="cloudContainer" ref={ref}>
+						<animated.img
+							src={'homepage/wolk_3.svg'}
+							alt="Cloud"
+							className="cloud"
+							style={{
+								width: '11%',
+								top: '40%',
+								left: '70%',
+								opacity: '0.7',
+								transform: offset.interpolate(calc),
+							}}
+						/>
+						<animated.img
+							src={'homepage/wolk_1.svg'}
+							alt="Cloud"
+							className="cloud"
+							style={{
+								width: '30%',
+								top: '0%',
+								left: '10%',
+								opacity: '1',
+								transform: offset.interpolate(calc),
+							}}
+						/>
+						<animated.img
+							src={'homepage/wolk_1.svg'}
+							alt="Cloud"
+							className="cloud"
+							style={{
+								width: '17%',
+								top: '60%',
+								left: '30%',
+								opacity: '0.8',
+								transform: offset.interpolate(calc),
+							}}
+						/>
+						<animated.img
+							src={'homepage/wolk_3.svg'}
+							alt="Cloud"
+							className="cloud"
+							style={{
+								width: '15%',
+								top: '40%',
+								left: '0%',
+								opacity: '0.5',
+								transform: offset.interpolate(calc),
+							}}
+						/>
+						<animated.img
+							src={'homepage/wolk_1.svg'}
+							alt="Cloud"
+							className="cloud"
+							style={{
+								width: '24%',
+								top: '10%',
+								left: '60%',
+								opacity: '1',
+								transform: offset.interpolate(calc),
+							}}
+						/>
+					</section>
+				</section>
+			</Scroll.Element>
         </div>
     );
 }

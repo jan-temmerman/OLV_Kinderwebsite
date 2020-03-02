@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .ground {
   background: rgb(77, 168, 77);
   height: 200px;
@@ -116,4 +120,14 @@
   bottom: 12vh;
   right: 13%;
   z-index: 99;
+  transition-property: transform;
+  transition-duration: 1s;
 }
+
+.logo {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  right: 0;
+}
+
