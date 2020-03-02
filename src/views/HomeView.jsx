@@ -108,18 +108,18 @@ export default function HomeView() {
 						<img className="logo" src="homepage/logolvp.svg" alt="logo" />
 					
 					<div className="planet_container">
-						<Link className="planet" to="/consultatie">
+						<Link className="planet" to="/dagkliniek">
 							{/*<img src="homepage/consultatie.svg" alt="consultatie" />*/}
 							<animated.img
 								src={'homepage/consultatie.svg'}
-								alt="Cloud"
+								alt="dagkliniek"
 								style={{
 									transform: offset.interpolate(calc),
 								}}
 							/>
 						</Link>
 						<Link className="planet" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
-						<Link className="planet" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
+						<Link className="planet" to="/consultatie"><img src="homepage/dagkliniek.svg" alt="consultatie" /></Link>
 					</div>
 				</section>
 			</Scroll.Element>
@@ -129,7 +129,7 @@ export default function HomeView() {
                 className="rocket"
                 style={{bottom: bottomOffset + 'vh'}}
             />*/}
-			<Scroll.Link activeClass="active" to="test2" smooth="easeInCubic" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
+			<Scroll.Link activeClass="active" to="test2" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
 				<div style={{zIndex: 4}} onClick={handleClick2} id='rocketRef' className="rocket">
 					<Lottie options={defaultOptions}
 						height={400}
@@ -150,7 +150,7 @@ export default function HomeView() {
 						alt="Ziekenhuis"
 					/>
 					<a href="#planets" onClick={handleClick}>to infinity</a>
-					<Scroll.Link activeClass="active" to="test1" smooth={"easeInQuart"} onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
+					<Scroll.Link activeClass="active" to="test1" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
 						Test 2 (delay)
 					</Scroll.Link>
 					<section className="clouds" id="cloudContainer" ref={ref}>
