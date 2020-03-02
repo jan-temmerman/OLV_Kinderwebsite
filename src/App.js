@@ -9,34 +9,19 @@ import {
 import './App.css'
 
 import HomeView from './views/HomeView'
+import Consultatie from './views/Consultatie'
 
-function App() {
+export default function App() {
   return (
     <Router>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/">
-            <HomeView />
-          </Route>
-          <Route path="/consultatie">
-            <HomeView />
-          </Route>
-          <Route path="/dagkliniek">
-            <HomeView />
-          </Route>
-          <Route path="/opname">
-            <HomeView />
-          </Route>
+          <Route path="/" component={HomeView} exact />
+          <Route path="/consultatie" component={Consultatie} exact />
+          <Route path="/dagkliniek" component={HomeView} exact />
+          <Route path="/opname" component={HomeView} exact />
         </Switch>
     </Router>
   );
-
-  return (
-    <div className="App">
-      <HomeView/>
-    </div>
-  );
 }
-
-export default App

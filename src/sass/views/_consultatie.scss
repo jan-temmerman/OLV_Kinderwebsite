@@ -1,0 +1,59 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.planet_C {
+  transition: all .2s ease-in-out;
+}
+
+.planet_C:nth-child(1) {
+  align-self: flex-start;
+  width: 16%;
+}
+
+.planet_C:nth-child(2) {
+  align-self: flex-end;
+  width: 20%;
+}
+
+.planet_C:hover {
+  transform: scale(1.1);
+  
+}
+
+.planet_container_C {
+  display: flex;
+  margin: 2% auto;
+  flex-direction: row ;
+  justify-content: space-evenly;
+  align-self: flex-start;
+  width: 60%;
+  height: 30%;
+}
+
+.skyline {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.rocket {
+  height: 20vw;
+  position: fixed;
+  bottom: 12vh;
+  right: 13%;
+  z-index: 99;
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+.logo {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  right: 0;
+}
+
