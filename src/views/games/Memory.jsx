@@ -12,6 +12,7 @@ export class Memory extends Component {
             card.style.order = randomPos;
         });
         cards.forEach(card => card.addEventListener('click', this.flipCard));
+        this.resetBoard();
     }
 
     state = {
@@ -68,6 +69,18 @@ export class Memory extends Component {
         }
     }
 
+    playAgain() {
+        setTimeout(() => {
+            const cards = document.querySelectorAll('.memory-card');
+            cards.forEach(card => card.classList.remove('flip'));
+            this.setState({
+                goodAnswer: 0
+            })
+            this.componentDidMount();
+            
+          }, 1500);
+    }
+
     resetBoard = () => {
         this.setState({
             firstCard: "",
@@ -75,9 +88,6 @@ export class Memory extends Component {
         })
     }
 
-    playAgain() {
-        
-    }
 
     editSoundLevel = () => {
         let soundOn = document.getElementById('soundOn')
