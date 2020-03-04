@@ -4,6 +4,10 @@
     box-sizing: border-box;
   }
 
+  p{
+    color: white;
+  }
+
   .hide{
       display: none;
   }
@@ -21,8 +25,16 @@
   }
 
 //   PLAY AGAIN CONTAINER
-    .playAgain-container{
-        
+  .playAgain-container{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9;
+      background-color: red;
+      width: 200px;
+      height: 100px;
+      text-align: center;
     }
 
 //   GAME-CONTAINER
@@ -69,9 +81,6 @@
     border-radius: 5px;
     background: #1C7CCC;
     backface-visibility: hidden;
-  }
-  
-  .front-face {
     transform: rotateY(180deg);
   }
 
@@ -83,8 +92,11 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: bottom;
+    transition-duration: 0.2s;
   }
 
   .back-face:hover{
       cursor: pointer;
+      transform: scale(0.98);
+      transition-duration: 0.2s;
   }
