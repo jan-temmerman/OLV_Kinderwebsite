@@ -11,31 +11,47 @@ export class Memory extends Component {
         sound: true,
         goodAnswer: 0,
         clicks: 0,
+        cards: 12,
     }
     
     componentDidMount = () => {
         document.title = "Spelletjes | Memory"
+        this.createGameContainer()
+    }
 
+    createGameContainer = () => {
         let cardsArray = ['beer', 'mondmasker', 'olivia', 'spuit', 'stetoscoop', 'thermometer']
         let count = 0;
-        for (let i = 0; i < cardsArray.length; i++){
-            console.log(cardsArray[i])
-            
-            if (count === 0 && i === 5) {
+        let amountCards = this.state.cards / 2
+        document.querySelector('.memory-game').innerHTML = "";
+        for (let i = 0; i < amountCards; i++){
+            const div = `<div class="memory-card" data-framework="${cardsArray[i]}"> <img class="front-face" src="games/memory/${cardsArray[i]}.svg" alt="${cardsArray[i]}" /> <div class="back-face"></div> </div>`;
+            document.querySelector('.memory-game').insertAdjacentHTML('afterbegin', div);
+            if (count === 0 && i +1 === amountCards) {
                 count++
-                i = 0;
+                i = -1;
             }
         }
 
         const cards = document.querySelectorAll('.memory-card');
         cards.forEach(card => {
-            let randomPos = Math.floor(Math.random() * 12);
+            let randomPos = Math.floor(Math.random() * this.state.cards);
             card.style.order = randomPos;
         });
         cards.forEach(card => card.addEventListener('click', this.flipCard));
         this.setState({
             clicks: 0,
         })
+
+        let level = this.state.cards;
+        if (level === 6) {
+            cards.forEach(card => card.style.height = 'calc(50% - 10px)')
+            cards.forEach(card => card.style.width = 'calc(33.333% - 10px)')
+        } else if (level === 18) {
+            cards.forEach(card => card.style.height = 'calc(33.333% - 10px)')
+            cards.forEach(card => card.style.width = 'calc(16.666% - 10px)')
+        }
+
         this.resetBoard();
     }
 
@@ -79,10 +95,10 @@ export class Memory extends Component {
             this.setState({
                 goodAnswer: goodAnswer
             })
-            if (this.state.goodAnswer < 6) {
+            if (this.state.goodAnswer < this.state.cards/2) {
                 this.resetBoard();
-            } else if (this.state.goodAnswer === 6) {
-                console.log(this.state.clicks)
+            } else if (this.state.goodAnswer === this.state.cards/2) {
+                console.log('Aantal clicks na deze ronde: ' + this.state.clicks)
                 setTimeout(() => {
                     document.querySelector('.playAgain-container').classList.remove('hide');
                 }, 1000);
@@ -97,7 +113,7 @@ export class Memory extends Component {
             goodAnswer: 0
         })
         document.querySelector('.playAgain-container').classList.add('hide');
-        this.componentDidMount();
+        this.createGameContainer();
     }
 
     dontPlayAgain() {
@@ -111,6 +127,25 @@ export class Memory extends Component {
         })
     }
 
+    changeLevel = (event) => {
+        let level = event.target.className
+        if (level === 'makkelijk') {
+            this.setState({
+                cards: 6
+            })
+        } else if (level === 'standaard') {
+            this.setState({
+                cards: 12
+            })
+        } else if (level === 'moeilijk') {
+            this.setState({
+                cards: 18
+            })
+        }
+        setTimeout(() => {
+            this.createGameContainer()
+        }, 1);
+    }
 
     editSoundLevel = () => {
         let soundOn = document.getElementById('soundOn')
@@ -155,63 +190,14 @@ export class Memory extends Component {
                     <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="games/memory/sound_off.svg" alt="sound off" />
                 </div>
 
+                <div className="lvl-btn-container">
+                    <button className="makkelijk" onClick={this.changeLevel}>Makkelijk</button>
+                    <button className="standaard" onClick={this.changeLevel}>Standaard</button>
+                    <button className="moeilijk" onClick={this.changeLevel}>Moeilijk</button>
+                </div>
+
                 <div className="memory-game-container">
-                <section className="memory-game">
-                    <div className="memory-card" data-framework="beer">
-                        <img className="front-face" src="games/memory/beer.svg" alt="beer" />
-                        <div className="back-face"></div>
-                    </div>
-                        
-                    <div className="memory-card" data-framework="beer">
-                    <img className="front-face" src="games/memory/beer.svg" alt="beer" />
-                    <div className="back-face"></div>
-                    </div>
-
-                    <div className="memory-card" data-framework="mondmasker">
-                    <img className="front-face" src="games/memory/mondmasker.svg" alt="mondmasker" />
-                    <div className="back-face"></div>
-                    </div>
-                    <div className="memory-card" data-framework="mondmasker">
-                    <img className="front-face" src="games/memory/mondmasker.svg" alt="mondmasker" />
-                    <div className="back-face"></div>
-                    </div>
-
-                    <div className="memory-card" data-framework="olivia">
-                    <img className="front-face" src="games/memory/olivia.svg" alt="olivia" />
-                    <div className="back-face"></div>
-                    </div>
-                    <div className="memory-card" data-framework="olivia">
-                    <img className="front-face" src="games/memory/olivia.svg" alt="olivia" />
-                    <div className="back-face"></div>
-                    </div>
-
-                    <div className="memory-card" data-framework="spuit">
-                    <img className="front-face" src="games/memory/spuit.svg" alt="spuit" />
-                    <div className="back-face"></div>
-                    </div>
-                    <div className="memory-card" data-framework="spuit">
-                    <img className="front-face" src="games/memory/spuit.svg" alt="spuit" />
-                    <div className="back-face"></div>
-                    </div>
-
-                    <div className="memory-card" data-framework="stetoscoop">
-                    <img className="front-face" src="games/memory/stetoscoop.svg" alt="stetoscoop" />
-                    <div className="back-face"></div>
-                    </div>
-                    <div className="memory-card" data-framework="stetoscoop">
-                    <img className="front-face" src="games/memory/stetoscoop.svg" alt="stetoscoop" />
-                    <div className="back-face"></div>
-                    </div>
-
-                    <div className="memory-card" data-framework="thermometer">
-                    <img className="front-face" src="games/memory/thermometer.svg" alt="thermometer" />
-                    <div className="back-face"></div>
-                    </div>
-                    <div className="memory-card" data-framework="thermometer">
-                    <img className="front-face" src="games/memory/thermometer.svg" alt="thermometer" />
-                    <div className="back-face"></div>
-                    </div>
-                </section>
+                <section className="memory-game"></section>
             </div>
             </div>
         )

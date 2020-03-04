@@ -3,10 +3,11 @@
     margin: 0;
     box-sizing: border-box;
   }
-
-  p{
-    color: white;
-  }
+  
+  @font-face {
+    font-family: 'luckiestguy';
+    src: url('../../fonts/luckiestguy.ttf') format('truetype');
+}
 
   .hide{
       display: none;
@@ -22,6 +23,20 @@
 
   .speaker-icon:hover{
       cursor: pointer;
+  }
+
+  .lvl-btn-container{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .lvl-btn-container button{
+    margin: 0 10px;
+    padding: 5px 10px;
+    text-transform: lowercase;
+    font-family: 'luckiestguy';
   }
 
 //   PLAY AGAIN CONTAINER
@@ -45,7 +60,7 @@
   }
   
   .memory-game {
-    width: 640px;
+    width: 80%;
     height: 640px;
     margin: auto;
     display: flex;
