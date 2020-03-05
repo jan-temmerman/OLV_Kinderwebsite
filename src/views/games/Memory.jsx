@@ -12,6 +12,8 @@ export class Memory extends Component {
         goodAnswer: 0,
         clicks: 0,
         cards: 12,
+        percentage: "",
+        firstId: "",
     }
     
     componentDidMount = () => {
@@ -25,7 +27,7 @@ export class Memory extends Component {
         let amountCards = this.state.cards / 2
         document.querySelector('.memory-game').innerHTML = "";
         for (let i = 0; i < amountCards; i++){
-            const div = `<div class="memory-card" data-framework="${cardsArray[i]}"> <img class="front-face" src="games/memory/${cardsArray[i]}.svg" alt="${cardsArray[i]}" /> <div class="back-face"></div> </div>`;
+            const div = `<div id="${i+count}" class="memory-card" data-framework="${cardsArray[i]}"> <img class="front-face" src="games/memory/${cardsArray[i]}.svg" alt="${cardsArray[i]}" /> <div class="back-face"></div> </div>`;
             document.querySelector('.memory-game').insertAdjacentHTML('afterbegin', div);
             if (count === 0 && i +1 === amountCards) {
                 count++
@@ -59,16 +61,20 @@ export class Memory extends Component {
         if (this.state.firstCard === "" || this.state.secondCard === "") {
             let parent = event.target.parentNode;
             parent.classList.add('flip');
+            let id = event.target.id
             if (this.state.firstCard === "") {
                 this.setState({
                     firstCard: parent,
-                    clicks: this.state.clicks +1,
+                    clicks: this.state.clicks + 1,
+                    firstId: id
                 })
-            } else if (this.state.firstCard !== "") {
+                this.state.firstCard.removeEventListener('click', this.flipCard)
+            } else if (this.state.firstCard !== "" ) {
                 this.setState({
                     secondCard: parent,
                     clicks: this.state.clicks +1,
                 })
+                this.state.secondCard.removeEventListener('click', this.flipCard)
                 this.checkForMatch()
             }
         }
@@ -80,9 +86,11 @@ export class Memory extends Component {
                 document.getElementById('sound-wrong').play();
             }
             setTimeout(() => {
+                this.state.firstCard.addEventListener('click', this.flipCard)
+                this.state.secondCard.addEventListener('click', this.flipCard)
+
                 this.state.firstCard.classList.remove('flip')
                 this.state.secondCard.classList.remove('flip')
-                
                 this.resetBoard();
               }, 1500);
         } else if (this.state.firstCard.dataset.framework === this.state.secondCard.dataset.framework) {
@@ -98,7 +106,8 @@ export class Memory extends Component {
             if (this.state.goodAnswer < this.state.cards/2) {
                 this.resetBoard();
             } else if (this.state.goodAnswer === this.state.cards/2) {
-                console.log('Aantal clicks na deze ronde: ' + this.state.clicks)
+                let clickPercentage = ((this.state.cards / this.state.clicks)*100).toFixed(2)
+                document.getElementById('percentage').innerHTML = 'Je behaalde ' + clickPercentage +'%'
                 setTimeout(() => {
                     document.querySelector('.playAgain-container').classList.remove('hide');
                 }, 1000);
@@ -176,6 +185,7 @@ export class Memory extends Component {
                     <p>Nog eens spelen?</p>
                     <button onClick={this.playAgain}>Ja</button>
                     <button onClick={this.dontPlayAgain}>Nee</button>
+                    <p id="percentage"></p>
                 </div>
 
                 <audio id="sound-right">
