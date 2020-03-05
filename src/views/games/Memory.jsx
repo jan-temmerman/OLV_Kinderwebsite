@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import '../../sass/games/_memory.scss';
 
-
+// MEMORY, BTNS, CARDS VERTICAL ALIGN OP 100VH
 export class Memory extends Component {
     
     state = {
@@ -17,12 +17,11 @@ export class Memory extends Component {
     }
     
     componentDidMount = () => {
-        document.title = "Spelletjes | Memory"
         this.createGameContainer()
     }
 
     createGameContainer = () => {
-        let cardsArray = ['beer', 'mondmasker', 'olivia', 'spuit', 'stetoscoop', 'thermometer']
+        let cardsArray = ['beer', 'mondmasker', 'olivia', 'spuit', 'stetoscoop', 'thermometer', 'MRI', 'INFUUS', 'OTTOSCOOP']
         let count = 0;
         let amountCards = this.state.cards / 2
         document.querySelector('.memory-game').innerHTML = "";
@@ -43,6 +42,7 @@ export class Memory extends Component {
         cards.forEach(card => card.addEventListener('click', this.flipCard));
         this.setState({
             clicks: 0,
+            goodAnswer: 0,
         })
 
         let level = this.state.cards;
@@ -107,7 +107,7 @@ export class Memory extends Component {
                 this.resetBoard();
             } else if (this.state.goodAnswer === this.state.cards/2) {
                 let clickPercentage = ((this.state.cards / this.state.clicks)*100).toFixed(2)
-                document.getElementById('percentage').innerHTML = 'Je behaalde ' + clickPercentage +'%'
+                document.getElementById('percentage').innerHTML = 'jouw score ' + clickPercentage +'%'
                 setTimeout(() => {
                     document.querySelector('.playAgain-container').classList.remove('hide');
                 }, 1000);
@@ -125,8 +125,11 @@ export class Memory extends Component {
         this.createGameContainer();
     }
 
-    dontPlayAgain() {
+    dontPlayAgain = () => {
         document.querySelector('.playAgain-container').classList.add('hide');
+        const cards = document.querySelectorAll('.memory-card');
+        cards.forEach(card => card.removeEventListener('click', this.flipCard));
+
     }
 
     resetBoard = () => {
@@ -176,16 +179,19 @@ export class Memory extends Component {
 
     render() {
         return (
-            <div>
+            <div class="memory-body-container">
                 <div className="navbar">
                     <Link className="back" to="/"><img src="homepage/terug.svg" alt="terug" /></Link>
                 </div>
 
+
                 <div className="playAgain-container hide">
-                    <p>Nog eens spelen?</p>
-                    <button onClick={this.playAgain}>Ja</button>
-                    <button onClick={this.dontPlayAgain}>Nee</button>
-                    <p id="percentage"></p>
+                    <div>
+                        <h3>Nog eens spelen?</h3>
+                        <button onClick={this.playAgain}>Ja</button>
+                        <button onClick={this.dontPlayAgain}>Nee</button>
+                        <p id="percentage"></p>
+                    </div>
                 </div>
 
                 <audio id="sound-right">
@@ -199,19 +205,30 @@ export class Memory extends Component {
                     <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="games/memory/sound_on.svg" alt="sound on" />
                     <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="games/memory/sound_off.svg" alt="sound off" />
                 </div>
+                
+                <div className="game-container">
+                    <h1>Memory Spel</h1>
+                    <div className="lvl-btn-container">
+                        <button className="makkelijk" onClick={this.changeLevel}>Makkelijk</button>
+                        <button className="standaard" onClick={this.changeLevel}>Standaard</button>
+                        <button className="moeilijk" onClick={this.changeLevel}>Moeilijk</button>
+                    </div>
 
-                <div className="lvl-btn-container">
-                    <button className="makkelijk" onClick={this.changeLevel}>Makkelijk</button>
-                    <button className="standaard" onClick={this.changeLevel}>Standaard</button>
-                    <button className="moeilijk" onClick={this.changeLevel}>Moeilijk</button>
+                    <div className="memory-game-container">
+                        <section className="memory-game"></section>
+                    </div>
                 </div>
-
-                <div className="memory-game-container">
-                <section className="memory-game"></section>
-            </div>
             </div>
         )
     }
 }
 
 export default Memory
+// ALS JE NEE DRUKT -> functie verwijderen
+// ALS JE BTN DRUKT -> geef allemaal terug functie
+
+// PICK RANDOM CARDS OUT OF API, PUSH THOSE NAMES IN ARRAY
+// FIRST TIME CHECK IF NAMES AREN'T IN ARRAY, SECOND TIME READ ARRAY ONE BY ONE
+// 
+// 
+// 
