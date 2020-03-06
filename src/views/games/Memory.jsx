@@ -107,7 +107,7 @@ export class Memory extends Component {
                 this.resetBoard();
             } else if (this.state.goodAnswer === this.state.cards/2) {
                 let clickPercentage = ((this.state.cards / this.state.clicks)*100).toFixed(2)
-                document.getElementById('percentage').innerHTML = 'jouw score ' + clickPercentage +'%'
+                document.getElementById('percentage').innerHTML = 'jouw score: ' + clickPercentage +'%'
                 setTimeout(() => {
                     document.querySelector('.playAgain-container').classList.remove('hide');
                 }, 1000);

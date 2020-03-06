@@ -1,12 +1,13 @@
 // COLORS
 $yellow-light: #F8FA94;
 $yellow-dark: #F9DF1B;
-$red: #F80000;
+$red: #E30104;
 $black: #000000;
 $white: #FFFFFF;
-$rose: #E77682;
+$rose: #FC6A76;
 $blue-light: #597386;
 $blue-dark: #385F78;
+$blue-dark-dark: #022746;
 
 // BORDER DIKTES
 $small: 5px;
@@ -128,7 +129,7 @@ h1{
 }
 
 .lvl-btn-container button{
-  margin: 0 10px;
+  margin: 10px 10px;
   padding: 5px 10px;
   width: 200px;
   text-transform: lowercase;
@@ -187,19 +188,20 @@ h1{
   background: $white;
   backface-visibility: hidden;
   transform: rotateY(180deg);
-  border: solid $small $rose;
+  border: solid $small $red;
 }
 
 .back-face{
   height: 100%;
   width: 100%;
   border-radius: 20px;
-  background-image: url('/games/memory/back.svg');
+  border: solid $small $red;
+  background-color: $blue-dark-dark;
+  background-image: url('/games/memory/card-back-red.svg');
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: bottom;
+  background-size: 50%;
+  background-position: center;
   transition-duration: 0.2s;
-  border: solid $small $rose;
 }
 
 .back-face:hover{
