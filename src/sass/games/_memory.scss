@@ -17,16 +17,7 @@ $small: 5px;
     margin: 0;
     box-sizing: border-box;
   }
-  
-  @font-face {
-    font-family: 'luckiestguy';
-    src: url('../../fonts/luckiestguy.ttf') format('truetype');
-}
 
-@font-face {
-  font-family: 'FredokaOne-Regular';
-  src: url('../../fonts/FredokaOne-Regular.ttf') format('truetype');
-}
 
 .memory-body-container{
   background-image: url('/background-planeet.svg');
@@ -41,7 +32,7 @@ $small: 5px;
       display: none;
   }
 
-  .speaker-icon{
+  .icons{
       width: 50px;
       position: absolute;
       right: 0;
@@ -51,6 +42,13 @@ $small: 5px;
 
   .speaker-icon:hover{
       cursor: pointer;
+  }
+
+  #info-icon{
+    margin: 0 0 20px 0;
+  }
+  #info-icon:hover{
+    cursor: pointer;
   }
 
 //   PLAY AGAIN CONTAINER

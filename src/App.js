@@ -13,6 +13,7 @@ import Consultatie from './views/Consultatie'
 
 // GAMES
 import GameMemoryView from './views/games/Memory'
+import GameMemoryInfoView from './views/games/Info'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/dagkliniek" component={HomeView} exact />
           <Route path="/opname" component={HomeView} exact />
           <Route path="/game-memory" component={GameMemoryView} exact />
+          <Route path="/game-memory-info" component={GameMemoryInfoView} exact />
           <Route path="/" component={HomeView} exact />
         </Switch>
     </Router>

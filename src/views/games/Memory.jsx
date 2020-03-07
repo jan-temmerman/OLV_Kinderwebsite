@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import '../../sass/games/_fonts.scss';
 import '../../sass/games/_memory.scss';
 
 // MEMORY, BTNS, CARDS VERTICAL ALIGN OP 100VH
@@ -201,7 +202,8 @@ export class Memory extends Component {
                     <source src="sound/wrong.mp3" type="audio/ogg"/>
                 </audio>
                 
-                <div>
+                <div className="icons">
+                    <a href="/game-memory-info"><img id="info-icon" onClick={this.info} src="games/memory/info-icon.svg" alt="info"/></a>
                     <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="games/memory/sound_on.svg" alt="sound on" />
                     <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="games/memory/sound_off.svg" alt="sound off" />
                 </div>
@@ -210,7 +212,7 @@ export class Memory extends Component {
                     <h1>Memory Spel</h1>
                     <div className="lvl-btn-container">
                         <button className="makkelijk" onClick={this.changeLevel}>Makkelijk</button>
-                        <button className="standaard" onClick={this.changeLevel}>Standaard</button>
+                        <button className="standaard" onClick={this.changeLevel}>Normaal</button>
                         <button className="moeilijk" onClick={this.changeLevel}>Moeilijk</button>
                     </div>
 
@@ -224,11 +226,9 @@ export class Memory extends Component {
 }
 
 export default Memory
-// ALS JE NEE DRUKT -> functie verwijderen
-// ALS JE BTN DRUKT -> geef allemaal terug functie
 
-// PICK RANDOM CARDS OUT OF API, PUSH THOSE NAMES IN ARRAY
+// PICK RANDOM CARDS OUT OF ARRAY, PUSH THOSE NAMES IN ARRAY
 // FIRST TIME CHECK IF NAMES AREN'T IN ARRAY, SECOND TIME READ ARRAY ONE BY ONE
 // 
-// 
+// SLIDE SHOW |-| |-| |-| <- 3 kaartjes, duw op next en tekst veranderd
 // 
