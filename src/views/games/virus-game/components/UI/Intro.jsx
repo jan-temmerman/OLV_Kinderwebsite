@@ -4,13 +4,10 @@ export default function Intro(props) {
   const { game: { startGame, difficulty } } = props;
 
   const difficultyBtns = [];
-  console.log(Object.keys(difficulty));
 
   for (let i = 0; i < Object.keys(difficulty).length; i += 1) {
     difficultyBtns.push(<button type="button" className="btn" onClick={() => { startGame(Object.keys(difficulty)[i]); }}>{difficulty[Object.keys(difficulty)[i]].buttonText}</button>);
   }
-
-  console.log(difficultyBtns);
 
   return (
     <div className="game__overlay">
