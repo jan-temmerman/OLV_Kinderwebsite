@@ -1,17 +1,24 @@
 import React from 'react';
 
 export default function Intro(props) {
-  const { game: { startGame } } = props;
+  const { game: { startGame, difficulty } } = props;
+
+  const difficultyBtns = [];
+  console.log(Object.keys(difficulty));
+
+  for (let i = 0; i < Object.keys(difficulty).length; i += 1) {
+    difficultyBtns.push(<button type="button" className="btn" onClick={() => { startGame(Object.keys(difficulty)[i]); }}>{difficulty[Object.keys(difficulty)[i]].buttonText}</button>);
+  }
+
+  console.log(difficultyBtns);
+
   return (
     <div className="game__overlay">
       <h1>Het virusspel</h1>
       <p>Kan jij alle virussen ontwijken?</p>
       <p>Tip: Sleep het karakter over het scherm met de muis om te spelen</p>
-      {/* <button type="button" className="btn" onClick={startGame}>Start het spel</button> */}
       <div className="btn__container">
-        <button type="button" className="btn" onClick={() => { startGame('easy'); }}>Makkelijk</button>
-        <button type="button" className="btn" onClick={() => { startGame('normal'); }}>Normaal</button>
-        <button type="button" className="btn" onClick={() => { startGame('hard'); }}>Moeilijk</button>
+        {difficultyBtns}
       </div>
     </div>
   );
