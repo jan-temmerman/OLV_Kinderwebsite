@@ -13,7 +13,6 @@ const gameConfig = {
     lives: 2,
     score: 0,
     level: 1,
-    scorePerLevel: 10,
     difficulty: {
       easy: {
         initViruses: 5,
