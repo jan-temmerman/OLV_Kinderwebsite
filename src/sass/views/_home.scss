@@ -101,7 +101,7 @@ html {
   align-self: center;
   width: 60%;
   // height: 30%;
-  // justify-content: center;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -115,6 +115,7 @@ html {
 }
 
 .rocket {
+  pointer-events: none;
   height: 20vw;
   position: fixed;
   bottom: 12vh;
@@ -131,3 +132,9 @@ html {
   right: 0;
 }
 
+.space {
+  //background-image: url('/starssss.svg');
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}

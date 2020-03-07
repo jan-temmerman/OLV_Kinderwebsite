@@ -86,6 +86,7 @@ export default function HomeView() {
 	
 	const handleClick = () => {
 		setPauseAnimation(false)
+		document.getElementById('rocketRef').style.transform = 'translate-x(100)'; 
 		setTimeout(() => {
 			setPauseAnimation(true)
 		}, 5000);
@@ -111,7 +112,7 @@ export default function HomeView() {
 						<Link className="planet" to="/dagkliniek">
 							{/*<img src="homepage/consultatie.svg" alt="consultatie" />*/}
 							<animated.img
-								src={'homepage/consultatie.svg'}
+								src={'homepage/dagkliniek.svg'}
 								alt="dagkliniek"
 								style={{
 									transform: offset.interpolate(calc),
@@ -119,7 +120,7 @@ export default function HomeView() {
 							/>
 						</Link>
 						<Link className="planet" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
-						<Link className="planet" to="/consultatie"><img src="homepage/dagkliniek.svg" alt="consultatie" /></Link>
+						<Link className="planet" to="/consultatie"><img src="homepage/consultatie.svg" alt="consultatie" /></Link>
 					</div>
 				</section>
 			</Scroll.Element>
@@ -144,11 +145,7 @@ export default function HomeView() {
 				<section className="container earth" onLoad={generateClouds(8)}>
 					<div className="ground" />
 					<img className="skyline" src="homepage/skyline_1.svg" alt="Skyline" />
-					<img
-						className="hospital"
-						src="homepage/ziekenhuis.svg"
-						alt="Ziekenhuis"
-					/>
+					<img className="hospital" src="homepage/ziekenhuis.svg" alt="Ziekenhuis" />
 					<a href="#planets" onClick={handleClick}>to infinity</a>
 					<Scroll.Link activeClass="active" to="test1" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
 						Test 2 (delay)

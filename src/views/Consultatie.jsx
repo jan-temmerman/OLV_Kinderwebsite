@@ -39,8 +39,8 @@ export default function Consulatie() {
             </div>
 
             <div className="planet_container_C">
-                <Link className="planet_C" to="/dagkliniek"><img src="homepage/opname.svg" alt="dagkliniek" /></Link>
-                <Link className="planet_C" to="/opname"><img src="homepage/consultatie.svg" alt="opname" /></Link>
+                <Link className="planet_C" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
+                <Link className="planet_C" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
             </div>
 
             <div className="container_content">
