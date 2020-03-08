@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "967a68f6d250ef517583f89476a0dbef",
+    "revision": "040abb579a96e9a00792d062f8e2fddd",
     "url": "/OLV_Kinderwebsite/index.html"
   },
   {
-    "revision": "e5a27114d78b2533099d",
+    "revision": "4a97e27dd4a2a2938f6e",
     "url": "/OLV_Kinderwebsite/static/css/main.71351469.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OLV_Kinderwebsite/static/js/2.f1551acb.chunk.js.LICENSE"
   },
   {
-    "revision": "e5a27114d78b2533099d",
-    "url": "/OLV_Kinderwebsite/static/js/main.ea4c1651.chunk.js"
+    "revision": "4a97e27dd4a2a2938f6e",
+    "url": "/OLV_Kinderwebsite/static/js/main.f4d7e67b.chunk.js"
   },
   {
     "revision": "bc6c68c098a37030e17b",
