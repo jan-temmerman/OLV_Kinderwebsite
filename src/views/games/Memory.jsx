@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import '../../sass/games/_fonts.scss';
 import '../../sass/games/_memory.scss';
 
-// MEMORY, BTNS, CARDS VERTICAL ALIGN OP 100VH
+// SVGS
+
+
 export class Memory extends Component {
     
     state = {

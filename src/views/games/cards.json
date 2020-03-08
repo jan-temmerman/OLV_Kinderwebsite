@@ -3,47 +3,47 @@
         {
             "id": 1,
             "name": "beer",
-            "joke": "Chuck Norris uses ribbed condoms inside out, so he gets the pleasure."
+            "explanation": "Je mag bijna altijd je favoriete beer met je meenemen ook als je een operatie krijgt. Wist je dat je teddybeer ook een polsbandje krijgt om te dragen?"
         },
         {
             "id": 2,
             "name": "mondmasker",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
+            "explanation": "Om de dokter of verpleegkundige niet te besmetten dragen zij een mondmasker"
         },
         {
             "id": 3,
             "name": "olivia",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
+            "explanation": "Olivia is de mascotte van ons ziekenhuis, ze zit op verschillende plekken in het ziekenhuis verstopt. Kan jij ze vinden?"
         },
         {
             "id": 4,
             "name": "spuit",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
+            "explanation": "Om je snel een medicijntje toe te dienen, krijg je een prikje. Dit kan een beetje pijn doen, maar je hoeft hier niet bang voor te zijn."
         },
         {
             "id": 5,
             "name": "stetoscoop",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
+            "explanation": "Hiermee kan de dokter naar je hart luisteren. Vraag hem of je ook eens kan luisteren!"
         },
         {
             "id": 6,
             "name": "thermometer",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
+            "explanation": "Om te kijken of je koorts hebt moet je de thermometer onder je oksel steken, zo kan je temperatuur gemeten worden."
         },
         {
             "id": 7,
             "name": "MRI",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
+            "explanation": "In het ziekenhuis hebben wij 2 grote scanners. Een mri en een ct daarmee kan je in lichaam kijken!"
         },
         {
             "id": 8,
             "name": "INFUUS",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
+            "explanation": "Om medicijnen aan je te geven, krijg je een infuus. Dat is een buisje in je arm, geen paniek dit is geen prik!"
         },
         {
             "id": 9,
             "name": "OTTOSCOOP",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
+            "explanation": "Met een otoscoop wordt in je neus, oren of keel gekeken. Er zit een lichtje en vergrootglas in zodat de dokter alles goed kan bekijken."
         }
     ]
 }

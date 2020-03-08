@@ -9,8 +9,7 @@ export class Info extends Component {
 
     state = {
         i: 0,
-        cards: ['beer', 'mondmasker', 'olivia', 'spuit', 'stetoscoop', 'thermometer', 'MRI', 'INFUUS', 'OTTOSCOOP'],
-
+        cards: ['beer', 'mondmasker', 'olivia', 'spuit', 'stetoscoop', 'thermometer', 'mri', 'infuus', 'ottoscoop'],
         length: 0
     }
 
@@ -21,12 +20,18 @@ export class Info extends Component {
         this.setState({
             length: length
         })
+
+        fetch("./cards.json")
+        .then(res => res.json())
+        .then(data => console.log(data))
+
         this.showCard()
     }
 
     showCard = () => {
         let i = this.state.i
         let cardsArray = this.state.cards
+        document.getElementById('title').innerHTML = cardsArray[i]
         document.getElementById(`card-one`).innerHTML = `<img class="card-icon" src="games/memory/${cardsArray[i]}.svg"/>`
     }
 
@@ -72,7 +77,10 @@ export class Info extends Component {
                             <img className="pijltje middle-icon" src="games/memory/explain-icon.svg" alt="explain" />
                             <img  onClick={this.nextCard} id="pijltje-volgende" className="pijltje" src="games/memory/pijltje.svg" alt="volgende"/>
                         </div>
-                        <div id="text-blok">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, porro voluptates? Nobis aspernatur nesciunt distinctio molestiae modi, pariatur est qui!</div>
+                        <div id="text-blok">
+                            <h2 id="title"></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, porro voluptates? Nobis aspernatur nesciunt distinctio molestiae modi, pariatur est qui!</p>
+                        </div>
                     </div>
                 </div>
             </div>
