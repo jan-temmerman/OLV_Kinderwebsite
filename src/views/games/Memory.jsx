@@ -180,7 +180,7 @@ export class Memory extends Component {
 
     render() {
         return (
-            <div class="memory-body-container">
+            <div className="memory-body-container">
                 <div className="navbar">
                     <Link className="back" to="/"><img src="homepage/terug.svg" alt="terug" /></Link>
                 </div>
