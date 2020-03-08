@@ -59,6 +59,8 @@ $small: 5px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
       z-index: 9;
       border: solid 10px $yellow-dark;
       border-radius: 20px;
@@ -106,6 +108,8 @@ $small: 5px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 h1{
@@ -177,6 +181,8 @@ h1{
 
 .memory-card.flip {
   transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .front-face {
@@ -188,6 +194,8 @@ h1{
   background: $white;
   backface-visibility: hidden;
   transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
   border: solid $small $red;
 }
 

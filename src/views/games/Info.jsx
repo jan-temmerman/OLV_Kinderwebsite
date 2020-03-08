@@ -20,19 +20,15 @@ export class Info extends Component {
         this.setState({
             length: length
         })
-
-        fetch("./cards.json")
-        .then(res => res.json())
-        .then(data => console.log(data))
-
         this.showCard()
     }
 
     showCard = () => {
         let i = this.state.i
-        let cardsArray = this.state.cards
-        document.getElementById('title').innerHTML = cardsArray[i]
-        document.getElementById(`card-one`).innerHTML = `<img class="card-icon" src="games/memory/${cardsArray[i]}.svg"/>`
+        let data = require('./cards.json');
+        document.getElementById('title').innerHTML = data[i].name
+        document.getElementById('text').innerHTML = data[i].explanation
+        document.getElementById(`card-one`).innerHTML = `<img class="card-icon" src="games/memory/${data[i].name}.svg"/>`
     }
 
     nextCard = () => {
@@ -79,7 +75,7 @@ export class Info extends Component {
                         </div>
                         <div id="text-blok">
                             <h2 id="title"></h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, porro voluptates? Nobis aspernatur nesciunt distinctio molestiae modi, pariatur est qui!</p>
+                            <p id="text"></p>
                         </div>
                     </div>
                 </div>

@@ -144,6 +144,7 @@ export class Memory extends Component {
 
     changeLevel = (event) => {
         let level = event.target.className
+        document.querySelector('.playAgain-container').classList.add('hide')
         if (level === 'makkelijk') {
             this.setState({
                 cards: 6

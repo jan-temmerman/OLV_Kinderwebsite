@@ -1,49 +1,56 @@
-{
-    "value": [
-        {
-            "id": 1,
-            "name": "beer",
-            "explanation": "Je mag bijna altijd je favoriete beer met je meenemen ook als je een operatie krijgt. Wist je dat je teddybeer ook een polsbandje krijgt om te dragen?"
-        },
-        {
-            "id": 2,
-            "name": "mondmasker",
-            "explanation": "Om de dokter of verpleegkundige niet te besmetten dragen zij een mondmasker"
-        },
-        {
-            "id": 3,
-            "name": "olivia",
-            "explanation": "Olivia is de mascotte van ons ziekenhuis, ze zit op verschillende plekken in het ziekenhuis verstopt. Kan jij ze vinden?"
-        },
-        {
-            "id": 4,
-            "name": "spuit",
-            "explanation": "Om je snel een medicijntje toe te dienen, krijg je een prikje. Dit kan een beetje pijn doen, maar je hoeft hier niet bang voor te zijn."
-        },
-        {
-            "id": 5,
-            "name": "stetoscoop",
-            "explanation": "Hiermee kan de dokter naar je hart luisteren. Vraag hem of je ook eens kan luisteren!"
-        },
-        {
-            "id": 6,
-            "name": "thermometer",
-            "explanation": "Om te kijken of je koorts hebt moet je de thermometer onder je oksel steken, zo kan je temperatuur gemeten worden."
-        },
-        {
-            "id": 7,
-            "name": "MRI",
-            "explanation": "In het ziekenhuis hebben wij 2 grote scanners. Een mri en een ct daarmee kan je in lichaam kijken!"
-        },
-        {
-            "id": 8,
-            "name": "INFUUS",
-            "explanation": "Om medicijnen aan je te geven, krijg je een infuus. Dat is een buisje in je arm, geen paniek dit is geen prik!"
-        },
-        {
-            "id": 9,
-            "name": "OTTOSCOOP",
-            "explanation": "Met een otoscoop wordt in je neus, oren of keel gekeken. Er zit een lichtje en vergrootglas in zodat de dokter alles goed kan bekijken."
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "beer",
+        "explanation": "Je mag bijna altijd je favoriete beer met je meenemen ook als je een operatie krijgt. Wist je dat je teddybeer ook een polsbandje krijgt om te dragen?",
+        "audio": "path/to/file"
+    },
+    {
+        "id": 2,
+        "name": "mondmasker",
+        "explanation": "Om de dokter of verpleegkundige niet te besmetten dragen zij een mondmasker.",
+        "audio": "path/to/file"
+    },
+    {
+        "id": 3,
+        "name": "olivia",
+        "explanation": "Olivia is de mascotte van ons ziekenhuis, ze zit op verschillende plaatsen in ons ziekenhuis verstopt. Kan jij ze vinden?",
+        "audio": "path/to/file"
+    },
+    {
+        "id": 4,
+        "name": "spuit",
+        "explanation": "Om je snel een medicijntje toe te dienen, krijg je een prikje. Dit kan een beetje pijn doen, maar je hoeft hier niet bang voor te zijn.",
+        "audio": "path/to/file"
+    },
+    {
+        "id": 5,
+        "name": "stetoscoop",
+        "explanation": "Hiermee kan de dokter naar je hart luisteren. Vraag hem of je ook eens kan luisteren!",
+        "audio": "path/to/file"
+    },
+    {
+        "id": 6,
+        "name": "thermometer",
+        "explanation": "Om te kijken of je koorts hebt moet je de thermometer onder je oksel steken, zo kan je temperatuur gemeten worden.",
+        "audio": "path/to/file"
+    },
+    {
+        "id": 7,
+        "name": "MRI",
+        "explanation": "In het ziekenhuis hebben wij 2 grote scanners. Een mri en een ct daarmee kan je in lichaam kijken!",
+        "audio": "path/to/file"
+    },
+    {
+        "id": 8,
+        "name": "INFUUS",
+        "explanation": "Om medicijnen aan je te geven, krijg je een infuus. Dat is een buisje in je arm, geen paniek dit is geen prik!",
+        "audio": "path/to/file"
+    },
+    {
+        "id": 9,
+        "name": "OTOSCOOP",
+        "explanation": "Met een otoscoop wordt in je neus, oren of keel gekeken. Er zit een lichtje en vergrootglas in zodat de dokter alles goed kan bekijken.",
+        "audio": "path/to/file"
+    }
+]
