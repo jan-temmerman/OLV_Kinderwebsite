@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/OLV_Kinderwebsite/precache-manifest.943f79491920e3196fee889ecc295d3f.js"
+  "/OLV_Kinderwebsite/precache-manifest.906cdad68ba6de456d427d3129022fd3.js"
 );
 
 self.addEventListener('message', (event) => {

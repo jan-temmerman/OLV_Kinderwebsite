@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/OLV_Kinderwebsite/static/css/main.71351469.chunk.css",
+    "main.css": "/OLV_Kinderwebsite/static/css/main.0ad1efed.chunk.css",
     "main.js": "/OLV_Kinderwebsite/static/js/main.a1e4cd4d.chunk.js",
     "main.js.map": "/OLV_Kinderwebsite/static/js/main.a1e4cd4d.chunk.js.map",
     "runtime-main.js": "/OLV_Kinderwebsite/static/js/runtime-main.b703048f.js",
@@ -8,16 +8,16 @@
     "static/js/2.d840bfe4.chunk.js": "/OLV_Kinderwebsite/static/js/2.d840bfe4.chunk.js",
     "static/js/2.d840bfe4.chunk.js.map": "/OLV_Kinderwebsite/static/js/2.d840bfe4.chunk.js.map",
     "index.html": "/OLV_Kinderwebsite/index.html",
-    "precache-manifest.943f79491920e3196fee889ecc295d3f.js": "/OLV_Kinderwebsite/precache-manifest.943f79491920e3196fee889ecc295d3f.js",
+    "precache-manifest.906cdad68ba6de456d427d3129022fd3.js": "/OLV_Kinderwebsite/precache-manifest.906cdad68ba6de456d427d3129022fd3.js",
     "service-worker.js": "/OLV_Kinderwebsite/service-worker.js",
-    "static/css/main.71351469.chunk.css.map": "/OLV_Kinderwebsite/static/css/main.71351469.chunk.css.map",
+    "static/css/main.0ad1efed.chunk.css.map": "/OLV_Kinderwebsite/static/css/main.0ad1efed.chunk.css.map",
     "static/js/2.d840bfe4.chunk.js.LICENSE": "/OLV_Kinderwebsite/static/js/2.d840bfe4.chunk.js.LICENSE",
     "static/media/_fonts.scss": "/OLV_Kinderwebsite/static/media/luckiestguy.5ee0f2d1.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.b703048f.js",
     "static/js/2.d840bfe4.chunk.js",
-    "static/css/main.71351469.chunk.css",
+    "static/css/main.0ad1efed.chunk.css",
     "static/js/main.a1e4cd4d.chunk.js"
   ]
 }
