@@ -10,6 +10,7 @@ import './App.css';
 
 import HomeView from './views/HomeView';
 import Consultatie from './views/Consultatie';
+import WatGebeuren from './views/WatGebeuren';
 
 // GAMES
 import GameMemoryView from './views/games/Memory';
@@ -24,6 +25,7 @@ export default function App() {
       <Switch>
         <Route path="/games/virus" component={VirusGame} exact />
         <Route path="/consultatie" component={Consultatie} exact />
+          <Route path="/consultatie/WatZalErGebeuren" component={WatGebeuren} exact />
         <Route path="/dagkliniek" component={HomeView} exact />
         <Route path="/opname" component={HomeView} exact />
         <Route path="/game-memory" component={GameMemoryView} exact />

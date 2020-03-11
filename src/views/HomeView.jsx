@@ -106,19 +106,21 @@ export default function HomeView() {
 			<Scroll.Element name="test1" className="element">
 				<section className="container space" id="planets">
 					
+					<a href="https://www.olvz.be">
 						<img className="logo" src="homepage/logolvp.svg" alt="logo" />
+					</a>
 					
 					<div className="planet_container">
 						<Link className="planet" to="/dagkliniek">
-							<h2>Dagkliniek</h2>
+							<h2 className="planetsName">Dagkliniek</h2>
 							<img src="homepage/dagkliniek.svg" alt="dagkliniek" />
 						</Link>
 						<Link className="planet" to="/opname">
-							<h2>Opname</h2>
+							<h2 className="planetsName">Opname</h2>
 							<img src="homepage/opname.svg" alt="opname" />
 						</Link>
 						<Link className="planet" to="/consultatie">
-							<h2>Consultatie</h2>
+							<h2 className="planetsName">Consultatie</h2>
 							<img src="homepage/consultatie.svg" alt="consultatie" />
 						</Link>
 					</div>

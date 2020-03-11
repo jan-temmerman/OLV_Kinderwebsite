@@ -67,19 +67,19 @@ html {
   text-align: center;
   transition: all .2s ease-in-out;
   align-self: flex-start;
-  width: 22%;
+  width: 30%;
 }
 
-.planet h2 {
+.planetsName{
   font-family: 'Fredoka';
-  color: white;
   margin-bottom: 10px;
   font-size: 32px;
+  color: white;
 }
 
 .planet:nth-child(2) {
   align-self: flex-end;
-  width: 18%;
+  width: 26%;
 }
 
 .planet:hover {
@@ -90,9 +90,9 @@ html {
   display: flex;
   margin: 0 auto;
   align-self: center;
-  width: 80%;
+  width: 60%;
   height: 60%;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
 }
 
@@ -124,7 +124,7 @@ html {
 }
 
 .space {
-  //background-image: url('/starssss.svg');
+  background-image: url('/stars-01.png');
   overflow: hidden;
   background-size: cover;
   background-position: center;

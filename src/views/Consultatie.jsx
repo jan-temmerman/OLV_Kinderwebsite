@@ -32,7 +32,9 @@ export default function Consulatie() {
                     />
                 </div>
             </div>
-            <img className="logo" src="homepage/logolvp.svg" alt="logo" />
+            <a href="https://www.olvz.be">
+                <img className="logo" src="homepage/logolvp.svg" alt="logo" />
+            </a>
 
             <div className="navbar">
                 <Link className="back" to="/"><img src="homepage/terug.svg" alt="terug" /></Link>
@@ -49,9 +51,10 @@ export default function Consulatie() {
 
             <div className="container_content">
                 <div className="container_action">
-                    <div className="action">
+                    
+                    <Link className="action" to="/consultatie/WatZalErGebeuren">
                         <img src="homepage/watdoen.svg" alt="watdoen" />
-                    </div>
+                    </Link>
                     <div className="action">
                         <img src="homepage/spelletjes.svg" alt="spelletjes" />
                     </div>

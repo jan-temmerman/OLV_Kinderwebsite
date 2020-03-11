@@ -98,17 +98,9 @@ body {
   height: 40%;
 }
 
-.container_content {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 70%;
-  position: absolute;
-  bottom: 0;
-}
-
 .planet_bg {
   position: relative;
+  bottom: 0;
   width: 100%;
   align-self: flex-end;
 }
@@ -180,6 +172,57 @@ body {
   top: 0;
   justify-content: center;
   pointer-events: none;
+}
+
+.container_WG {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+}
+
+.inside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FF5D19;
+  position: relative;
+  top: -5px;
+  width: 100%;
+}
+
+.inside_container {
+  width: 60%;
+  align-self: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    font-family: 'Fredoka';
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+
+    &:nth-child(n) {
+      align-self: flex-start;
+    }
+
+    &:nth-child(2n) {
+      align-self: flex-end;
+    }
+
+    h2 {
+      color: #FBDE21;
+      text-align: center;
+      margin: 20px;
+    }
+  }
+
 }
 
 
