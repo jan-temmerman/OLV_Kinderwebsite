@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/OLV_Kinderwebsite/static/css/main.0ad1efed.chunk.css",
-    "main.js": "/OLV_Kinderwebsite/static/js/main.a1e4cd4d.chunk.js",
-    "main.js.map": "/OLV_Kinderwebsite/static/js/main.a1e4cd4d.chunk.js.map",
+    "main.css": "/OLV_Kinderwebsite/static/css/main.2d515b56.chunk.css",
+    "main.js": "/OLV_Kinderwebsite/static/js/main.dced3638.chunk.js",
+    "main.js.map": "/OLV_Kinderwebsite/static/js/main.dced3638.chunk.js.map",
     "runtime-main.js": "/OLV_Kinderwebsite/static/js/runtime-main.b703048f.js",
     "runtime-main.js.map": "/OLV_Kinderwebsite/static/js/runtime-main.b703048f.js.map",
-    "static/js/2.d840bfe4.chunk.js": "/OLV_Kinderwebsite/static/js/2.d840bfe4.chunk.js",
-    "static/js/2.d840bfe4.chunk.js.map": "/OLV_Kinderwebsite/static/js/2.d840bfe4.chunk.js.map",
+    "static/js/2.e16e9781.chunk.js": "/OLV_Kinderwebsite/static/js/2.e16e9781.chunk.js",
+    "static/js/2.e16e9781.chunk.js.map": "/OLV_Kinderwebsite/static/js/2.e16e9781.chunk.js.map",
     "index.html": "/OLV_Kinderwebsite/index.html",
-    "precache-manifest.906cdad68ba6de456d427d3129022fd3.js": "/OLV_Kinderwebsite/precache-manifest.906cdad68ba6de456d427d3129022fd3.js",
+    "precache-manifest.59d42554326a553e551e14d6def3c785.js": "/OLV_Kinderwebsite/precache-manifest.59d42554326a553e551e14d6def3c785.js",
     "service-worker.js": "/OLV_Kinderwebsite/service-worker.js",
-    "static/css/main.0ad1efed.chunk.css.map": "/OLV_Kinderwebsite/static/css/main.0ad1efed.chunk.css.map",
-    "static/js/2.d840bfe4.chunk.js.LICENSE": "/OLV_Kinderwebsite/static/js/2.d840bfe4.chunk.js.LICENSE",
+    "static/css/main.2d515b56.chunk.css.map": "/OLV_Kinderwebsite/static/css/main.2d515b56.chunk.css.map",
+    "static/js/2.e16e9781.chunk.js.LICENSE": "/OLV_Kinderwebsite/static/js/2.e16e9781.chunk.js.LICENSE",
+    "static/media/FredokaOne-Regular.ttf": "/OLV_Kinderwebsite/static/media/FredokaOne-Regular.4a2f2ea4.ttf",
     "static/media/_fonts.scss": "/OLV_Kinderwebsite/static/media/luckiestguy.5ee0f2d1.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.b703048f.js",
-    "static/js/2.d840bfe4.chunk.js",
-    "static/css/main.0ad1efed.chunk.css",
-    "static/js/main.a1e4cd4d.chunk.js"
+    "static/js/2.e16e9781.chunk.js",
+    "static/css/main.2d515b56.chunk.css",
+    "static/js/main.dced3638.chunk.js"
   ]
 }
