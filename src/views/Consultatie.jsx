@@ -38,6 +38,10 @@ export default function Consulatie() {
                 <Link className="back" to="/"><img src="homepage/terug.svg" alt="terug" /></Link>
             </div>
 
+            <div className="heading_container">
+                <h1 className="planetName">Consultatie</h1>
+            </div>
+
             <div className="planet_container_C">
                 <Link className="planet_C" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
                 <Link className="planet_C" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
@@ -55,6 +59,7 @@ export default function Consulatie() {
                         <img src="homepage/personeel.svg" alt="personeel" />
                     </div>
                 </div>
+                <img className="olivia" src="homepage/oliviaMetRaket.svg" alt="olivia" />
                 <img className="planet_bg" src="homepage/consultatie_bg.svg" alt="planet" />
             </div>
         </section>

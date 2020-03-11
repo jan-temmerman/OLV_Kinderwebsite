@@ -209,7 +209,7 @@ export class Memory extends Component {
                 </div>
                 
                 <div className="game-container">
-                    <h1>Memory Spel</h1>
+                    <h1 className="heading">Memory Spel</h1>
                     <div className="lvl-btn-container">
                         <button className="makkelijk" onClick={this.changeLevel}>Makkelijk</button>
                         <button className="standaard" onClick={this.changeLevel}>Normaal</button>
