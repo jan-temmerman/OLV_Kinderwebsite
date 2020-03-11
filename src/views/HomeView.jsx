@@ -110,17 +110,17 @@ export default function HomeView() {
 					
 					<div className="planet_container">
 						<Link className="planet" to="/dagkliniek">
-							{/*<img src="homepage/consultatie.svg" alt="consultatie" />*/}
-							<animated.img
-								src={'homepage/dagkliniek.svg'}
-								alt="dagkliniek"
-								style={{
-									transform: offset.interpolate(calc),
-								}}
-							/>
+							<h2>Dagkliniek</h2>
+							<img src="homepage/dagkliniek.svg" alt="dagkliniek" />
 						</Link>
-						<Link className="planet" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
-						<Link className="planet" to="/consultatie"><img src="homepage/consultatie.svg" alt="consultatie" /></Link>
+						<Link className="planet" to="/opname">
+							<h2>Opname</h2>
+							<img src="homepage/opname.svg" alt="opname" />
+						</Link>
+						<Link className="planet" to="/consultatie">
+							<h2>Consultatie</h2>
+							<img src="homepage/consultatie.svg" alt="consultatie" />
+						</Link>
 					</div>
 				</section>
 			</Scroll.Element>

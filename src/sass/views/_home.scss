@@ -64,30 +64,22 @@ html {
 }
 
 .planet {
+  text-align: center;
   transition: all .2s ease-in-out;
+  align-self: flex-start;
+  width: 22%;
 }
 
-.planet:nth-child(1) {
-  position: absolute;
-  align-self: center;
-  width: 16%;
-  transform: translateY(-180px);
-
-  &:hover {
-    transform: translateY(-180px) scale(1.1);
-  }
+.planet h2 {
+  font-family: 'Fredoka';
+  color: white;
+  margin-bottom: 10px;
+  font-size: 32px;
 }
 
 .planet:nth-child(2) {
-  position: absolute;
-  align-self: flex-start;
-  width: 20%;
-}
-
-.planet:nth-child(3) {
-  position: absolute;
   align-self: flex-end;
-  width: 20%;
+  width: 18%;
 }
 
 .planet:hover {
@@ -98,10 +90,10 @@ html {
   display: flex;
   margin: 0 auto;
   align-self: center;
-  width: 60%;
-  // height: 30%;
+  width: 80%;
+  height: 60%;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .skyline {
