@@ -2,12 +2,13 @@ import * as PIXI from 'pixi.js';
 import AI from './AI';
 import { imageConfig } from '../../config';
 
-export default class Virus extends AI {
+export default class Powerup extends AI {
   constructor(renderer, stage) {
     super(renderer, stage);
-    const texture = PIXI.Texture.from(imageConfig.viruses[Math.floor(Math.random() * imageConfig.viruses.length)]);
+    const texture = PIXI.Texture.from(imageConfig.powerUp);
     this.sprite = PIXI.Sprite.from(texture);
-    this.type = 'virus';
+
+    this.type = 'powerup';
 
     this.sprite.width = 56;
     this.sprite.height = 56;

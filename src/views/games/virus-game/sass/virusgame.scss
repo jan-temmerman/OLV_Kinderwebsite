@@ -47,6 +47,15 @@ $red: #e30104;
   }
 }
 
+.heart {
+  font-size: 16px;
+
+  img {
+    height: 28px;
+    margin: 0 4px;
+  }
+}
+
 .backButton {
   position: absolute;
   left: 5%;
@@ -54,12 +63,17 @@ $red: #e30104;
   font-family: "FredokaOne-Regular", sans-serif;
   text-decoration: none;
   color: inherit;
+
+  img {
+    height: 42px;
+  }
 }
 
 .top-right {
   position: absolute;
   right: 5%;
   top: 5%;
+  text-align: right;
 }
 
 a {
