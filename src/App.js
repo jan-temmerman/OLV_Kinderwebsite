@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
   Link,
@@ -25,7 +25,7 @@ export default function App() {
       <Switch>
         <Route path="/games/virus" component={VirusGame} exact />
         <Route path="/consultatie" component={Consultatie} exact />
-          <Route path="/consultatie/WatZalErGebeuren" component={WatGebeuren} exact />
+        <Route path="/consultatie/WatZalErGebeuren" component={WatGebeuren} exact />
         <Route path="/dagkliniek" component={HomeView} exact />
         <Route path="/opname" component={HomeView} exact />
         <Route path="/game-memory" component={GameMemoryView} exact />
