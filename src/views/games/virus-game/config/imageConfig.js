@@ -11,8 +11,8 @@ const imageConfig = {
   powerUp: '/games/virus/dna_energy.svg',
   player: {
     default: '/games/virus/celltje.svg',
-    wounded: '/games/virus/celltje_gewond.svg',
-    dead: '/games/virus/celltje_dood.svg',
+    wounded: '/games/virus/Celltje_gewond.svg',
+    dead: '/games/virus/Celltje_dood.svg',
   },
 };
 
