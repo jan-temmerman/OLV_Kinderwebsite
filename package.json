@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "deployment": "^0.2.3",
     "install": "^0.13.0",
     "lottie-web": "^5.6.5",
     "node-sass": "^4.13.0",
