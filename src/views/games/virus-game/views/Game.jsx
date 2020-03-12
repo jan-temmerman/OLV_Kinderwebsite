@@ -119,9 +119,9 @@ export default class Game extends Component {
                   ...this.gameState,
                   lives: this.gameState.lives - 1,
                 });
-                this.player.setWounded();
+                this.player.setTexture('wounded');
               } else {
-                this.player.setDead();
+                this.player.setTexture('dead');
                 updateGameState({
                   ...this.gameState,
                   playing: false,
@@ -133,7 +133,7 @@ export default class Game extends Component {
             } if (character.type === 'powerup') {
               this.aiObjects.splice(i, 1);
               character.sprite.destroy();
-              this.player.setHappy();
+              this.player.setTexture('default');
               if (this.gameState.lives < 2) {
                 updateGameState({
                   ...this.gameState,
