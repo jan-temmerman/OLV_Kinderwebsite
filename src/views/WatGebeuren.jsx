@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
 
 
@@ -7,16 +7,15 @@ import '../sass/app.scss';
 import '../sass/views/_watGebeuren.scss';
 
 export default function WatGebeuren() {
-
-    return(
+    return (
         <div>
             <section className="container_WG space" id="planets">
                 <a href="https://www.olvz.be">
-                    <img className="logo" src="homepage/logolvp.svg" alt="logo" />
+                    <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
                 </a>
 
                 <div className="navbar">
-                    <Link className="back" to="/consultatie"><img src="homepage/terug.svg" alt="terug" /></Link>
+                    <Link className="back" to="/consultatie"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 </div>
 
                 <div className="heading_container">
@@ -24,12 +23,12 @@ export default function WatGebeuren() {
                 </div>
 
                 <div className="planet_container_C">
-                    <Link className="planet_C" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
-                    <Link className="planet_C" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
+                    <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
+                    <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
                 </div>
 
                 <div className="container_content_WG">
-                    <img className="planet_bg" src="homepage/consultatie_bg.svg" alt="planet" />
+                    <img className="planet_bg" src="/homepage/consultatie_bg.svg" alt="planet" />
                 </div>
             </section>
             <section className="inside">
@@ -53,5 +52,5 @@ export default function WatGebeuren() {
                 </div>
             </section>
         </div>
-    )
+    );
 }
