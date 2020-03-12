@@ -26,8 +26,8 @@ export default function App() {
         <Route path="/consultatie" component={Consultatie} exact />
         <Route path="/dagkliniek" component={HomeView} exact />
         <Route path="/opname" component={HomeView} exact />
-        <Route path="/game-memory" component={GameMemoryView} exact />
-        <Route path="/game-memory-info" component={GameMemoryInfoView} exact />
+        <Route path="/games/memory" component={GameMemoryView} exact />
+        <Route path="/games/memory/info" component={GameMemoryInfoView} exact />
         <Route path="/" component={HomeView} exact />
       </Switch>
     </Router>

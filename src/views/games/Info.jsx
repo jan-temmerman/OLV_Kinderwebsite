@@ -8,7 +8,7 @@ export class Info extends Component {
    
 
     state = {
-        i: 0,
+        i: "",
         cards: ['beer', 'mondmasker', 'olivia', 'spuit', 'stetoscoop', 'thermometer', 'mri', 'infuus', 'ottoscoop'],
         length: 0
     }
@@ -17,10 +17,15 @@ export class Info extends Component {
     componentDidMount = () => {
         let cardsArray = this.state.cards
         let length = cardsArray.length
+        let randomNumber = Math.random() * length
+        let i = Math.floor(randomNumber)
         this.setState({
-            length: length
+            length: length,
+            i: i
         })
-        this.showCard()
+        setTimeout(() => {
+            this.showCard()
+        }, 50);
     }
 
     showCard = () => {
@@ -28,54 +33,71 @@ export class Info extends Component {
         let data = require('./cards.json');
         document.getElementById('title').innerHTML = data[i].name
         document.getElementById('text').innerHTML = data[i].explanation
-        document.getElementById(`card-one`).innerHTML = `<img class="card-icon" src="games/memory/${data[i].name}.svg"/>`
+        document.getElementById('audio-explenation').src = data[i].audio
+        document.getElementById(`card-one`).innerHTML = `<img class="card-icon" src="/games/memory/${data[i].name}.svg"/>`
     }
 
     nextCard = () => {
         let i = this.state.i
         let length = this.state.length
-        console.log(i)
         if (i< length-1) {
             this.setState({
                 i: i+1
             })
-            setTimeout(() => {
-                this.showCard()
-              }, 50);
+        } else {
+            this.setState({
+                i: 0
+            })
         }
+        setTimeout(() => {
+            this.showCard()
+        }, 50);
     }
 
     previousCard = () => {
         let i = this.state.i
-        if (i>0) {
+        if (i>0 && i !== 0) {
             this.setState({
                 i: i-1
             })
-            setTimeout(() => {
-                this.showCard()
-              }, 50);
+        } else {
+            let max = this.state.length -1
+            this.setState({
+                i: max
+            })
         }
+        setTimeout(() => {
+            this.showCard()
+        }, 50);
+    }
+
+    explain = () => {
+        // document.getElementById('explain-card').play();
+        alert('Hallo daar, ik ben Andy')
     }
 
 
     render() {
         return (
             <div className="memory-info-body-container">
-                <a href="game-memory"><img className="memory-icon" src="games/memory/memory-icon.svg" alt="memory-icon"/></a>
+                <a href="/games/memory"><img className="memory-icon" src="/games/memory/memory-icon.svg" alt="memory-icon"/></a>
                 <div className="navbar">
-                    <Link className="back" to="/game-memory"><img src="homepage/terug.svg" alt="terug" /></Link>
+                    <Link className="back" to="/games/memory"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 </div>
                 <div>
                     <div className="memory-cards-container">
                         <div id="card-one" className="cards"></div>
                         <div id="icons-container">
-                            <img onClick={this.previousCard} id="pijltje-terug" className="pijltje" src="games/memory/pijltje.svg" alt="terug" />
-                            <img className="pijltje middle-icon" src="games/memory/explain-icon.svg" alt="explain" />
-                            <img  onClick={this.nextCard} id="pijltje-volgende" className="pijltje" src="games/memory/pijltje.svg" alt="volgende"/>
+                            <img onClick={this.previousCard} id="pijltje-terug" className="pijltje" src="/games/memory/pijltje.svg" alt="terug" />
+                            <img onClick={this.explain} className="pijltje middle-icon"  id="explain-card" src="/games/memory/explain-icon.svg" alt="explain" />
+                            <img  onClick={this.nextCard} id="pijltje-volgende" className="pijltje" src="/games/memory/pijltje.svg" alt="volgende"/>
                         </div>
                         <div id="text-blok">
                             <h2 id="title"></h2>
                             <p id="text"></p>
+                            <audio>
+                                <source id="audio-explenation" src="" type="audio/ogg"/>
+                            </audio>
                         </div>
                     </div>
                 </div>
