@@ -4,8 +4,10 @@ import { gameConfig } from '../config';
 import { Player, Virus } from '../components';
 import { Spawner } from '../helpers';
 import GameContext from '../context';
+import { Powerup } from '../components/characters';
 
 const virusSpawner = new Spawner();
+const powerupSpawner = new Spawner();
 
 export default class Game extends Component {
   constructor(props) {
@@ -31,9 +33,16 @@ export default class Game extends Component {
      * Spawns a new virus and adds it to the array of viruses
      */
     const spawnVirus = () => {
-      if (this.viruses.length < this.gameState.maxViruses) {
-        this.viruses.push((new Virus(this.app.renderer, this.app.stage)));
+      if (this.aiObjects.length < this.gameState.maxViruses) {
+        this.aiObjects.push((new Virus(this.app.renderer, this.app.stage)));
       }
+    };
+
+    /**
+     * Spawns and adds a new powerup to the scene
+     */
+    const spawnPowerup = () => {
+      this.aiObjects.push((new Powerup(this.app.renderer, this.app.stage)));
     };
 
     /**
@@ -56,12 +65,12 @@ export default class Game extends Component {
     /**
      * Removes all viruses from the game canvas.
      */
-    const removeVirusesFromScreen = () => {
+    const removeObjectsFromScreen = () => {
       const objectsToRemove = this.app.stage.children.filter((child) => child.cursor !== 'pointer');
       objectsToRemove.forEach((object) => {
         this.app.stage.removeChild(object);
       });
-      this.viruses = [];
+      this.aiObjects = [];
     };
 
     /**
@@ -73,7 +82,7 @@ export default class Game extends Component {
         playing: false,
       });
       this.player.setDraggable(false);
-      removeVirusesFromScreen();
+      removeObjectsFromScreen();
       if (this.gameState.lives === 0) {
         this.player.reset();
       }
@@ -97,35 +106,57 @@ export default class Game extends Component {
       const { renderer, view: { width: gameWidth, height: gameHeight } } = this.app;
       this.player.containCharacter(renderer);
       if (this.gameState.playing) {
-        this.viruses.forEach((virus, i) => {
-          virus.animateVirus();
+        // Logic for each virus
+        this.aiObjects.forEach((character, i) => {
+          character.animate();
           // Check for player collision BEFORE removal
-          if (virus.checkPlayerCollision(this.player)) {
-            resetGameWindow();
-            if (this.gameState.lives > 0) {
-              updateGameState({
-                ...this.gameState,
-                lives: this.gameState.lives - 1,
-              });
-              resumeGameWindow();
-            } else {
-              updateGameState({
-                ...this.gameState,
-                playing: false,
-                gameOver: true,
-              });
-              this.app.stop();
+          if (character.checkPlayerCollision(this.player)) {
+            if (character.type === 'virus') {
+              this.aiObjects.splice(i, 1);
+              character.sprite.destroy();
+              if (this.gameState.lives > 0) {
+                updateGameState({
+                  ...this.gameState,
+                  lives: this.gameState.lives - 1,
+                });
+                this.player.setWounded();
+              } else {
+                this.player.setDead();
+                updateGameState({
+                  ...this.gameState,
+                  playing: false,
+                  gameOver: true,
+                });
+                this.app.stop();
+              }
+              return;
+            } if (character.type === 'powerup') {
+              this.aiObjects.splice(i, 1);
+              character.sprite.destroy();
+              this.player.setHappy();
+              if (this.gameState.lives < 2) {
+                updateGameState({
+                  ...this.gameState,
+                  lives: this.gameState.lives + 1,
+                });
+              } else {
+                updateGameState({
+                  ...this.gameState,
+                  score: this.gameState.score + 10,
+                });
+              }
+              return;
             }
           }
 
-          if (virus.checkCollision({ gameWidth, gameHeight })) {
-            this.viruses.splice(i, 1);
+          if (character.checkCollision({ gameWidth, gameHeight })) {
+            this.aiObjects.splice(i, 1);
             updateGameState({
               ...this.gameState,
               score: this.gameState.score + 1,
             });
             checkForLevelIncrease();
-            virus.sprite.destroy();
+            character.sprite.destroy();
           }
         });
       }
@@ -139,7 +170,7 @@ export default class Game extends Component {
       this.difficulty = this.gameState.difficulty[difficulty];
       resetGameWindow();
       updateGameState(gameConfig.game);
-      this.viruses = [];
+      this.aiObjects = [];
       // Start a new game
       this.player.setDraggable(true);
       updateGameState({
@@ -149,6 +180,7 @@ export default class Game extends Component {
         maxViruses: this.difficulty.initViruses,
       });
       virusSpawner.start(spawnVirus, this.difficulty.spawnInterval);
+      powerupSpawner.start(spawnPowerup, 5000);
       this.app.ticker.add(gameLoop);
     };
 

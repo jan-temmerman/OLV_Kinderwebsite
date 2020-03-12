@@ -5,7 +5,7 @@ export default function Lives(props) {
   const hearts = [];
 
   for (let i = 0; i <= lives; i += 1) {
-    hearts.push(<span key={i}>*</span>);
+    hearts.push(<span key={i} className="heart"><img src="/games/virus/HART.svg" /></span>);
   }
   return (
     <p>{hearts}</p>
