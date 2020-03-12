@@ -16,6 +16,10 @@ import GameMemoryView from './views/games/Memory';
 import GameMemoryInfoView from './views/games/Info';
 import VirusGame from './views/games/virus-game';
 
+// 404
+import ErrorNotFound from './views/Error404';
+
+
 export default function App() {
   return (
     <Router>
@@ -29,6 +33,7 @@ export default function App() {
         <Route path="/games/memory" component={GameMemoryView} exact />
         <Route path="/games/memory/info" component={GameMemoryInfoView} exact />
         <Route path="/" component={HomeView} exact />
+        <ErrorNotFound path="*"/>
       </Switch>
     </Router>
   );
