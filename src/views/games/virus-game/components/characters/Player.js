@@ -1,6 +1,15 @@
 import * as PIXI from 'pixi.js';
 import { imageConfig } from '../../config';
 
+const generateTextures = (inputObject) => {
+  const outputObject = {};
+  Object.keys(inputObject).forEach((name) => {
+    outputObject[name] = new PIXI.Texture.from(inputObject[name]);
+  });
+
+  return outputObject;
+};
+
 export default class Player {
   constructor(renderer, stage = PIXI.Container) {
     // Set default values
@@ -11,8 +20,9 @@ export default class Player {
     this.renderer = renderer;
 
     // Sprite setup from image
-    const texture = PIXI.Texture.from(imageConfig.player.default);
-    const sprite = new PIXI.Sprite(texture);
+    this.textures = generateTextures(imageConfig.player);
+
+    const sprite = new PIXI.Sprite(this.textures.default);
     sprite.interactive = true;
     sprite.buttonMode = true;
     sprite.anchor.set(0.5);
@@ -47,19 +57,8 @@ export default class Player {
   }
 
   // Change texture
-  setHappy() {
-    const newTexture = PIXI.Texture.from(imageConfig.player.default);
-    this.sprite.texture = newTexture;
-  }
-
-  setWounded() {
-    const newTexture = PIXI.Texture.from(imageConfig.player.wounded);
-    this.sprite.texture = newTexture;
-  }
-
-  setDead() {
-    const newTexture = PIXI.Texture.from(imageConfig.player.dead);
-    this.sprite.texture = newTexture;
+  setTexture(state) {
+    this.sprite.texture = this.textures[state];
   }
 
   // Reset position
