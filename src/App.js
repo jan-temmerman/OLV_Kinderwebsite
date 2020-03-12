@@ -16,6 +16,7 @@ import WatGebeuren from './views/WatGebeuren';
 import GameMemoryView from './views/games/Memory';
 import GameMemoryInfoView from './views/games/Info';
 import VirusGame from './views/games/virus-game';
+import Spelletjes from './views/Spelletjes';
 
 export default function App() {
   return (
@@ -25,7 +26,8 @@ export default function App() {
       <Switch>
         <Route path="/games/virus" component={VirusGame} exact />
         <Route path="/consultatie" component={Consultatie} exact />
-        <Route path="/consultatie/WatZalErGebeuren" component={WatGebeuren} exact />
+          <Route path="/consultatie/WatZalErGebeuren" component={WatGebeuren} exact />
+          <Route path="/consultatie/spelletjes" component={Spelletjes} exact />
         <Route path="/dagkliniek" component={HomeView} exact />
         <Route path="/opname" component={HomeView} exact />
         <Route path="/game-memory" component={GameMemoryView} exact />

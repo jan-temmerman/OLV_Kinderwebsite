@@ -9,9 +9,9 @@ import * as Scroll from 'react-scroll';
 
 
 import '../sass/app.scss';
-import '../sass/views/_consultatie.scss';
+import '../sass/views/_spelletjes.scss';
 
-export default function Consulatie() {
+export default function Spelletjes() {
     const defaultOptions = {
         loop: true,
         autoplay: true, 
@@ -33,37 +33,27 @@ export default function Consulatie() {
                 </div>
             </div>*/}
             <a href="https://www.olvz.be">
-                <img className="logo" src="homepage/logolvp.svg" alt="logo" />
+                <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
             </a>
 
             <div className="navbar">
-                <Link className="back" to="/"><img src="homepage/terug.svg" alt="terug" /></Link>
+                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
             </div>
 
             <div className="heading_container">
-                <h1 className="planetName">Consultatie</h1>
+                <h1 className="planetName">Spelletjes</h1>
             </div>
 
             <div className="planet_container_C">
-                <Link className="planet_C" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
-                <Link className="planet_C" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
+                <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
+                <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
             </div>
 
             <div className="container_content">
                 <div className="container_action">
-                    
-                    <Link className="action" to="/consultatie/WatZalErGebeuren">
-                        <img src="homepage/watdoen.svg" alt="watdoen" />
-                    </Link>
-                    <Link className="action" to="/consultatie/spelletjes">
-                        <img src="homepage/spelletjes.svg" alt="spelletjes" />
-                    </Link>
-                    <div className="action">
-                        <img src="homepage/personeel.svg" alt="personeel" />
-                    </div>
+                    <img className="planet_bg" src="/spelletjespage/vuur.svg" alt="planet" />
                 </div>
-                <img className="olivia" src="homepage/oliviaMetRaket.svg" alt="olivia" />
-                <img className="planet_bg" src="homepage/consultatie_bg.svg" alt="planet" />
+                <img className="planet_bg" src="/homepage/consultatie_bg.svg" alt="planet" />
             </div>
         </section>
     )

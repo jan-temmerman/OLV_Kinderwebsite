@@ -162,9 +162,14 @@ body {
   position: relative;
 }
 
-.container_content_WG {
-  margin-top: -80px;
-  margin-bottom: -10px;
+.container_content_spel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  bottom: 0;
 }
 
 .inside {
