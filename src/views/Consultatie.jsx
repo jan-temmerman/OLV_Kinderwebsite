@@ -24,14 +24,14 @@ export default function Consulatie() {
 
     return(
         <section className="container space" id="planets">
-            <div className="loading">
+            {/*<div className="loading">
                 <div className="rocket_ani">
                     <Lottie options={defaultOptions}
                         height={200}
                         width={200}
                     />
                 </div>
-            </div>
+            </div>*/}
             <a href="https://www.olvz.be">
                 <img className="logo" src="homepage/logolvp.svg" alt="logo" />
             </a>
