@@ -37,7 +37,7 @@ export default function Spelletjes() {
             </a>
 
             <div className="navbar">
-                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <Link className="back" to="/consultatie"><img src="/homepage/terug.svg" alt="terug" /></Link>
             </div>
 
             <div className="heading_container">
@@ -49,11 +49,28 @@ export default function Spelletjes() {
                 <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
             </div>
 
-            <div className="container_content">
-                <div className="container_action">
-                    <img className="planet_bg" src="/spelletjespage/vuur.svg" alt="planet" />
+            <div className="container_content_spel">
+                <div className="container_action_spel">
+
+                    <Link className="game" to="#" >
+                        <img src="/spelletjespage/rugzak.svg" alt="game" />
+                    </Link>
+
+                    <Link className="game" to="/consultatie/spelletjes/virusspel" >
+                        <img src="/spelletjespage/virusspel.svg" alt="game" />
+                    </Link>
+
+                    <Link className="game" to="#" >
+                        <img src="/spelletjespage/lichaamspel.svg" alt="game" />
+                    </Link>
+
+                    <Link className="game" to="/consultatie/spelletjes/memory" >
+                        <img src="/spelletjespage/memory.svg" alt="game" />
+                    </Link>
+
+                    <img className="olivia-rocket" src="/spelletjespage/olivia-raket.svg" alt="olivia" />
                 </div>
-                <img className="planet_bg" src="/homepage/consultatie_bg.svg" alt="planet" />
+                <img className="planet_bg_spel" src="/homepage/consultatie_bg.svg" alt="planet" />
             </div>
         </section>
     )

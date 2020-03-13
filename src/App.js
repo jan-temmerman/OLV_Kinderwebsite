@@ -24,13 +24,13 @@ export default function App() {
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
-        <Route path="/games/virus" component={VirusGame} exact />
+        <Route path="/consultatie/spelletjes/virusspel" component={VirusGame} exact />
         <Route path="/consultatie" component={Consultatie} exact />
           <Route path="/consultatie/WatZalErGebeuren" component={WatGebeuren} exact />
           <Route path="/consultatie/spelletjes" component={Spelletjes} exact />
         <Route path="/dagkliniek" component={HomeView} exact />
         <Route path="/opname" component={HomeView} exact />
-        <Route path="/game-memory" component={GameMemoryView} exact />
+        <Route path="/consultatie/spelletjes/memory" component={GameMemoryView} exact />
         <Route path="/game-memory-info" component={GameMemoryInfoView} exact />
         <Route path="/" component={HomeView} exact />
       </Switch>

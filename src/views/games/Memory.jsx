@@ -27,7 +27,7 @@ export class Memory extends Component {
         let amountCards = this.state.cards / 2
         document.querySelector('.memory-game').innerHTML = "";
         for (let i = 0; i < amountCards; i++){
-            const div = `<div id="${i+count}" class="memory-card" data-framework="${cardsArray[i]}"> <img class="front-face" src="games/memory/${cardsArray[i]}.svg" alt="${cardsArray[i]}" /> <div class="back-face"></div> </div>`;
+            const div = `<div id="${i+count}" class="memory-card" data-framework="${cardsArray[i]}"> <img class="front-face" src="/games/memory/${cardsArray[i]}.svg" alt="${cardsArray[i]}" /> <div class="back-face"></div> </div>`;
             document.querySelector('.memory-game').insertAdjacentHTML('afterbegin', div);
             if (count === 0 && i +1 === amountCards) {
                 count++
@@ -182,7 +182,7 @@ export class Memory extends Component {
         return (
             <div className="memory-body-container">
                 <div className="navbar">
-                    <Link className="back" to="/"><img src="homepage/terug.svg" alt="terug" /></Link>
+                    <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 </div>
 
 
@@ -196,16 +196,16 @@ export class Memory extends Component {
                 </div>
 
                 <audio id="sound-right">
-                    <source src="sound/right.mp3" type="audio/ogg"/>
+                    <source src="/sound/right.mp3" type="audio/ogg"/>
                 </audio>
                 <audio id="sound-wrong">
-                    <source src="sound/wrong.mp3" type="audio/ogg"/>
+                    <source src="/sound/wrong.mp3" type="audio/ogg"/>
                 </audio>
                 
                 <div className="icons">
-                    <a href="/game-memory-info"><img id="info-icon" onClick={this.info} src="games/memory/info-icon.svg" alt="info"/></a>
-                    <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="games/memory/sound_on.svg" alt="sound on" />
-                    <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="games/memory/sound_off.svg" alt="sound off" />
+                    <a href="/game-memory-info"><img id="info-icon" onClick={this.info} src="/games/memory/info-icon.svg" alt="info"/></a>
+                    <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
+                    <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
                 </div>
                 
                 <div className="game-container">
