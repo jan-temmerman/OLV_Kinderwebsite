@@ -11,15 +11,7 @@ import * as Scroll from 'react-scroll';
 import '../sass/app.scss';
 import '../sass/views/_consultatie.scss';
 
-export default function Consulatie() {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true, 
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
-        }
-      };
+export default function Opname() {
 
     return(
         <section className="container space" id="planets">
@@ -41,12 +33,12 @@ export default function Consulatie() {
             </div>
 
             <div className="heading_container">
-                <h1 className="planetName">Consultatie</h1>
+                <h1 className="planetName">Opname</h1>
             </div>
 
             <div className="planet_container_C">
                 <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
-                <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
+                <Link className="planet_C" to="/consultatie"><img src="/homepage/consultatie.svg" alt="consultatie" /></Link>
             </div>
 
             <div className="container_content">
@@ -55,7 +47,7 @@ export default function Consulatie() {
                     <Link className="action" to="/consultatie/wat_zal_er_gebeuren">
                         <img src="/homepage/watdoen.svg" alt="watdoen" />
                     </Link>
-                    <Link className="action" to="/consultatie/spelletjes">
+                    <Link className="action" to="/opname/spelletjes">
                         <img src="/homepage/spelletjes.svg" alt="spelletjes" />
                     </Link>
                     <Link className="action" to="/consultatie/wie_is_wie">
@@ -63,7 +55,7 @@ export default function Consulatie() {
                     </Link>
                 </div>
                 <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
-                <img className="planet_bg" src="/homepage/consultatie_bg.svg" alt="planet" />
+                <img className="planet_bg" src="/homepage/planeet_opname.svg" alt="planet" />
             </div>
         </section>
     )

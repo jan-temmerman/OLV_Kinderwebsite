@@ -11,16 +11,7 @@ import * as Scroll from 'react-scroll';
 import '../sass/app.scss';
 import '../sass/views/_spelletjes.scss';
 
-export default function Spelletjes() {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true, 
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
-        }
-	  };
-
+export default function Opna_Spelletjes() {
 
     return(
         <section className="container space" id="planets">
@@ -46,7 +37,7 @@ export default function Spelletjes() {
 
             <div className="planet_container_C">
                 <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
-                <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
+                <Link className="planet_C" to="/consultatie"><img src="/homepage/consultatie.svg" alt="consultatie" /></Link>
             </div>
 
             <div className="container_content_spel">
@@ -70,7 +61,7 @@ export default function Spelletjes() {
 
                     <img className="olivia-rocket" src="/spelletjes_page/olivia-raket.svg" alt="olivia" />
                 </div>
-                <img className="planet_bg_spel" src="/homepage/consultatie_bg.svg" alt="planet" />
+                <img className="planet_bg_spel" src="/homepage/planeet_opname.svg" alt="planet" />
             </div>
         </section>
     )
