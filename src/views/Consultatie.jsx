@@ -19,8 +19,23 @@ export default function Consulatie() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-	  };
+      };
 
+    const [loadingScreen, setLoadingScreen] = useState(
+        <div className="loading">
+            <div className="rocket_ani">
+                <Lottie options={defaultOptions}
+                    height={200}
+                    width={200}
+                />
+            </div>
+        </div>
+    )
+      
+    useEffect(() => {
+        setLoadingScreen("")
+        return
+    },[])
 
     return(
         <section className="container space" id="planets">
@@ -32,12 +47,14 @@ export default function Consulatie() {
                     />
                 </div>
             </div>*/}
+
+            {loadingScreen}
             <a href="https://www.olvz.be">
-                <img className="logo" src="homepage/logolvp.svg" alt="logo" />
+                <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
             </a>
 
             <div className="navbar">
-                <Link className="back" to="/"><img src="homepage/terug.svg" alt="terug" /></Link>
+                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
             </div>
 
             <div className="heading_container">
@@ -45,25 +62,25 @@ export default function Consulatie() {
             </div>
 
             <div className="planet_container_C">
-                <Link className="planet_C" to="/dagkliniek"><img src="homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
-                <Link className="planet_C" to="/opname"><img src="homepage/opname.svg" alt="opname" /></Link>
+                <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
+                <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
             </div>
 
             <div className="container_content">
                 <div className="container_action">
                     
-                    <Link className="action" to="/consultatie/WatZalErGebeuren">
-                        <img src="homepage/watdoen.svg" alt="watdoen" />
+                    <Link className="action" to="/consultatie/wat_zal_er_gebeuren">
+                        <img src="/homepage/watdoen.svg" alt="watdoen" />
                     </Link>
                     <Link className="action" to="/consultatie/spelletjes">
-                        <img src="homepage/spelletjes.svg" alt="spelletjes" />
+                        <img src="/homepage/spelletjes.svg" alt="spelletjes" />
                     </Link>
-                    <div className="action">
-                        <img src="homepage/personeel.svg" alt="personeel" />
-                    </div>
+                    <Link className="action" to="/consultatie/wie_is_wie">
+                        <img src="/homepage/personeel.svg" alt="personeel" />
+                    </Link>
                 </div>
-                <img className="olivia" src="homepage/oliviaMetRaket.svg" alt="olivia" />
-                <img className="planet_bg" src="homepage/consultatie_bg.svg" alt="planet" />
+                <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
+                <img className="planet_bg" src="/homepage/consultatie_bg.svg" alt="planet" />
             </div>
         </section>
     )

@@ -19,14 +19,8 @@ body {
   bottom: 0;
   width: 100%;
   height: 100%;
-  animation: fadeinout 2.5s linear forwards;
   opacity: 1;
   z-index: 3;
-}
-
-@keyframes fadeinout {
-90% { opacity: 1; }
-100% { opacity: 0; }
 }
 
 .planet_C {

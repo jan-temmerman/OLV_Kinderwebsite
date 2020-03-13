@@ -9,9 +9,9 @@ import * as Scroll from 'react-scroll';
 
 
 import '../sass/app.scss';
-import '../sass/views/_spelletjes.scss';
+import '../sass/views/_wieiswie.scss';
 
-export default function Spelletjes() {
+export default function WieIsWie() {
     const defaultOptions = {
         loop: true,
         autoplay: true, 
@@ -41,7 +41,7 @@ export default function Spelletjes() {
             </div>
 
             <div className="heading_container">
-                <h1 className="planetName">Spelletjes</h1>
+                <h1 className="planetName">Wie is Wie</h1>
             </div>
 
             <div className="planet_container_C">
@@ -50,26 +50,27 @@ export default function Spelletjes() {
             </div>
 
             <div className="container_content_spel">
-                <div className="container_action_spel">
-
-                    <Link className="game" to="#" >
-                        <img src="/spelletjes_page/rugzak.svg" alt="game" />
-                    </Link>
-
-                    <Link className="game" to="/consultatie/spelletjes/virusspel" >
-                        <img src="/spelletjes_page/virusspel.svg" alt="game" />
-                    </Link>
-
-                    <Link className="game" to="#" >
-                        <img src="/spelletjes_page/lichaamspel.svg" alt="game" />
-                    </Link>
-
-                    <Link className="game" to="/consultatie/spelletjes/memory" >
-                        <img src="/spelletjes_page/memory.svg" alt="game" />
-                    </Link>
-
-                    <img className="olivia-rocket" src="/spelletjes_page/olivia-raket.svg" alt="olivia" />
+                <div className="container_action_WHO">
+                    <div>
+                        <h2>Medewerker</h2>
+                        <div>
+                            <img src="/wieiswie_page/medewerker.svg" alt="employee" />
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Dokter</h2>
+                        <div>
+                            <img src="/wieiswie_page/vrouwelijkedokter.svg" alt="doctor" />
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Verpleegkundige</h2>
+                        <div>
+                            <img src="/wieiswie_page/verpleger.svg" alt="nurse" />
+                        </div>
+                    </div>
                 </div>
+                <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
                 <img className="planet_bg_spel" src="/homepage/consultatie_bg.svg" alt="planet" />
             </div>
         </section>

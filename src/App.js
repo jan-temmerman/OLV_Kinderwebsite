@@ -17,6 +17,7 @@ import GameMemoryView from './views/games/Memory';
 import GameMemoryInfoView from './views/games/Info';
 import VirusGame from './views/games/virus-game';
 import Spelletjes from './views/Spelletjes';
+import WieIsWie from './views/WieIsWie';
 
 export default function App() {
   return (
@@ -26,8 +27,9 @@ export default function App() {
       <Switch>
         <Route path="/consultatie/spelletjes/virusspel" component={VirusGame} exact />
         <Route path="/consultatie" component={Consultatie} exact />
-          <Route path="/consultatie/WatZalErGebeuren" component={WatGebeuren} exact />
+          <Route path="/consultatie/wat_zal_er_gebeuren" component={WatGebeuren} exact />
           <Route path="/consultatie/spelletjes" component={Spelletjes} exact />
+          <Route path="/consultatie/wie_is_wie" component={WieIsWie} exact />
         <Route path="/dagkliniek" component={HomeView} exact />
         <Route path="/opname" component={HomeView} exact />
         <Route path="/consultatie/spelletjes/memory" component={GameMemoryView} exact />
