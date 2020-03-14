@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../sass/games/_fonts.scss';
 import '../sass/404.scss'
 
 export class Error404 extends Component {
@@ -6,6 +7,9 @@ export class Error404 extends Component {
         return (
             <div>
                 <div class="mars"></div>
+                    
+                    <div class="container-background-full-height"></div>
+                
                     <div class="container-text-404">
                         <p class="title">Olivia is verdwaald</p>
                         <p class="subtitle">

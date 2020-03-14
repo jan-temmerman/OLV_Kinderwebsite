@@ -17,7 +17,14 @@ $nunito-font: 'Nunito', sans-serif;
     to   { transform: translateY(-0px); }
 }
 
+.container-background-full-height{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+}
+
 .mars{
+    z-index: 2;
   left:0;
   right:0;
   bottom:0;
@@ -97,6 +104,7 @@ $nunito-font: 'Nunito', sans-serif;
   bottom: 15vmin;
   right: 24vmin;
   height: 200px;
+  z-index: 3;
 
   @include breakpoint(mobile){
     width: 45vmin;

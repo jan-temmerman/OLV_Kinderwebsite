@@ -33,11 +33,13 @@ export class Info extends Component {
         let data = require('./cards.json');
         document.getElementById('title').innerHTML = data[i].name
         document.getElementById('text').innerHTML = data[i].explanation
-        document.getElementById('audio-explenation').src = data[i].audio
+        document.getElementById('container-audio-control').innerHTML = `<audio id="control-audio-explanation"><source id="audio-file" src="${data[i].audio}" type="audio/ogg"/></audio>`
         document.getElementById(`card-one`).innerHTML = `<img class="card-icon" src="/games/memory/${data[i].name}.svg"/>`
     }
 
     nextCard = () => {
+        document.getElementById('control-audio-explanation').pause()
+        document.getElementById('control-audio-explanation').currentTime = 0;
         let i = this.state.i
         let length = this.state.length
         if (i< length-1) {
@@ -55,6 +57,8 @@ export class Info extends Component {
     }
 
     previousCard = () => {
+        document.getElementById('control-audio-explanation').pause()
+        document.getElementById('control-audio-explanation').currentTime = 0;
         let i = this.state.i
         if (i>0 && i !== 0) {
             this.setState({
@@ -71,9 +75,11 @@ export class Info extends Component {
         }, 50);
     }
 
-    explain = () => {
-        // document.getElementById('explain-card').play();
-        alert('Hallo daar, ik ben Andy')
+    explainCard = () => {
+        let audio = document.getElementById('control-audio-explanation')
+        audio.currentTime = 0
+        audio.play()
+        console.log('tits')
     }
 
 
@@ -89,16 +95,14 @@ export class Info extends Component {
                         <div id="card-one" className="cards"></div>
                         <div id="icons-container">
                             <img onClick={this.previousCard} id="pijltje-terug" className="pijltje" src="/games/memory/pijltje.svg" alt="terug" />
-                            <img onClick={this.explain} className="pijltje middle-icon"  id="explain-card" src="/games/memory/explain-icon.svg" alt="explain" />
+                            <img onClick={this.explainCard} className="pijltje middle-icon"  id="explain-card" src="/games/memory/explain-icon.svg" alt="explain" />
                             <img  onClick={this.nextCard} id="pijltje-volgende" className="pijltje" src="/games/memory/pijltje.svg" alt="volgende"/>
                         </div>
                         <div id="text-blok">
                             <h2 id="title"></h2>
                             <p id="text"></p>
-                            <audio>
-                                <source id="audio-explenation" src="" type="audio/ogg"/>
-                            </audio>
                         </div>
+                        <div id="container-audio-control"></div>
                     </div>
                 </div>
             </div>

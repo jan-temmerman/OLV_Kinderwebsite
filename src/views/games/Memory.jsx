@@ -24,7 +24,7 @@ export class Memory extends Component {
     }
 
     createGameContainer = () => {
-        let cardsArray = ['beer', 'mondmasker', 'olivia', 'spuit', 'stetoscoop', 'thermometer', 'MRI', 'INFUUS', 'OTOSCOOP']
+        let cardsArray = ['beer', 'mondmasker', 'olivia', 'spuit', 'stetoscoop', 'thermometer', 'scanner', 'INFUUS', 'OTOSCOOP']
         let cardsArrayRandom = []
         let numberArray = []
 
@@ -178,19 +178,35 @@ export class Memory extends Component {
     editSoundLevel = () => {
         let soundOn = document.getElementById('soundOn')
         let soundOff = document.getElementById('soundOff')
-        if (this.state.sound === true) {
+        if (this.state.sound) {
             this.setState({
                 sound: false
             })
             soundOn.classList.add('hide')
             soundOff.classList.remove('hide')
-        } else if (this.state.sound === false) {
+        } else if (!this.state.sound) {
             this.setState({
                 sound: true
             })
             soundOn.classList.remove('hide')
             soundOff.classList.add('hide')
         }
+    }
+
+    explainTheGame = () => {
+        document.querySelector('.explain-container').classList.remove('hide')
+        if (this.state.sound) {
+            document.getElementById('explain-the-game').play()
+        }
+        setTimeout(() => {
+            document.querySelector('.explain-container').classList.add('hide')
+        }, 13000);
+    }
+
+    closeExplain = () => {
+        document.querySelector('.explain-container').classList.add('hide')
+        document.getElementById('explain-the-game').pause()
+        document.getElementById('explain-the-game').currentTime = 0
     }
 
     render() {
@@ -210,17 +226,18 @@ export class Memory extends Component {
                     </div>
                 </div>
 
-                <audio id="sound-right">
-                    <source src="sound/right.mp3" type="audio/ogg"/>
-                </audio>
-                <audio id="sound-wrong">
-                    <source src="sound/wrong.mp3" type="audio/ogg"/>
-                </audio>
+                <div className="explain-container hide">
+                    <div>
+                        <button id="close-btn-explain" onClick={this.closeExplain}>x</button>
+                        <p>Draai 2 kaartjes om, als ze hetzelfde zijn dan heb je het juist. <br />Zijn het 2 verschillende dan draaien je  2 kaartjes weer om. <br />Blijf draaien tot je ze allemaal gevonden hebt!</p>
+                    </div>
+                </div>
                 
                 <div className="icons">
                     <a href="/games/memory/info"><img id="info-icon" onClick={this.info} src="/games/memory/info-icon.svg" alt="info"/></a>
                     <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
                     <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
+                    <img onClick={this.explainTheGame} id="handleiding-icon" src="/games/memory/handleiding-icon.svg" alt="handleiding"/>
                 </div>
                 
                 <div className="game-container">
@@ -235,15 +252,27 @@ export class Memory extends Component {
                         <section className="memory-game"></section>
                     </div>
                 </div>
+
+                
+
+
+                <audio id="sound-right">
+                    <source src="/sound/right.mp3" type="audio/ogg"/>
+                </audio>
+
+                <audio id="sound-wrong">
+                    <source src="/sound/wrong.mp3" type="audio/ogg"/>
+                </audio>
+
+                <audio id="explain-the-game">
+                    <source src="/sound/memory/memory.mp3" type="audio/ogg"/>
+                </audio>
+
+
+
             </div>
         )
     }
 }
 
 export default Memory
-
-// PICK RANDOM CARDS OUT OF ARRAY, PUSH THOSE NAMES IN ARRAY
-// FIRST TIME CHECK IF NAMES AREN'T IN ARRAY, SECOND TIME READ ARRAY ONE BY ONE
-// 
-// SLIDE SHOW |-| |-| |-| <- 3 kaartjes, duw op next en tekst veranderd
-// 
