@@ -107,20 +107,13 @@ html {
 
 .rocket {
   pointer-events: none;
-  height: 20vw;
+  width: 30%;
   position: fixed;
-  bottom: 12vh;
-  right: 13%;
+  bottom: 40px;
+  right: 10%;
   z-index: 99;
   transition-property: transform;
   transition-duration: 1s;
-}
-
-.logo {
-  position: fixed;
-  width: 120px;
-  height: 120px;
-  right: 0;
 }
 
 .space {
@@ -128,4 +121,34 @@ html {
   overflow: hidden;
   background-size: cover;
   background-position: center;
+}
+
+.logo_fixed {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  right: 0;
+}
+
+@media screen and (max-width: 1080px) {
+  .planet_container{
+    width: 90%;
+    height: 40%;
+  }
+
+  .planetsName{
+    font-size: 28px;
+  }
+
+  .rocket {
+    width: 40%;
+    right: 0;
+    bottom: 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .planetsName{
+    font-size: 16px;
+  }
 }

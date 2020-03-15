@@ -32,16 +32,12 @@ export default function Consulatie() {
                 </div>
             </div>*/}
 
-            <a href="https://www.olvz.be">
-                <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
-            </a>
-
-            <div className="navbar">
-                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
-            </div>
-
             <div className="heading_container">
+                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 <h1 className="planetName">Consultatie</h1>
+                <a href="https://www.olvz.be">
+                    <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
+                </a>
             </div>
 
             <div className="planet_container_C">
@@ -62,8 +58,10 @@ export default function Consulatie() {
                         <img src="/homepage/personeel.svg" alt="personeel" />
                     </Link>
                 </div>
-                <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
-                <img className="planet_bg" src="/homepage/consultatie_bg.svg" alt="planet" />
+                <div className="planet_bg">
+                    <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
+                    <img src="/homepage/consultatie_bg.svg" alt="planet" />
+                </div>
             </div>
         </section>
     )

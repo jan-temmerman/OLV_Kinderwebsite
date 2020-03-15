@@ -107,7 +107,7 @@ export default function HomeView() {
 				<section className="container space" id="planets">
 					
 					<a href="https://www.olvz.be">
-						<img className="logo" src="homepage/logolvp.svg" alt="logo" />
+						<img className="logo_fixed" src="homepage/logolvp.svg" alt="logo" />
 					</a>
 					
 					<div className="planet_container">
@@ -135,9 +135,6 @@ export default function HomeView() {
 			<Scroll.Link activeClass="active" to="test2" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
 				<div style={{zIndex: 4}} onClick={handleClick2} id='rocketRef' className="rocket">
 					<Lottie options={defaultOptions}
-						height={400}
-						width={400}
-						
 						isPaused={pauseAnimation}
 					/>
 				</div>

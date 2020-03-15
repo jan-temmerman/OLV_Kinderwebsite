@@ -23,16 +23,12 @@ export default function Opna_Spelletjes() {
                     />
                 </div>
             </div>*/}
-            <a href="https://www.olvz.be">
-                <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
-            </a>
-
-            <div className="navbar">
-                <Link className="back" to="/consultatie"><img src="/homepage/terug.svg" alt="terug" /></Link>
-            </div>
-
             <div className="heading_container">
-                <h1 className="planetName">Spelletjes</h1>
+                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <h1 className="planetName">Wie is wie?</h1>
+                <a href="https://www.olvz.be">
+                    <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
+                </a>
             </div>
 
             <div className="planet_container_C">
@@ -61,7 +57,9 @@ export default function Opna_Spelletjes() {
 
                     <img className="olivia-rocket" src="/spelletjes_page/olivia-raket.svg" alt="olivia" />
                 </div>
-                <img className="planet_bg_spel" src="/homepage/planeet_opname.svg" alt="planet" />
+                <div className="planet_bg">
+                    <img src="/homepage/planeet_opname.svg" alt="planet" />
+                </div>
             </div>
         </section>
     )
