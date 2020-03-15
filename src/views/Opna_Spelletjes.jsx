@@ -47,7 +47,7 @@ export default function Opna_Spelletjes() {
                         <img src="/spelletjes_page/rugzak.svg" alt="game" />
                     </Link>
 
-                    <Link className="game" to="/consultatie/spelletjes/virusspel" >
+                    <Link className="game" to="/opname/spelletjes/virusspel" >
                         <img src="/spelletjes_page/virusspel.svg" alt="game" />
                     </Link>
 
@@ -55,7 +55,7 @@ export default function Opna_Spelletjes() {
                         <img src="/spelletjes_page/lichaamspel.svg" alt="game" />
                     </Link>
 
-                    <Link className="game" to="/consultatie/spelletjes/memory" >
+                    <Link className="game" to="/opname/spelletjes/memory" >
                         <img src="/spelletjes_page/memory.svg" alt="game" />
                     </Link>
 
