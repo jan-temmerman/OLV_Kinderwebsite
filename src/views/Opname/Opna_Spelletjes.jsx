@@ -4,12 +4,12 @@ import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
 import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
-import animationData from './loadingAni.json'
+import animationData from '../loadingAni.json'
 import * as Scroll from 'react-scroll';
 
 
-import '../sass/app.scss';
-import '../sass/views/_spelletjes.scss';
+import '../../sass/app.scss';
+import '../../sass/views/_spelletjes.scss';
 
 export default function Opna_Spelletjes() {
 
@@ -23,16 +23,12 @@ export default function Opna_Spelletjes() {
                     />
                 </div>
             </div>*/}
-            <a href="https://www.olvz.be">
-                <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
-            </a>
-
-            <div className="navbar">
-                <Link className="back" to="/consultatie"><img src="/homepage/terug.svg" alt="terug" /></Link>
-            </div>
-
             <div className="heading_container">
-                <h1 className="planetName">Spelletjes</h1>
+                <Link className="back" to="/opname"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <h1 className="planetName">Wie is wie?</h1>
+                <a href="https://www.olvz.be">
+                    <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
+                </a>
             </div>
 
             <div className="planet_container_C">
@@ -44,24 +40,30 @@ export default function Opna_Spelletjes() {
                 <div className="container_action_spel">
 
                     <Link className="game" to="#" >
+                        <h2>Rugzakspel</h2>
                         <img src="/spelletjes_page/rugzak.svg" alt="game" />
                     </Link>
 
                     <Link className="game" to="/consultatie/spelletjes/virusspel" >
+                        <h2>Virusspel</h2>
                         <img src="/spelletjes_page/virusspel.svg" alt="game" />
                     </Link>
 
                     <Link className="game" to="#" >
+                        <h2>Lichaamspel</h2>
                         <img src="/spelletjes_page/lichaamspel.svg" alt="game" />
                     </Link>
 
                     <Link className="game" to="/consultatie/spelletjes/memory" >
+                        <h2>Memory</h2>
                         <img src="/spelletjes_page/memory.svg" alt="game" />
                     </Link>
 
                     <img className="olivia-rocket" src="/spelletjes_page/olivia-raket.svg" alt="olivia" />
                 </div>
-                <img className="planet_bg_spel" src="/homepage/planeet_opname.svg" alt="planet" />
+                <div className="planet_bg">
+                    <img src="/homepage/planeet_opname.svg" alt="planet" />
+                </div>
             </div>
         </section>
     )

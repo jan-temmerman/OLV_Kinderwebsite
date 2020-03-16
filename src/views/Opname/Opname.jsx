@@ -4,22 +4,14 @@ import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
 import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
-import animationData from './loadingAni.json'
+import animationData from '../loadingAni.json'
 import * as Scroll from 'react-scroll';
 
 
-import '../sass/app.scss';
-import '../sass/views/_consultatie.scss';
+import '../../sass/app.scss';
+import '../../sass/views/_consultatie.scss';
 
-export default function Consulatie() {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true, 
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
-        }
-      };
+export default function Opname() {
 
     return(
         <section className="container space" id="planets">
@@ -32,38 +24,40 @@ export default function Consulatie() {
                 </div>
             </div>*/}
 
-            <a href="https://www.olvz.be">
-                <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
-            </a>
-
-            <div className="navbar">
-                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
-            </div>
-
             <div className="heading_container">
-                <h1 className="planetName">Consultatie</h1>
+                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <h1 className="planetName">Opname</h1>
+                <a href="https://www.olvz.be">
+                    <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
+                </a>
             </div>
 
             <div className="planet_container_C">
                 <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
-                <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
+                <Link className="planet_C" to="/consultatie"><img src="/homepage/consultatie.svg" alt="consultatie" /></Link>
             </div>
 
             <div className="container_content">
                 <div className="container_action">
                     
-                    <Link className="action" to="/consultatie/wat_zal_er_gebeuren">
+                    <Link className="action" to="#">
+                        <h2>Wat zal er gebeuren?</h2>
                         <img src="/homepage/watdoen.svg" alt="watdoen" />
                     </Link>
-                    <Link className="action" to="/consultatie/spelletjes">
+                    <Link className="action" to="/opname/spelletjes">
+                        <h2>Spelletjes</h2>
                         <img src="/homepage/spelletjes.svg" alt="spelletjes" />
                     </Link>
-                    <Link className="action" to="/consultatie/wie_is_wie">
+                    <Link className="action" to="/opname/wie_is_wie">
+                        <h2>Wie is wie?</h2>
                         <img src="/homepage/personeel.svg" alt="personeel" />
                     </Link>
+                    
                 </div>
-                <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
-                <img className="planet_bg" src="/homepage/consultatie_bg.svg" alt="planet" />
+                <div className="planet_bg">
+                    <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
+                    <img src="/homepage/planeet_opname.svg" alt="planet" />
+                </div>
             </div>
         </section>
     )

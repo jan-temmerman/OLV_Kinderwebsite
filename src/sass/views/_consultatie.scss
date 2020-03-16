@@ -47,8 +47,12 @@ body {
   flex-direction: row ;
   justify-content: space-evenly;
   align-self: flex-start;
-  width: 20%;
+  width: 340px;
   height: 200px;
+
+  a {
+    z-index: 3;
+  }
 }
 
 .skyline {
@@ -69,13 +73,6 @@ body {
   100% { opacity: 1; }
   }
 
-.logo {
-  position: fixed;
-  width: 120px;
-  height: 120px;
-  right: 0;
-}
-
 .navbar {
   position: absolute;
   top: 0;
@@ -84,12 +81,21 @@ body {
 }
 
 .back {
-  position: relative;
+  display: flex;
   height: 100%;
-}
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all .2s ease-in-out;
 
-.back img {
-  height: 40%;
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  img {
+    height: 50%;
+  }
 }
 
 .container_content {
@@ -102,9 +108,15 @@ body {
 }
 
 .planet_bg {
-  position: relative;
   width: 100%;
+  right: 0;
   align-self: flex-end;
+
+  img {
+    margin-bottom: -5px;
+    margin-right: -5px;
+    margin-left: -20px;
+  }
 }
 
 .container_action {
@@ -122,6 +134,15 @@ body {
 .action {
   width: 30%;
   transition: all .2s ease-in-out;
+
+  h2 {
+    font-family: 'Fredoka';
+    align-self: center;
+    color: white;
+    font-size: auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
 .action:nth-child(1) {
@@ -156,24 +177,86 @@ body {
   z-index: 2;
   width: 10%;
   right: 50px;
-  bottom: 140px;
-}
-
-.planetName {
-  font-family: 'Fredoka';
-  align-self: center;
-  color: white;
-  font-size: 70px;
+  bottom: 6%;
+  align-self: flex-end;
 }
 
 .heading_container {
   position: absolute;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 100px;
   top: 0;
-  justify-content: center;
-  pointer-events: none;
+
+  a {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  transition: all .2s ease-in-out;
+  align-self: center;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .planet_container_C {
+    width: 240px;
+    height: 160px;
+  }
+
+  .container_action {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    height: 40%;
+    align-self: center;
+    bottom: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .planet_container_C {
+    margin: 2%;
+    margin-top: 80px;
+    width: 160px;
+    height: 110px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .logo {
+    width: 80%;
+    height: 80%;
+  }
+
+  .action {
+    h2 {
+      font-size: inherit;
+    }
+  }
+
+  .back {
+    width: 20%;
+    padding: 10px;
+  }
+
+  .heading_container {
+    a {
+      width: 20%;
+    }
+  }
 }
 
 

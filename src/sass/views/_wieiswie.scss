@@ -6,6 +6,8 @@ body {
   background-color: #002645;
 }
 
+
+
 .loading {
   display: flex;
   flex-direction: column;
@@ -65,27 +67,11 @@ body {
   100% { opacity: 1; }
   }
 
-.logo {
-  position: fixed;
-  width: 120px;
-  height: 120px;
-  right: 0;
-}
-
 .navbar {
   position: absolute;
   top: 0;
   height: 100px;
   margin: 20px;
-}
-
-.back {
-  position: relative;
-  height: 100%;
-}
-
-.back img {
-  height: 40%;
 }
 
 .planet_bg_spel {
@@ -125,22 +111,6 @@ body {
 	}
 }
 
-.olivia {
-  position: absolute;
-  z-index: 2;
-  width: 10%;
-  right: 50px;
-  bottom: 140px;
-}
-
-.planetName {
-  font-family: 'Fredoka';
-  align-self: center;
-  color: white;
-  font-size: 70px;
-}
-
-
 .container_WG {
   display: flex;
   width: 100%;
@@ -169,12 +139,11 @@ body {
   div {
     width: 26%;
 
-    h2 {
+    .name {
       text-align: center;
       font-family: 'Fredoka';
       color: white;
       margin-bottom: 10px;
-      font-size: 30px;
     }
 
     div {
@@ -185,6 +154,65 @@ body {
       width: 100%;
     }
   }
+}
+
+.container_content_WHO {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  bottom: 0;
+}
+
+.carousel_container {
+  width: 36%;
+  align-self: center;
+  margin-bottom: -1000px;
+}
+
+.carousel_arrow {
+  width: 100px;
+  height: 56px;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.person_card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 12px solid rgba(0, 37, 69, 0.5);
+  padding: 40px 30px;
+  border-radius: 30px;
+  height: 100%;
+  width: 80%;
+
+  .name {
+    text-align: center;
+    font-family: 'Fredoka';
+    color: white;
+    margin-bottom: 10px;
+  }
+}
+
+.space_WHO {
+  background-image: url('/stars-01.png');
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container_WHO {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
 }
 
 @keyframes float2 {
@@ -199,73 +227,36 @@ body {
 	}
 }
 
-.container_content_spel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 70%;
-  position: absolute;
-  bottom: 0;
-}
+@media screen and (max-width: 1080px) {
+  .container_action_WHO {
+    width: 100%;
+  }
 
-.inside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #FF5D19;
-  margin-top: -85px;
-  width: 100%;
-}
-
-.inside_container {
-  position: relative;
-  top: -100px;
-  width: 70%;
-  align-self: center;
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  div {
-    display: flex;
-    flex-direction: row;
-
-    &:nth-child(2n) {
-      flex-direction: row-reverse;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      font-family: 'Fredoka';
-      color: white;
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 24px 40px;
-      margin: 20px;
-      width: 600px;
-      height: 400px;
-      align-content: center;
-
-      &:nth-child(2n) {
-        background-color: #F7FA91;
-        border: 20px solid #FBDE21;
-      }
-
-      p {
-        font-size: 20px;
-      }
-
-      h2 {
-        color: #FBDE21;
-        text-align: center;
-        margin: 0px 0 20px 0;
-      }
-    }
+  .carousel_container {
+    width: 90%;
+    align-self: center;
   }
 
 }
 
+@media screen and (max-width: 600px) {
+  .container_action_WHO {
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
 
+    div {
+      width: 70%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .carousel_arrow {
+    width: 40px;
+    height: 26px;
+    padding: 0px;
+  }
+
+}

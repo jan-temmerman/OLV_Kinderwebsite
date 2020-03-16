@@ -107,7 +107,7 @@ export default function HomeView() {
 				<section className="container space" id="planets">
 					
 					<a href="https://www.olvz.be">
-						<img className="logo" src="homepage/logolvp.svg" alt="logo" />
+						<img className="logo_fixed" src="homepage/logolvp.svg" alt="logo" />
 					</a>
 					
 					<div className="planet_container">
@@ -126,18 +126,9 @@ export default function HomeView() {
 					</div>
 				</section>
 			</Scroll.Element>
-            {/*<img
-                src="homepage/raket.svg"
-                alt="Raket"
-                className="rocket"
-                style={{bottom: bottomOffset + 'vh'}}
-            />*/}
 			<Scroll.Link activeClass="active" to="test2" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
 				<div style={{zIndex: 4}} onClick={handleClick2} id='rocketRef' className="rocket">
 					<Lottie options={defaultOptions}
-						height={400}
-						width={400}
-						
 						isPaused={pauseAnimation}
 					/>
 				</div>
@@ -146,13 +137,14 @@ export default function HomeView() {
 			<Scroll.Element name="test2" className="element">
 				<section className="container earth" onLoad={generateClouds(8)}>
 					<div className="ground" />
-					<img className="skyline" src="homepage/skyline_1.svg" alt="Skyline" />
-					<img className="hospital" src="homepage/ziekenhuis.svg" alt="Ziekenhuis" />
-					<a href="#planets" onClick={handleClick}>to infinity</a>
-					<Scroll.Link activeClass="active" to="test1" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
-						Test 2 (delay)
+					<img className="skyline" src="/homepage/skyline_1.svg" alt="Skyline" />
+					<img className="hospital" src="/homepage/ziekenhuis.svg" alt="Ziekenhuis" />
+					<img className="olivia_home" src="/homepage/Olivia_small.svg" alt="Olivia" />
+					<Scroll.Link className="launch_button" activeClass="active" to="test1" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
+						Opstijgen!
 					</Scroll.Link>
 					<section className="clouds" id="cloudContainer" ref={ref}>
+						<h1 className="siteName">Welkom bij het OLV!</h1>
 						<animated.img
 							src={'homepage/wolk_3.svg'}
 							alt="Cloud"
@@ -160,7 +152,7 @@ export default function HomeView() {
 							style={{
 								width: '11%',
 								top: '40%',
-								left: '70%',
+								left: '80%',
 								opacity: '0.7',
 								transform: offset.interpolate(calc),
 							}}
@@ -171,7 +163,7 @@ export default function HomeView() {
 							className="cloud"
 							style={{
 								width: '30%',
-								top: '0%',
+								top: '8%',
 								left: '10%',
 								opacity: '1',
 								transform: offset.interpolate(calc),
@@ -184,7 +176,7 @@ export default function HomeView() {
 							style={{
 								width: '17%',
 								top: '60%',
-								left: '30%',
+								left: '40%',
 								opacity: '0.8',
 								transform: offset.interpolate(calc),
 							}}
@@ -207,7 +199,7 @@ export default function HomeView() {
 							className="cloud"
 							style={{
 								width: '24%',
-								top: '10%',
+								top: '6%',
 								left: '60%',
 								opacity: '1',
 								transform: offset.interpolate(calc),
