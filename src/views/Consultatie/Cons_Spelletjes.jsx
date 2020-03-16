@@ -2,20 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import animationData from '../loadingAni.json'
 import * as Scroll from 'react-scroll';
+import animationData from './loadingAni.json';
 
 
 import '../../sass/app.scss';
 import '../../sass/views/_spelletjes.scss';
 
 export default function Cons_Spelletjes() {
-
-    return(
-        <section className="container space" id="planets">
-            {/*<div className="loading">
+  return (
+    <section className="container space" id="planets">
+      {/* <div className="loading">
                 <div className="rocket_ani">
                     <Lottie options={defaultOptions}
                         height={200}
@@ -31,13 +31,13 @@ export default function Cons_Spelletjes() {
                 </a>
             </div>
 
-            <div className="planet_container_C">
-                <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
-                <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
-            </div>
+      <div className="planet_container_C">
+        <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
+        <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
+      </div>
 
-            <div className="container_content_spel">
-                <div className="container_action_spel">
+      <div className="container_content_spel">
+        <div className="container_action_spel">
 
                     <Link className="game" to="#" >
                         <h2>Rugzakspel</h2>
@@ -49,7 +49,7 @@ export default function Cons_Spelletjes() {
                         <img src="/spelletjes_page/virusspel.svg" alt="game" />
                     </Link>
 
-                    <Link className="game" to="#" >
+                    <Link className="game" to="/consultatie/spelletjes/lichaamspel" >
                         <h2>Lichaamspel</h2>
                         <img src="/spelletjes_page/lichaamspel.svg" alt="game" />
                     </Link>
