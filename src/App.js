@@ -20,6 +20,8 @@ import Cons_Spelletjes from './views/Cons_Spelletjes';
 import Opna_Spelletjes from './views/Opna_Spelletjes';
 import WieIsWie from './views/WieIsWie';
 import Opname from './views/Opname';
+import BodyGame from './views/games/body-game/BodyGame';
+import BodyGameV2 from './views/games/body-game';
 
 export default function App() {
   return (
@@ -28,10 +30,11 @@ export default function App() {
             renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/consultatie/spelletjes/virusspel" component={VirusGame} exact />
+        <Route path="/consultatie/spelletjes/lichaamspel" component={BodyGameV2} exact />
         <Route path="/consultatie" component={Consultatie} exact />
-          <Route path="/consultatie/wat_zal_er_gebeuren" component={WatGebeuren} exact />
-          <Route path="/consultatie/spelletjes" component={Cons_Spelletjes} exact />
-          <Route path="/consultatie/wie_is_wie" component={WieIsWie} exact />
+        <Route path="/consultatie/wat_zal_er_gebeuren" component={WatGebeuren} exact />
+        <Route path="/consultatie/spelletjes" component={Cons_Spelletjes} exact />
+        <Route path="/consultatie/wie_is_wie" component={WieIsWie} exact />
         <Route path="/dagkliniek" component={HomeView} exact />
         <Route path="/opname" component={Opname} exact />
         <Route path="/opname/spelletjes" component={Opna_Spelletjes} exact />

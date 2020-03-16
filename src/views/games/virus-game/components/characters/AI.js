@@ -1,5 +1,4 @@
 import * as PIXI from 'pixi.js';
-import { imageConfig } from '../../config';
 
 /**
  * Class for virus objects
