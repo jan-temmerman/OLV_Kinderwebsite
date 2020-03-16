@@ -166,6 +166,39 @@ body {
   bottom: 0;
 }
 
+.carousel_container {
+  width: 36%;
+  align-self: center;
+  margin-bottom: -1000px;
+}
+
+.carousel_arrow {
+  width: 100px;
+  height: 56px;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.person_card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 12px solid rgba(0, 37, 69, 0.5);
+  padding: 40px 30px;
+  border-radius: 30px;
+  height: 100%;
+  width: 80%;
+
+  .name {
+    text-align: center;
+    font-family: 'Fredoka';
+    color: white;
+    margin-bottom: 10px;
+  }
+}
+
 .space_WHO {
   background-image: url('/stars-01.png');
   overflow: hidden;
@@ -199,6 +232,11 @@ body {
     width: 100%;
   }
 
+  .carousel_container {
+    width: 90%;
+    align-self: center;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -215,8 +253,10 @@ body {
     }
   }
 
-  .container_content_WHO {
-    position: inherit;
+  .carousel_arrow {
+    width: 40px;
+    height: 26px;
+    padding: 0px;
   }
 
 }

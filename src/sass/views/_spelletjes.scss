@@ -137,26 +137,51 @@ body {
   .game {
     width: 20%;
     margin: 20px;
+
+    h2 {
+      font-family: 'Fredoka';
+      align-self: center;
+      color: white;
+      font-size: auto;
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
 
     .game:nth-child(1) {
       transform: translateY(-10px);
       animation: float2 2.9s ease-in-out infinite;
+
+      h2 {
+        color: #99CCF2;
+      }
     }
 
     .game:nth-child(2) {
       transform: translateY(+10px);
       animation: float2 3.2s ease-in-out infinite;
+
+      h2 {
+        color: #A2CA83;
+      }
     }
 
     .game:nth-child(3) {
       transform: translateY(-4px);
       animation: float2 3.0s ease-in-out infinite;
+
+      h2 {
+        color: #F4B8D9;
+      }
     }
 
     .game:nth-child(4) {
       transform: translateY(-6px);
       animation: float2 3.1s ease-in-out infinite;
+
+      h2 {
+        color: #F6F992;
+      }
     }
 }
 
@@ -185,10 +210,11 @@ body {
 @media screen and (max-width: 1080px) {
   .container_action_spel {
     width: 80%;
+    margin-left: -10%;
   }
 
   .container_content_spel {
-    height: 50%;
+    height: 60%;
   }
 }
 
@@ -201,11 +227,11 @@ body {
     width: 100%;
     flex-wrap: wrap;
     background-image: none;
-
-    .game {
-      width: 50%;
-    }
   }
+    h2 {
+      font-size: 100%;
+    }
+  
 }
 
 

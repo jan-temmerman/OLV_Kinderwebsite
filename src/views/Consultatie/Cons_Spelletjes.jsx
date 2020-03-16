@@ -4,26 +4,17 @@ import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
 import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
-import animationData from './loadingAni.json'
+import animationData from '../loadingAni.json'
 import * as Scroll from 'react-scroll';
 
 
-import '../sass/app.scss';
-import '../sass/views/_wieiswie.scss';
+import '../../sass/app.scss';
+import '../../sass/views/_spelletjes.scss';
 
-export default function WieIsWie() {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true, 
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
-        }
-	  };
-
+export default function Cons_Spelletjes() {
 
     return(
-        <section className="container_WHO space_WHO" id="planets">
+        <section className="container space" id="planets">
             {/*<div className="loading">
                 <div className="rocket_ani">
                     <Lottie options={defaultOptions}
@@ -34,7 +25,7 @@ export default function WieIsWie() {
             </div>*/}
             <div className="heading_container">
                 <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
-                <h1 className="planetName">Wie is wie?</h1>
+                <h1 className="planetName">Spelletjes</h1>
                 <a href="https://www.olvz.be">
                     <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
                 </a>
@@ -45,29 +36,32 @@ export default function WieIsWie() {
                 <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
             </div>
 
-            <div className="container_content_WHO">
-                <div className="container_action_WHO">
-                    <div>
-                        <h2 className="name">Medewerker</h2>
-                        <div>
-                            <img src="/wieiswie_page/medewerker.svg" alt="employee" />
-                        </div>
-                    </div>
-                    <div>
-                        <h2 className="name">Dokter</h2>
-                        <div>
-                            <img src="/wieiswie_page/vrouwelijkedokter.svg" alt="doctor" />
-                        </div>
-                    </div>
-                    <div>
-                        <h2 className="name">Verpleegkundige</h2>
-                        <div>
-                            <img src="/wieiswie_page/verpleger.svg" alt="nurse" />
-                        </div>
-                    </div>
+            <div className="container_content_spel">
+                <div className="container_action_spel">
+
+                    <Link className="game" to="#" >
+                        <h2>Rugzakspel</h2>
+                        <img src="/spelletjes_page/rugzak.svg" alt="game" />
+                    </Link>
+
+                    <Link className="game" to="/consultatie/spelletjes/virusspel" >
+                        <h2>Virusspel</h2>
+                        <img src="/spelletjes_page/virusspel.svg" alt="game" />
+                    </Link>
+
+                    <Link className="game" to="#" >
+                        <h2>Lichaamspel</h2>
+                        <img src="/spelletjes_page/lichaamspel.svg" alt="game" />
+                    </Link>
+
+                    <Link className="game" to="/consultatie/spelletjes/memory" >
+                        <h2>Memory</h2>
+                        <img src="/spelletjes_page/memory.svg" alt="game" />
+                    </Link>
+
+                    <img className="olivia-rocket" src="/spelletjes_page/olivia-raket.svg" alt="olivia" />
                 </div>
                 <div className="planet_bg">
-                    <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
                     <img src="/homepage/consultatie_bg.svg" alt="planet" />
                 </div>
             </div>

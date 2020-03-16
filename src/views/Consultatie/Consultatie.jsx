@@ -4,14 +4,22 @@ import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
 import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
-import animationData from './loadingAni.json'
+import animationData from '../loadingAni.json'
 import * as Scroll from 'react-scroll';
 
 
-import '../sass/app.scss';
-import '../sass/views/_spelletjes.scss';
+import '../../sass/app.scss';
+import '../../sass/views/_consultatie.scss';
 
-export default function Cons_Spelletjes() {
+export default function Consulatie() {
+    const defaultOptions = {
+        loop: true,
+        autoplay: true, 
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      };
 
     return(
         <section className="container space" id="planets">
@@ -23,9 +31,10 @@ export default function Cons_Spelletjes() {
                     />
                 </div>
             </div>*/}
+
             <div className="heading_container">
                 <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
-                <h1 className="planetName">Spelletjes</h1>
+                <h1 className="planetName">Consultatie</h1>
                 <a href="https://www.olvz.be">
                     <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
                 </a>
@@ -36,28 +45,25 @@ export default function Cons_Spelletjes() {
                 <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
             </div>
 
-            <div className="container_content_spel">
-                <div className="container_action_spel">
-
-                    <Link className="game" to="#" >
-                        <img src="/spelletjes_page/rugzak.svg" alt="game" />
+            <div className="container_content">
+                <div className="container_action">
+                    
+                    <Link className="action" to="/consultatie/wat_zal_er_gebeuren">
+                        <h2>Wat zal er gebeuren?</h2>
+                        <img src="/homepage/watdoen.svg" alt="watdoen" />
                     </Link>
-
-                    <Link className="game" to="/consultatie/spelletjes/virusspel" >
-                        <img src="/spelletjes_page/virusspel.svg" alt="game" />
+                    <Link className="action" to="/consultatie/spelletjes">
+                        <h2>Spelletjes</h2>
+                        <img src="/homepage/spelletjes.svg" alt="spelletjes" />
                     </Link>
-
-                    <Link className="game" to="#" >
-                        <img src="/spelletjes_page/lichaamspel.svg" alt="game" />
+                    <Link className="action" to="/consultatie/wie_is_wie">
+                        <h2>Wie is wie?</h2>
+                        <img src="/homepage/personeel.svg" alt="personeel" />
                     </Link>
-
-                    <Link className="game" to="/consultatie/spelletjes/memory" >
-                        <img src="/spelletjes_page/memory.svg" alt="game" />
-                    </Link>
-
-                    <img className="olivia-rocket" src="/spelletjes_page/olivia-raket.svg" alt="olivia" />
+                    
                 </div>
                 <div className="planet_bg">
+                    <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
                     <img src="/homepage/consultatie_bg.svg" alt="planet" />
                 </div>
             </div>

@@ -4,14 +4,14 @@ import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
 import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
-import animationData from './loadingAni.json'
+import animationData from '../loadingAni.json'
 import * as Scroll from 'react-scroll';
 
 
-import '../sass/app.scss';
-import '../sass/views/_consultatie.scss';
+import '../../sass/app.scss';
+import '../../sass/views/_wieiswie.scss';
 
-export default function Consulatie() {
+export default function Cons_WieIsWie() {
     const defaultOptions = {
         loop: true,
         autoplay: true, 
@@ -19,10 +19,11 @@ export default function Consulatie() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      };
+	  };
+
 
     return(
-        <section className="container space" id="planets">
+        <section className="container_WHO space_WHO" id="planets">
             {/*<div className="loading">
                 <div className="rocket_ani">
                     <Lottie options={defaultOptions}
@@ -31,10 +32,9 @@ export default function Consulatie() {
                     />
                 </div>
             </div>*/}
-
             <div className="heading_container">
-                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
-                <h1 className="planetName">Consultatie</h1>
+                <Link className="back" to="/consultatie"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <h1 className="planetName">Wie is wie?</h1>
                 <a href="https://www.olvz.be">
                     <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
                 </a>
@@ -45,18 +45,26 @@ export default function Consulatie() {
                 <Link className="planet_C" to="/opname"><img src="/homepage/opname.svg" alt="opname" /></Link>
             </div>
 
-            <div className="container_content">
-                <div className="container_action">
-                    
-                    <Link className="action" to="/consultatie/wat_zal_er_gebeuren">
-                        <img src="/homepage/watdoen.svg" alt="watdoen" />
-                    </Link>
-                    <Link className="action" to="/consultatie/spelletjes">
-                        <img src="/homepage/spelletjes.svg" alt="spelletjes" />
-                    </Link>
-                    <Link className="action" to="/consultatie/wie_is_wie">
-                        <img src="/homepage/personeel.svg" alt="personeel" />
-                    </Link>
+            <div className="container_content_WHO">
+                <div className="container_action_WHO">
+                    <div>
+                        <h2 className="name">Medewerker</h2>
+                        <div>
+                            <img src="/wieiswie_page/medewerker.svg" alt="employee" />
+                        </div>
+                    </div>
+                    <div>
+                        <h2 className="name">Dokter</h2>
+                        <div>
+                            <img src="/wieiswie_page/vrouwelijkedokter.svg" alt="doctor" />
+                        </div>
+                    </div>
+                    <div>
+                        <h2 className="name">Verpleegkundige</h2>
+                        <div>
+                            <img src="/wieiswie_page/verpleger.svg" alt="nurse" />
+                        </div>
+                    </div>
                 </div>
                 <div className="planet_bg">
                     <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />

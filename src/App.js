@@ -9,17 +9,19 @@ import {
 import './App.css';
 
 import HomeView from './views/HomeView';
-import Consultatie from './views/Consultatie';
-import WatGebeuren from './views/WatGebeuren';
+import Consultatie from './views/Consultatie/Consultatie';
+import WatGebeuren from './views/Consultatie/WatGebeuren';
 
 // GAMES
 import GameMemoryView from './views/games/Memory';
 import GameMemoryInfoView from './views/games/Info';
 import VirusGame from './views/games/virus-game';
-import Cons_Spelletjes from './views/Cons_Spelletjes';
-import Opna_Spelletjes from './views/Opna_Spelletjes';
-import WieIsWie from './views/WieIsWie';
-import Opname from './views/Opname';
+
+import Cons_Spelletjes from './views/Consultatie/Cons_Spelletjes';
+import Opna_Spelletjes from './views/Opname/Opna_Spelletjes';
+import Cons_WieIsWie from './views/Consultatie/Cons_WieIsWie';
+import Opna_WieIsWie from './views/Opname/Opna_WieIsWie';
+import Opname from './views/Opname/Opname';
 
 export default function App() {
   return (
@@ -34,7 +36,7 @@ export default function App() {
           <Route path="/consultatie/spelletjes" component={Cons_Spelletjes} exact />
             <Route path="/consultatie/spelletjes/virusspel" component={VirusGame} exact />
             <Route path="/consultatie/spelletjes/memory" component={GameMemoryView} exact />
-          <Route path="/consultatie/wie_is_wie" component={WieIsWie} exact />
+          <Route path="/consultatie/wie_is_wie" component={Cons_WieIsWie} exact />
 
         <Route path="/dagkliniek" component={HomeView} exact />
 
@@ -42,6 +44,7 @@ export default function App() {
           <Route path="/opname/spelletjes" component={Opna_Spelletjes} exact />
             <Route path="/opname/spelletjes/memory" component={GameMemoryView} exact />
             <Route path="/opname/spelletjes/virusspel" component={VirusGame} exact />
+          <Route path="/opname/wie_is_wie" component={Opna_WieIsWie} exact />
 
         <Route path="/game-memory-info" component={GameMemoryInfoView} exact />
 
