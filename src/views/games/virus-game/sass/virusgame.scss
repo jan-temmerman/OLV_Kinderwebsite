@@ -81,6 +81,24 @@ a {
   display: inline-block;
 }
 
+.instruction__container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20%;
+
+  div {
+    display: flex;
+    font-size: 4rem;
+    margin: 0 4rem;
+
+    img {
+      height: 4rem;
+      margin: 0 1rem;
+    }
+  }
+}
+
 // .lives {
 
 // }

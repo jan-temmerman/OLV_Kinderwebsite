@@ -19,6 +19,20 @@ export default function Intro(props) {
       <div className="btn__container">
         {difficultyBtns}
       </div>
+      <div className="instruction__container">
+        <div>
+          <span>1.</span>
+          <img src="/games/virus/viruspel_svg1.svg" alt="Stap 1" />
+        </div>
+        <div>
+          <span>2.</span>
+          <img src="/games/virus/virusspel_svg2.svg" alt="Stap 2" />
+        </div>
+        <div>
+          <span>3.</span>
+          <img src="/games/virus/viruspel_svg3.svg" alt="Stap 3" />
+        </div>
+      </div>
     </div>
   );
 }
