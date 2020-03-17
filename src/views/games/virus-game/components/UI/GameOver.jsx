@@ -13,7 +13,7 @@ export default function GameOver(props) {
         punten gehaald!
       </p>
       <div className="btn__container">
-        <a href="/games/virus" className="btn">Speel opnieuw</a>
+        <button type="button" onClick={() => { window.location.reload(); }} className="btn">Speel opnieuw</button>
         <a href="/" className="btn">Ga terug</a>
       </div>
     </div>
