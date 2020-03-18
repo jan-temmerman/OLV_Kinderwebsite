@@ -9,9 +9,9 @@ import * as Scroll from 'react-scroll';
 
 
 import '../../sass/app.scss';
-import '../../sass/views/_consultatie.scss';
+import '../../sass/views/_spelletjes.scss';
 
-export default function Opname() {
+export default function Opna_WatGebeuren() {
 
     return(
         <section className="container space" id="planets">
@@ -23,10 +23,9 @@ export default function Opname() {
                     />
                 </div>
             </div>*/}
-
             <div className="heading_container">
-                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
-                <h1 className="planetName">Opname</h1>
+                <Link className="back" to="/opname"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <h1 className="planetName">Wat zal er gebeuren?</h1>
                 <a href="https://www.olvz.be">
                     <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
                 </a>
@@ -37,25 +36,12 @@ export default function Opname() {
                 <Link className="planet_C" to="/consultatie"><img src="/homepage/consultatie.svg" alt="consultatie" /></Link>
             </div>
 
-            <div className="container_content">
-                <div className="container_action">
-                    
-                    <Link className="action" to="/opname/wat_zal_er_gebeuren">
-                        <h2>Wat zal er gebeuren?</h2>
-                        <img src="/homepage/watdoen.svg" alt="watdoen" />
-                    </Link>
-                    <Link className="action" to="/opname/spelletjes">
-                        <h2>Spelletjes</h2>
-                        <img src="/homepage/spelletjes.svg" alt="spelletjes" />
-                    </Link>
-                    <Link className="action" to="/opname/wie_is_wie">
-                        <h2>Wie is wie?</h2>
-                        <img src="/homepage/personeel.svg" alt="personeel" />
-                    </Link>
-                    
+            <div className="container_content_spel">
+                <div className="container_action_Bellen">
+
+                    <img src="/WatGebeuren_page/olivia_belleblaas.svg" alt="Olivia"/>
                 </div>
                 <div className="planet_bg">
-                    <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
                     <img src="/homepage/planeet_opname.svg" alt="planet" />
                 </div>
             </div>

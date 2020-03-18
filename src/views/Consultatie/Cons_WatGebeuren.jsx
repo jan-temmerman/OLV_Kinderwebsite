@@ -6,7 +6,7 @@ import * as Scroll from 'react-scroll';
 import '../../sass/app.scss';
 import '../../sass/views/_watGebeuren.scss';
 
-export default function WatGebeuren() {
+export default function Cons_WatGebeuren() {
     return (
         <div>
             <section className="container_WG space" id="planets">
