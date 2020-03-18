@@ -39,18 +39,18 @@ export default function Opna_WatGebeuren() {
             <div className="container_content_bellen">
                 <div className="container_action_bellen">
                     <div>
-                        <img className="bel" src="/WatGebeuren_page/CTSCAN.svg" alt="CTSCAN"/>
-                        <img className="bel" src="/WatGebeuren_page/ECHO.svg" alt="ECHO"/>
-                        <img className="bel" src="/WatGebeuren_page/EKG.svg" alt="EKG"/>
-                        <img className="bel" src="/WatGebeuren_page/INFUUS.svg" alt="INFUUS"/>
-                        <img className="bel" src="/WatGebeuren_page/KALINOX.svg" alt="KALINOX"/>
-                        <img className="bel" src="/WatGebeuren_page/MRI.svg" alt="MRI"/>
-                        <img className="bel" src="/WatGebeuren_page/NPA.svg" alt="NPA"/>
-                        <img className="bel" src="/WatGebeuren_page/LACTOSETEST.svg" alt="LACTOSETEST"/>
-                        <img className="bel" src="/WatGebeuren_page/RUGGENPRIK.svg" alt="RUGGENPRIK"/>
+                        <img className="bel" src="/watGebeuren_page/CTSCAN.svg" alt="CTSCAN"/>
+                        <img className="bel" src="/watGebeuren_page/ECHO.svg" alt="ECHO"/>
+                        <img className="bel" src="/watGebeuren_page/EKG.svg" alt="EKG"/>
+                        <img className="bel" src="/watGebeuren_page/INFUUS.svg" alt="INFUUS"/>
+                        <img className="bel" src="/watGebeuren_page/KALINOX.svg" alt="KALINOX"/>
+                        <img className="bel" src="/watGebeuren_page/MRI.svg" alt="MRI"/>
+                        <img className="bel" src="/watGebeuren_page/NPA.svg" alt="NPA"/>
+                        <img className="bel" src="/watGebeuren_page/LACTOSETEST.svg" alt="LACTOSETEST"/>
+                        <img className="bel" src="/watGebeuren_page/RUGGENPRIK.svg" alt="RUGGENPRIK"/>
                     </div>
 
-                    <img className="olivia_bellenblaas" src="/WatGebeuren_page/olivia_belleblaas.svg" alt="Olivia"/>
+                    <img className="olivia_bellenblaas" src="/watGebeuren_page/olivia_belleblaas.svg" alt="Olivia"/>
                 </div>
                 <div className="planet_bg">
                     <img src="/homepage/planeet_opname.svg" alt="planet" />
