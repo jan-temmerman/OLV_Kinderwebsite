@@ -240,6 +240,15 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .container_content_WHO {
+    position: inherit;
+    height: inherit;
+  }
+
+  .space_WHO {
+    overflow: inherit;
+  }
+
   .container_action_WHO {
     margin-bottom: 0;
     flex-wrap: wrap;
