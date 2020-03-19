@@ -41,11 +41,7 @@ export class Memory extends Component {
         let amountCards = this.state.cards / 2
         document.querySelector('.memory-game').innerHTML = "";
         for (let i = 0; i < amountCards; i++){
-<<<<<<< HEAD
-            const div = `<div id="${i+count}" class="memory-card" data-framework="${cardsArray[i]}"> <img class="front-face" src="/games/memory/${cardsArray[i]}.svg" alt="${cardsArray[i]}" /> <div class="back-face"></div> </div>`;
-=======
             const div = `<div id="${i+count}" class="memory-card" data-framework="${cardsArrayRandom[i]}"> <img class="front-face" src="/games/memory/${cardsArrayRandom[i]}.svg" alt="${cardsArrayRandom[i]}" /> <div class="back-face"></div> </div>`;
->>>>>>> bbb6adb400f5129fe9e05c73b641d51653da6e37
             document.querySelector('.memory-game').insertAdjacentHTML('afterbegin', div);
             if (count === 0 && i +1 === amountCards) {
                 count++
@@ -230,19 +226,6 @@ export class Memory extends Component {
                     </div>
                 </div>
 
-<<<<<<< HEAD
-                <audio id="sound-right">
-                    <source src="/sound/right.mp3" type="audio/ogg"/>
-                </audio>
-                <audio id="sound-wrong">
-                    <source src="/sound/wrong.mp3" type="audio/ogg"/>
-                </audio>
-                
-                <div className="icons">
-                    <a href="/game-memory-info"><img id="info-icon" onClick={this.info} src="/games/memory/info-icon.svg" alt="info"/></a>
-                    <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
-                    <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
-=======
                 <div className="explain-container hide">
                     <div>
                         <button id="close-btn-explain" onClick={this.closeExplain}>x</button>
@@ -255,7 +238,6 @@ export class Memory extends Component {
                     <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
                     <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
                     <img onClick={this.explainTheGame} id="handleiding-icon" src="/games/memory/handleiding-icon.svg" alt="handleiding"/>
->>>>>>> bbb6adb400f5129fe9e05c73b641d51653da6e37
                 </div>
                 
                 <div className="game-container">

@@ -168,13 +168,8 @@ export default class Game extends Component {
     const initGame = () => {
       // Reset the full game window before creating a new game
       resetGameWindow();
-<<<<<<< HEAD
       updateGameState(gameConfig.game);
       this.aiObjects = [];
-=======
-      updateGameState(gameConfig);
-      this.viruses = [];
->>>>>>> bbb6adb400f5129fe9e05c73b641d51653da6e37
       // Start a new game
       this.player.setDraggable(true);
       virusSpawner.start(spawnVirus, 500);
@@ -183,11 +178,8 @@ export default class Game extends Component {
         hasStarted: true,
         playing: true,
       });
-<<<<<<< HEAD
       virusSpawner.start(spawnVirus, this.difficulty.spawnInterval);
       powerupSpawner.start(spawnPowerup, 5000);
-=======
->>>>>>> bbb6adb400f5129fe9e05c73b641d51653da6e37
       this.app.ticker.add(gameLoop);
     };
 
