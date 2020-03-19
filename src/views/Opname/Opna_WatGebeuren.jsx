@@ -57,12 +57,12 @@ export default function Opna_WatGebeuren() {
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/CT.jpg')", "CT-SCAN")} className="bel" src="/watGebeuren_page/bellen/CTSCAN.svg" alt="CTSCAN"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/ECHO.jpg')", "ECHO")} className="bel" src="/watGebeuren_page/bellen/ECHO.svg" alt="ECHO"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/EKG.jpg')", "EKG")} className="bel" src="/watGebeuren_page/bellen/EKG.svg" alt="EKG"/>
-                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/CT.jpg')", "INFUUS")} className="bel" src="/watGebeuren_page/bellen/INFUUS.svg" alt="INFUUS"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/INFUUS.jpg')", "INFUUS")} className="bel" src="/watGebeuren_page/bellen/INFUUS.svg" alt="INFUUS"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/CT.jpg')", "KALINOX")} className="bel" src="/watGebeuren_page/bellen/KALINOX.svg" alt="KALINOX"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/MRI.jpg')", "MRI")} className="bel" src="/watGebeuren_page/bellen/MRI.svg" alt="MRI"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/NPA.jpg')", "NPA")} className="bel" src="/watGebeuren_page/bellen/NPA.svg" alt="NPA"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/LACTOSETEST.jpg')", "LACTOSETEST")} className="bel" src="/watGebeuren_page/bellen/LACTOSETEST.svg" alt="LACTOSETEST"/>
-                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/ALLERGIETEST.jpg')", "RUGGENPRIK")} className="bel" src="/watGebeuren_page/bellen/RUGGENPRIK.svg" alt="RUGGENPRIK"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/RUGGENPRIK.jpg')", "RUGGENPRIK")} className="bel" src="/watGebeuren_page/bellen/RUGGENPRIK.svg" alt="RUGGENPRIK"/>
                     </div>
 
                     <img className="olivia_bellenblaas" src="/watGebeuren_page/olivia_belleblaas.svg" alt="Olivia"/>
