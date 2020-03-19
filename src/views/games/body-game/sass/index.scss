@@ -95,6 +95,15 @@
 
   &__part {
     cursor: pointer;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+
+    &.selected {
+      z-index: 999;
+      transform: scale(1.1);
+      transition: all .2s ease-in-out;
+
+    }
   }
 
   &__labels {
@@ -118,6 +127,7 @@
     font-family: "FredokaOne-Regular", sans-serif;
     font-size: 22px;
     background: none;
+    text-transform: lowercase;
 
     &.selected {
       border: 4px solid #fefefe;
