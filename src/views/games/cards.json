@@ -1,49 +1,56 @@
-{
-    "value": [
-        {
-            "id": 1,
-            "name": "beer",
-            "joke": "Chuck Norris uses ribbed condoms inside out, so he gets the pleasure."
-        },
-        {
-            "id": 2,
-            "name": "mondmasker",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
-        },
-        {
-            "id": 3,
-            "name": "olivia",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
-        },
-        {
-            "id": 4,
-            "name": "spuit",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
-        },
-        {
-            "id": 5,
-            "name": "stetoscoop",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
-        },
-        {
-            "id": 6,
-            "name": "thermometer",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
-        },
-        {
-            "id": 7,
-            "name": "MRI",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
-        },
-        {
-            "id": 8,
-            "name": "INFUUS",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
-        },
-        {
-            "id": 9,
-            "name": "OTTOSCOOP",
-            "joke": "MacGyver can build an airplane out of gum and paper clips. Chuck Norris can kill him and take it."
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "beer",
+        "explanation": "Je mag bijna altijd je favoriete beer met je meenemen ook als je een operatie krijgt. Wist je dat je teddybeer ook een polsbandje krijgt om te dragen?",
+        "audio": "/sound/memory/beer.mp3"
+    },
+    {
+        "id": 2,
+        "name": "mondmasker",
+        "explanation": "Om de dokter of verpleegkundige niet te besmetten dragen zij een mondmasker.",
+        "audio": "/sound/memory/mondmasker.mp3"
+    },
+    {
+        "id": 3,
+        "name": "olivia",
+        "explanation": "Olivia is de mascotte van ons ziekenhuis, ze zit op verschillende plaatsen in ons ziekenhuis verstopt. Kan jij ze vinden?",
+        "audio": "/sound/memory/olivia.mp3"
+    },
+    {
+        "id": 4,
+        "name": "spuit",
+        "explanation": "Om je snel een medicijntje toe te dienen, krijg je een prikje. Dit kan een beetje pijn doen, maar je hoeft hier niet bang voor te zijn.",
+        "audio": "/sound/memory/spuit.mp3"
+    },
+    {
+        "id": 5,
+        "name": "stetoscoop",
+        "explanation": "Hiermee kan de dokter naar je hart luisteren. Vraag hem of je ook eens kan luisteren!",
+        "audio": "/sound/memory/stetoscoop.mp3"
+    },
+    {
+        "id": 6,
+        "name": "thermometer",
+        "explanation": "Om te kijken of je koorts hebt moet je de thermometer onder je oksel steken, zo kan je temperatuur gemeten worden.",
+        "audio": "/sound/memory/thermometer.mp3"
+    },
+    {
+        "id": 7,
+        "name": "Scanner",
+        "explanation": "In het ziekenhuis hebben wij 2 grote scanners. Een mri en een ct daarmee kunnen we in je lichaam kijken!",
+        "audio": "/sound/memory/mri.mp3"
+    },
+    {
+        "id": 8,
+        "name": "INFUUS",
+        "explanation": "Om medicijnen aan je te geven, krijg je een infuus. Dat is een buisje in je arm, geen paniek dit is geen prik!",
+        "audio": "/sound/memory/infuus.mp3"
+    },
+    {
+        "id": 9,
+        "name": "OTOSCOOP",
+        "explanation": "Met een otoscoop wordt in je neus, oren of keel gekeken. Er zit een lichtje en vergrootglas in zodat de dokter alles goed kan bekijken.",
+        "audio": "/sound/memory/otoscoop.mp3"
+    }
+]

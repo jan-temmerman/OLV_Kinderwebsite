@@ -21,6 +21,7 @@ $small: 5px;
 
 .memory-body-container{
   background-image: url('/background-planeet.svg');
+  // background-image: url(/OLV_Kinderwebsite/background-planeet.svg);
   background-position: bottom;
   background-repeat: no-repeat;
   position: relative;
@@ -44,31 +45,39 @@ $small: 5px;
       cursor: pointer;
   }
 
-  #info-icon{
+  #info-icon, #handleiding-icon{
     margin: 0 0 20px 0;
+    height: 50px;
+    width: 50px;
   }
-  #info-icon:hover{
+  #info-icon:hover, #handleiding-icon:hover{
     cursor: pointer;
   }
 
+  #handleiding-icon{
+    margin: 20px 0;
+  }
+
 //   PLAY AGAIN CONTAINER
-  .playAgain-container{
+  .playAgain-container, .explain-container{
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 9;
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      z-index: 11;
       border: solid 10px $yellow-dark;
       border-radius: 20px;
       background-color: $yellow-light;
       text-align: center;
     }
 
-    .playAgain-container div{
+    .playAgain-container div, .explain-container div{
       margin: 50px 100px;
     }
 
-    .playAgain-container p, h3{
+    .playAgain-container p, h3, .explain-container p{
       color: $red;
       font-family: 'FredokaOne-Regular';
     }
@@ -90,9 +99,23 @@ $small: 5px;
 
     }
 
-    .playAgain-container button:hover{
+    .playAgain-container button:hover, #close-btn-explain:hover{
       cursor: pointer;
       transform: scale(0.9);
+      transition: transform .2s;
+    }
+
+    #close-btn-explain{
+      background-color: $white;
+      color: $black;
+      font-family: 'FredokaOne-Regular';
+      font-size: 35px;
+      padding: 0 11px 3px 11px;
+      margin: 10px;
+      border: none;
+      position: absolute;
+      top: 0;
+      right: 0;
       transition: transform .2s;
     }
 
@@ -104,6 +127,8 @@ $small: 5px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 .heading{
@@ -175,6 +200,8 @@ $small: 5px;
 
 .memory-card.flip {
   transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .front-face {
@@ -186,6 +213,8 @@ $small: 5px;
   background: $white;
   backface-visibility: hidden;
   transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
   border: solid $small $red;
 }
 
@@ -196,6 +225,7 @@ $small: 5px;
   border: solid $small $red;
   background-color: $blue-dark-dark;
   background-image: url('/games/memory/card-back-red.svg');
+  // background-image: url(/OLV_Kinderwebsite/games/memory/card-back-red.svg);
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center;

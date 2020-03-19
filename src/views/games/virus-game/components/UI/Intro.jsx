@@ -17,7 +17,7 @@ export default function Intro(props) {
       <p>Kan jij alle virussen ontwijken?</p>
       <p>Tip: Sleep het karakter over het scherm met de muis om te spelen</p>
       <div className="btn__container">
-        {difficultyBtns}
+        {difficultyBtns || ''}
       </div>
       <div className="instruction__container">
         <div>
