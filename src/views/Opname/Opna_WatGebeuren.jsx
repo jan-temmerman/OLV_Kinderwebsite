@@ -1,11 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { Spring } from 'react-spring/renderprops';
-import { animated, useSpring } from 'react-spring';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import Lottie from 'react-lottie';
-import animationData from '../loadingAni.json'
-import * as Scroll from 'react-scroll';
 
 
 import '../../sass/app.scss';
@@ -13,14 +7,28 @@ import '../../sass/views/_spelletjes.scss';
 
 export default function Opna_WatGebeuren() {
 
+    const [modal, setModal] = useState("")
+
+    const showModal = (imagePath) => {
+        setModal(
+            <div className="detail_modal">
+                <div>
+                    <div className="modal_header">
+                        <div className="cross"/>
+                        <h2>CT-SCAN</h2>
+                        <img onClick={() => setModal("")} className="cross" src="/watGebeuren_page/kruisje.svg" alt="kruisje"/>
+                    </div>
+
+                    <div style={{backgroundImage: imagePath}} className="image_container"/>
+                </div>
+            </div>
+        )
+    }
+
     return(
         <section className="container space" id="planets">
 
-            <div className="detail_modal">
-                <div>
-                    <h2>CT-SCAN</h2>
-                </div>
-            </div>
+            {modal}
 
             {/*<div className="loading">
                 <div className="rocket_ani">
@@ -46,15 +54,15 @@ export default function Opna_WatGebeuren() {
             <div className="container_content_bellen">
                 <div className="container_action_bellen">
                     <div>
-                        <img className="bel" src="/watGebeuren_page/CTSCAN.svg" alt="CTSCAN"/>
-                        <img className="bel" src="/watGebeuren_page/ECHO.svg" alt="ECHO"/>
-                        <img className="bel" src="/watGebeuren_page/EKG.svg" alt="EKG"/>
-                        <img className="bel" src="/watGebeuren_page/INFUUS.svg" alt="INFUUS"/>
-                        <img className="bel" src="/watGebeuren_page/KALINOX.svg" alt="KALINOX"/>
-                        <img className="bel" src="/watGebeuren_page/MRI.svg" alt="MRI"/>
-                        <img className="bel" src="/watGebeuren_page/NPA.svg" alt="NPA"/>
-                        <img className="bel" src="/watGebeuren_page/LACTOSETEST.svg" alt="LACTOSETEST"/>
-                        <img className="bel" src="/watGebeuren_page/RUGGENPRIK.svg" alt="RUGGENPRIK"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/CT_5.jpg')")} className="bel" src="/watGebeuren_page/bellen/CTSCAN.svg" alt="CTSCAN"/>
+                        <img className="bel" src="/watGebeuren_page/bellen/ECHO.svg" alt="ECHO"/>
+                        <img className="bel" src="/watGebeuren_page/bellen/EKG.svg" alt="EKG"/>
+                        <img className="bel" src="/watGebeuren_page/bellen/INFUUS.svg" alt="INFUUS"/>
+                        <img className="bel" src="/watGebeuren_page/bellen/KALINOX.svg" alt="KALINOX"/>
+                        <img className="bel" src="/watGebeuren_page/bellen/MRI.svg" alt="MRI"/>
+                        <img className="bel" src="/watGebeuren_page/bellen/NPA.svg" alt="NPA"/>
+                        <img className="bel" src="/watGebeuren_page/bellen/LACTOSETEST.svg" alt="LACTOSETEST"/>
+                        <img className="bel" src="/watGebeuren_page/bellen/RUGGENPRIK.svg" alt="RUGGENPRIK"/>
                     </div>
 
                     <img className="olivia_bellenblaas" src="/watGebeuren_page/olivia_belleblaas.svg" alt="Olivia"/>
