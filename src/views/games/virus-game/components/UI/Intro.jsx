@@ -2,7 +2,7 @@ import React from 'react';
 import BackButton from './BackButton';
 
 export default function Intro(props) {
-  const { game: { startGame, difficulty } } = props;
+  const { game: { game: { startGame, difficulty } } } = props;
 
   const difficultyBtns = [];
 
