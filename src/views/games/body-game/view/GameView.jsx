@@ -12,9 +12,9 @@ export default function GameView() {
   const [gameOver, setGameOver] = useState(true);
   const [labels, setLabels] = useState(null);
   const [matchedOrgans, setMatchedOrgans] = useState(0);
+  const [totalClicks, setTotalClicks] = useState(0);
 
   const organAmount = LabelConfig.organs.length;
-  const labelColors = LabelConfig.colors;
 
   const setMatchedVisual = (label) => {
     const id = removeSpaces(label, '_');
@@ -51,6 +51,7 @@ export default function GameView() {
    */
   useEffect(() => {
     if (selectedLabel && selectedOrgan) {
+      setTotalClicks((prevTotal) => prevTotal + 1);
       if (selectedOrgan === selectedLabel) {
         setMatchedOrgans((prevCount) => prevCount + 1);
         setMatchedVisual(selectedLabel);
@@ -99,7 +100,12 @@ export default function GameView() {
           <UIButton action={() => { setMatchedOrgans(0); setGameOver(false); }} text="Ja" />
           <a href="/consultatie/spelletjes" className="UIButton">Nee</a>
         </div>
-        <p>Jouw score: 100%</p>
+        <p>
+          Jouw score:
+          {' '}
+          { ((LabelConfig.organs.length / totalClicks) * 100).toFixed(2) }
+          %
+        </p>
       </div>
     </div>
   );
@@ -152,11 +158,4 @@ export default function GameView() {
       </div>
     </>
   );
-
-  // return (
-  //   <div>
-  //     <h1>Game Over!</h1>
-  //     <UIButton action={() => { setMatchedOrgans(0); setGameOver(false); }} text="Speel opnieuw" />
-  //   </div>
-  // );
 }
