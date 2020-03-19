@@ -18,9 +18,12 @@ export class index extends Component {
             btn.style.order = randomPos;
             btn.addEventListener('click', this.checkResult)
         });
+
+        document.querySelector('.container-h2').addEventListener('click', this.hideTitle)
     }
 
     checkResult = (e) => {
+        e.target.parentNode.removeEventListener('click', this.checkResult)
         let target = e.target.parentNode.dataset.framework
         e.target.insertAdjacentHTML('beforebegin', `<img class="result-icon" src="/${target}.svg" alt="${target}"/>`);
         document.querySelector('.audio-rugzak').innerHTML = `<audio id="control-audio-rugzak"><source src="/sound/${target}.mp3" type="audio/ogg"/></audio>`
@@ -86,6 +89,10 @@ export class index extends Component {
         document.querySelector('.playAgain-container').classList.add('hide')
     }
 
+    hideTitle() {
+        document.querySelector('.container-h2').style.display = 'none'
+    }
+
 
     render() {
         return (
@@ -100,7 +107,9 @@ export class index extends Component {
                         <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
                     </div>
 
-                    <h2>Wat neem je mee in je rugzak?</h2>
+                    <div className="container-h2">
+                        <h2>Wat neem je mee in je rugzak?</h2>
+                    </div>
 
                     <div className="rugzak">
                         <img src="/games/rugzakspel/rugzak.svg" alt="rugzak" />

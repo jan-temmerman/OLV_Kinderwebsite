@@ -25,7 +25,7 @@ $bordeaux-dark: #B05C73;
     width: 15%;
 }
 
-h2{
+.container-h2 h2{
     font-family: 'FredokaOne-Regular';
     font-size: 30px;
     font-weight: lighter;
@@ -96,3 +96,67 @@ h2{
     background-color: #5776B7;
 }
 
+// GSM PORTRAIT
+@media only screen and (max-width: 1024px) {
+
+    .container-h2{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        z-index: 12;
+    }
+
+    .container-h2 h2{
+        top: 50%;
+        transform: translate(-50%, 0);
+    }
+    
+    // RUGZAK
+    .rugzak{
+        width: 100%;
+    }
+    
+    .rugzak img{
+        height: 80%;
+        opacity: 0.8;
+    }
+    
+    // RUGZAK ICONS
+    .container-icon-rugzak{
+        width: 100%;
+    }
+    
+    .icon-rugzak{
+        width: 15%;
+    }
+    
+    // FOOTER
+    .footer-rugzak{
+        height: 0vh;
+    }
+  }
+
+// GSM LANDSCAP
+@media only screen and (max-width: 600px){
+    
+    .container-h2{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        z-index: 12;
+    }
+    
+    .container-h2 h2{
+        z-index: 13;
+        font-size: 20px;
+        width: 200px;
+        top: 50%;
+        transform: translate(-50%, 0);
+    }
+}
