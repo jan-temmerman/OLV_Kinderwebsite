@@ -128,7 +128,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #FF5D19;
+  background-color: #FF4D00;
   margin-top: -85px;
   width: 100%;
 }
@@ -172,6 +172,8 @@ body {
       &:nth-child(2n) {
         background-color: #F7FA91;
         border: 20px solid #FBDE21;
+        background-position: center;
+        background-size: cover;
       }
 
       p {

@@ -25,7 +25,7 @@ export default function Cons_WatGebeuren() {
 
                 <div className="planet_bg">
                     <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
-                    <img src="/homepage/consultatie_bg.svg" alt="planet" />
+                    <img src="/homepage/planeet_consultatie.svg" alt="planet" />
                 </div>
             </section>
             <section className="inside">
@@ -37,7 +37,7 @@ export default function Cons_WatGebeuren() {
                                 Op beide armpjes worden 4 lijntjes met balpen getekend. Daarop worden kleine druppeltjes gedaan, dat kan een beetje koud aanvoelen. Met een klein wit staafje wordt een prikje + draaitje gegeven in het druppeltje, dat is geen naald maar je zal dit wel voelen. Daarna wordt het droog gedopt. Het is belangrijk dat je er niet aan krabt, als het jeukt mag je er wel op blazen. na 15 minuten komt de verpleegster of de dokter naar je arm kijken. Soms wordt het rood met een wit bolletje, de verpleegkundige of de dokter zullen dit opmeten. Zo kan je te weten komen aan welke stof of voeding je allergisch bent
                             </p>
                         </div>
-                        <div></div>
+                        <div style={{backgroundImage: "url('/watGebeuren_page/fotos/ALLERGIETEST.jpg')"}} />
                     </div>
                     <div className="text-image_container">
                         <div>
@@ -50,7 +50,7 @@ export default function Cons_WatGebeuren() {
                                 Op die manier kunnen we kijken of je problemen hebt met plassen.
                             </p>
                         </div>
-                        <div></div>
+                        <div style={{backgroundImage: "url('/watGebeuren_page/fotos/UROFLOW.jpg')"}} />
                     </div>
                     <div className="text-image_container">
                         <div>
@@ -59,7 +59,7 @@ export default function Cons_WatGebeuren() {
                                 De dokter wil van jouw hart een hartfilmpje of EKG maken. De dokter of de verpleegkundige plakt enkele ronde pleisters of zuignapjes met daaraan draadjes op jouw armen, benen en borstkas. Jij hoeft terwijl niets te doen en kan lekker gaan liggen. De pleisters of zuignapjes kunnen nadien weer makkelijk er af gedaan worden. De draadjes zijn verbonden met een computer die kijkt hoe goed je hart zijn werk doet. Wanneer het hartfilmpje gemaakt is, zal je zien dat uit de printer van het apparaat een blaadje tevoorschijn komt met daarop het rapport van jouw hart. Vraag maar eens aan de dokter of je mag kijken!
                             </p>
                         </div>
-                        <div></div>
+                        <div style={{backgroundImage: "url('/watGebeuren_page/fotos/EKG.jpg')"}} />
                     </div>
                     <div className="text-image_container">
                         <div>
@@ -68,7 +68,7 @@ export default function Cons_WatGebeuren() {
                                 Voor en tijdens het onderzoek mag je niet eten. Je zal in het begin van de test een eerste keer moeten blazen om te kijken hoeveel je score dan is. Nadien is het de bedoeling dat je een drankje (lactose) opdrinkt. Nu moet je enkele keren opnieuw blazen, telkens met 30 minuutjes tussen. Op deze manier kan de dokter zien of je wel/niet tegen lactose kan. Na de test mag je terug eten en drinken zoveel je wilt. De resultaten worden nadien met de dokter besproken.
                             </p>
                         </div>
-                        <div></div>
+                        <div style={{backgroundImage: "url('/watGebeuren_page/fotos/LACTOSETEST.jpg')"}} />
                     </div>
                 </div>
             </section>
