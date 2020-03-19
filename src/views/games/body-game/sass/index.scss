@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .body {
   &__container {
     width: 100vw;
@@ -104,7 +107,8 @@
     button {
       height: 50px;
       cursor: pointer;
-      max-width: 30%;
+      width: auto;
+      max-width: 45%;
     }
   }
 

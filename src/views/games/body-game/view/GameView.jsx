@@ -66,12 +66,13 @@ export default function GameView() {
    */
   useEffect(() => {
     const { colors, organs } = LabelConfig;
-    const colorCopy = colors;
+    let colorCopy;
     if (!gameOver) {
-      setLabels([[], []]);
+      colorCopy = [...colors];
       const organArray = shuffle(organs);
       const newLabels = [[], []];
       organArray.forEach((organ, i) => {
+        // Remove matched class from all organs.
         document.querySelector(`#organ__${removeSpaces(organ, '_')}`).classList.remove('matched');
         const colorIndex = Math.floor(Math.random() * colorCopy.length);
         const labelMargin = i < organs.length / 2 ? { marginLeft: `${(Math.random() * (60 - 40)) + 40}%` } : { marginLeft: `${(Math.random() * 40 - 20) + 20}%` };
@@ -84,6 +85,8 @@ export default function GameView() {
         colorCopy.splice(colorIndex, 1);
       });
       setLabels(newLabels);
+    } else {
+      setLabels([[], []]);
     }
   }, [gameOver]);
 
