@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
-
+import ReactPlayer from 'react-player'
 
 import '../../sass/app.scss';
 import '../../sass/views/_consultatie.scss';
@@ -31,9 +31,9 @@ export default function Dagkliniek() {
                 <Link className="planet_C" to="/consultatie"><img src="/homepage/consultatie.svg" alt="consultatie" /></Link>
             </div>
 
-            <div className="container_content">
-                <div className="container_action">
-                    
+            <div className="container_content_dag">
+                <div className="container_action_dag">
+                    <ReactPlayer url='https://vimeo.com/398967843' height={'100%'} />
                 </div>
                 <div className="planet_bg">
                     <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
