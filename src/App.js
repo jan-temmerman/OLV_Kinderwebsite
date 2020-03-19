@@ -30,6 +30,7 @@ import Opna_WieIsWie from './views/Opname/Opna_WieIsWie';
 import Opname from './views/Opname/Opname';
 import BodyGameV2 from './views/games/body-game';
 import Opna_WatGebeuren from './views/Opname/Opna_WatGebeuren';
+import Dagkliniek from './views/Dagkliniek/Dagkliniek';
 
 export default function App() {
   return (
@@ -47,7 +48,7 @@ export default function App() {
             <Route path="/consultatie/spelletjes/memory" component={GameMemoryView} exact />
           <Route path="/consultatie/wie_is_wie" component={Cons_WieIsWie} exact />
 
-        <Route path="/dagkliniek" component={HomeView} exact />
+        <Route path="/dagkliniek" component={Dagkliniek} exact />
 
         <Route path="/opname" component={Opname} exact />
         <Route path="/opname/wat_zal_er_gebeuren" component={Opna_WatGebeuren} exact />

@@ -68,7 +68,7 @@ export default function Cons_WieIsWie() {
                 </div>
                 <div className="planet_bg">
                     <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
-                    <img src="/homepage/consultatie_bg.svg" alt="planet" />
+                    <img src="/homepage/planeet_consultatie.svg" alt="planet" />
                 </div>
             </div>
         </section>

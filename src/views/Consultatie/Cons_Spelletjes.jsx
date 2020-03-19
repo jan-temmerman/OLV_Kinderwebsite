@@ -61,7 +61,7 @@ export default function Cons_Spelletjes() {
                     <img className="olivia-rocket" src="/spelletjes_page/olivia-raket.svg" alt="olivia" />
                 </div>
                 <div className="planet_bg">
-                    <img src="/homepage/consultatie_bg.svg" alt="planet" />
+                    <img src="/homepage/planeet_consultatie.svg" alt="planet" />
                 </div>
             </div>
         </section>
