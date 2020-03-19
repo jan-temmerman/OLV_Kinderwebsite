@@ -30,7 +30,7 @@ export default function Opna_WieIsWie() {
                 <Link className="planet_C" to="/dagkliniek"><img src="/homepage/dagkliniek.svg" alt="dagkliniek" /></Link>
                 <Link className="planet_C" to="/consultatie"><img src="/homepage/consultatie.svg" alt="consultatie" /></Link>
             </div>
-            <div className="container_content_WHO">
+            <div className="container_content_opna_WHO">
                 <div className="carousel_container">
                     <Carousel 
                     arrowLeft={<img className="carousel_arrow" src="/homepage/terug.svg" alt="terug" />}
