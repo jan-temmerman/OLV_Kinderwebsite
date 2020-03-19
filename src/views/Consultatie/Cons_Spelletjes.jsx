@@ -38,7 +38,7 @@ export default function Cons_Spelletjes() {
       <div className="container_content_spel">
         <div className="container_action_spel">
 
-                    <Link className="game" to="#" >
+                    <Link className="game" to="/opname/spelletjes/rugzak" >
                         <h2>Rugzakspel</h2>
                         <img src="/spelletjes_page/rugzak.svg" alt="game" />
                     </Link>

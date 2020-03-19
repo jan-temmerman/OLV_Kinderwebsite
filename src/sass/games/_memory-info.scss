@@ -97,3 +97,42 @@ $height: 360px;
     text-transform: capitalize;
     font-family: 'luckiestguy';
 }
+
+.container-rotate-portrait{
+    display: none;
+}
+
+@media only screen and (max-width: 850px) and (orientation: landscape){
+    .memory-cards-container{
+        display: none;
+    }
+
+    .container-rotate-portrait{
+        display: block;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+
+    .container-rotate-portrait img{
+        height: 80vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .memory-info-body-container{
+        background-image: none;
+    }
+}
+  
+@media only screen and (max-width: 850px) and (orientation: portrait){
+    .memory-cards-container{
+        display: block;
+    }
+
+    .container-rotate-portrait{
+        display: none;
+    }
+}

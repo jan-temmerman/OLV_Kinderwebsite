@@ -104,6 +104,9 @@ export class Info extends Component {
                         </div>
                         <div id="container-audio-control"></div>
                     </div>
+                    <div className="container-rotate-portrait">
+                        <img src="/rotate-screen-to-portrait.svg" alt="to portrait"/>
+                    </div>
                 </div>
             </div>
         )

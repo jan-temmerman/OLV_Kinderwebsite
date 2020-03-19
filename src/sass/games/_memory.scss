@@ -235,3 +235,60 @@ $small: 5px;
 .back-face:hover{
     cursor: pointer;
 }
+
+.container-rotate-screen{
+  display: none;
+}
+
+@media only screen and (min-width: 500px){
+    
+  .play-container{
+    display: block;
+  }
+
+  .memory-body-container{
+    background-image: none;
+  }
+
+  .memory-game {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+
+  .playAgain-container div, .explain-container div{
+    margin: 20px;
+  }
+
+  //   PLAY AGAIN CONTAINER
+  .playAgain-container{
+    top: 100%;
+  }
+}
+
+// GSM LANDSCAP
+@media only screen and (max-width: 500px){
+    
+  .play-container{
+    display: none;
+  }
+
+  .container-rotate-screen{
+    height: 100vh;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .container-rotate-screen img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
