@@ -99,7 +99,7 @@ export class index extends Component {
             <div className="container-rugzak-game">
                 <div className="container-rugzak">
                     <div className="navbar">
-                        <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                        <Link className="back" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
                     </div>
 
                     <div className="icons">
@@ -132,7 +132,7 @@ export class index extends Component {
 
                     <div className="audio-rugzak"></div>
                     
-                    <div className="playAgain-container hide">
+                    <div className="playAgain-container playAgain-container-rugzak hide">
                     <div>
                         <h3>Nog eens spelen?</h3>
                         <button onClick={this.playAgain}>Ja</button>

@@ -42,9 +42,10 @@ export default function App() {
         <Route path="/consultatie" component={Consultatie} exact />
           <Route path="/consultatie/wat_zal_er_gebeuren" component={Cons_WatGebeuren} exact />
           <Route path="/consultatie/spelletjes" component={Cons_Spelletjes} exact />
-            <Route path="/consultatie/spelletjes/virusspel" component={VirusGame} exact />
-            <Route path="/consultatie/spelletjes/lichaamspel" component={BodyGameV2} exact />
-            <Route path="/consultatie/spelletjes/memory" component={GameMemoryView} exact />
+          <Route path="/consultatie/spelletjes/virusspel" component={VirusGame} exact />
+          <Route path="/consultatie/spelletjes/lichaamspel" component={BodyGameV2} exact />
+          <Route path="/consultatie/spelletjes/memory" component={GameMemoryView} exact />
+          <Route path="/consultatie/spelletjes/rugzak" component={BagView} exact />
           <Route path="/consultatie/wie_is_wie" component={Cons_WieIsWie} exact />
 
         <Route path="/dagkliniek" component={HomeView} exact />
@@ -53,7 +54,8 @@ export default function App() {
         <Route path="/opname/wat_zal_er_gebeuren" component={Opna_WatGebeuren} exact />
         <Route path="/opname/spelletjes" component={Opna_Spelletjes} exact />
           <Route path="/opname/spelletjes/memory" component={GameMemoryView} exact />
-          <Route path="/opname/spelletjes/virusspel" component={VirusGame} exact />
+        <Route path="/opname/spelletjes/virusspel" component={VirusGame} exact />
+        <Route path="/opname/spelletjes/rugzak" component={BagView} exact/>
         <Route path="/opname/wie_is_wie" component={Opna_WieIsWie} exact />
 
         <Route path="/game-memory-info" component={GameMemoryInfoView} exact />

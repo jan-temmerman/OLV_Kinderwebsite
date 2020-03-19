@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.12.21",
+    "@brainhubeu/react-carousel": "^1.13.4",
     "deployment": "^0.2.3",
     "install": "^0.13.0",
     "lottie-web": "^5.6.5",

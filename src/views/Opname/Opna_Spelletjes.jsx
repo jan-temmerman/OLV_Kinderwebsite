@@ -25,7 +25,7 @@ export default function Opna_Spelletjes() {
             </div>*/}
             <div className="heading_container">
                 <Link className="back" to="/opname"><img src="/homepage/terug.svg" alt="terug" /></Link>
-                <h1 className="planetName">Wie is wie?</h1>
+                <h1 className="planetName">Spelletjes</h1>
                 <a href="https://www.olvz.be">
                     <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
                 </a>
@@ -39,7 +39,7 @@ export default function Opna_Spelletjes() {
             <div className="container_content_spel">
                 <div className="container_action_spel">
 
-                    <Link className="game" to="#" >
+                    <Link className="game" to="/consultatie/spelletjes/rugzak" >
                         <h2>Rugzakspel</h2>
                         <img src="/spelletjes_page/rugzak.svg" alt="game" />
                     </Link>

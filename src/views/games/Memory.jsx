@@ -213,43 +213,44 @@ export class Memory extends Component {
         return (
             <div class="memory-body-container">
                 <div className="navbar">
-                    <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                    <Link className="back" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 </div>
 
-
-                <div className="playAgain-container hide">
-                    <div>
-                        <h3>Nog eens spelen?</h3>
-                        <button onClick={this.playAgain}>Ja</button>
-                        <button onClick={this.dontPlayAgain}>Nee</button>
-                        <p id="percentage"></p>
-                    </div>
-                </div>
-
-                <div className="explain-container hide">
-                    <div>
-                        <button id="close-btn-explain" onClick={this.closeExplain}>x</button>
-                        <p>Draai 2 kaartjes om, als ze hetzelfde zijn dan heb je het juist. <br />Zijn het 2 verschillende dan draaien je  2 kaartjes weer om. <br />Blijf draaien tot je ze allemaal gevonden hebt!</p>
-                    </div>
-                </div>
-                
-                <div className="icons">
-                    <a href="/games/memory/info"><img id="info-icon" onClick={this.info} src="/games/memory/info-icon.svg" alt="info"/></a>
-                    <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
-                    <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
-                    <img onClick={this.explainTheGame} id="handleiding-icon" src="/games/memory/handleiding-icon.svg" alt="handleiding"/>
-                </div>
-                
-                <div className="game-container">
-                    <h1 className="heading">Memory Spel</h1>
-                    <div className="lvl-btn-container">
-                        <button className="makkelijk" onClick={this.changeLevel}>Makkelijk</button>
-                        <button className="standaard" onClick={this.changeLevel}>Normaal</button>
-                        <button className="moeilijk" onClick={this.changeLevel}>Moeilijk</button>
+                <div className="play-container">
+                    <div className="playAgain-container hide">
+                        <div>
+                            <h3>Nog eens spelen?</h3>
+                            <button onClick={this.playAgain}>Ja</button>
+                            <button onClick={this.dontPlayAgain}>Nee</button>
+                            <p id="percentage"></p>
+                        </div>
                     </div>
 
-                    <div className="memory-game-container">
-                        <section className="memory-game"></section>
+                    <div className="explain-container hide">
+                        <div>
+                            <button id="close-btn-explain" onClick={this.closeExplain}>x</button>
+                            <p>Draai 2 kaartjes om, als ze hetzelfde zijn dan heb je het juist. <br />Zijn het 2 verschillende dan draaien je  2 kaartjes weer om. <br />Blijf draaien tot je ze allemaal gevonden hebt!</p>
+                        </div>
+                    </div>
+                    
+                    <div className="icons">
+                        <a href="/games/memory/info"><img id="info-icon" onClick={this.info} src="/games/memory/info-icon.svg" alt="info"/></a>
+                        <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
+                        <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
+                        <img onClick={this.explainTheGame} id="handleiding-icon" src="/games/memory/handleiding-icon.svg" alt="handleiding"/>
+                    </div>
+                    
+                    <div className="game-container">
+                        <h1 className="heading">Memory Spel</h1>
+                        <div className="lvl-btn-container">
+                            <button className="makkelijk" onClick={this.changeLevel}>Makkelijk</button>
+                            <button className="standaard" onClick={this.changeLevel}>Normaal</button>
+                            <button className="moeilijk" onClick={this.changeLevel}>Moeilijk</button>
+                        </div>
+
+                        <div className="memory-game-container">
+                            <section className="memory-game"></section>
+                        </div>
                     </div>
                 </div>
 
@@ -268,7 +269,9 @@ export class Memory extends Component {
                     <source src="/sound/memory/memory.mp3" type="audio/ogg"/>
                 </audio>
 
-
+                <div className="container-rotate-screen">
+                    <img src="/rotate-screen.svg" alt="rotate-screen"/>
+                </div>
 
             </div>
         )
