@@ -14,6 +14,8 @@ export class index extends Component {
     componentDidMount = () => {
         let btns = document.querySelectorAll('.clickable')
         btns.forEach(btn => {
+            let randomPos = Math.floor(Math.random() * 9);
+            btn.style.order = randomPos;
             btn.addEventListener('click', this.checkResult)
         });
     }
