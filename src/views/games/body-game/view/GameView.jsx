@@ -46,6 +46,13 @@ export default function GameView() {
     setLabel(label);
   };
 
+  const updateSelectedOrgan = (organ) => {
+    removeSelectionFromLabel();
+    const newSelected = document.querySelector(`#organ__${removeSpaces(organ, '_')}`);
+    newSelected.classList.add('selected');
+    setOrgan(organ);
+  };
+
   /**
    * Hook that checks if there is a match between label and organ
    */
@@ -151,7 +158,7 @@ export default function GameView() {
         <div className="body__labels --left">
           {labels ? labels[0] : ''}
         </div>
-        <Body pickOrgan={setOrgan} />
+        <Body pickOrgan={updateSelectedOrgan} />
         <div className="body__labels --right">
           {labels ? labels[1] : ''}
         </div>
