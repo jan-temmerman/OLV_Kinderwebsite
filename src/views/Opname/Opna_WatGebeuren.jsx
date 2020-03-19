@@ -15,6 +15,13 @@ export default function Opna_WatGebeuren() {
 
     return(
         <section className="container space" id="planets">
+
+            <div className="detail_modal">
+                <div>
+                    <h2>CT-SCAN</h2>
+                </div>
+            </div>
+
             {/*<div className="loading">
                 <div className="rocket_ani">
                     <Lottie options={defaultOptions}
