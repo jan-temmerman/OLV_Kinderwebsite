@@ -50,13 +50,13 @@ export default class Game extends Component {
      */
     const checkForLevelIncrease = () => {
       const {
-        score, maxViruses, level,
+        score, maxViruses, level, scorePerLevel,
       } = this.gameState;
-      if (score % this.difficulty.scorePerLevel === 0) {
+      if (score % scorePerLevel === 0) {
         updateGameState({
           ...this.gameState,
           score: score + 1,
-          maxViruses: maxViruses + this.difficulty.virusPerLevel,
+          maxViruses: maxViruses + 2,
           level: level + 1,
         });
       }
@@ -165,29 +165,36 @@ export default class Game extends Component {
     /**
      * Initialize a new game
      */
-    const initGame = (difficulty) => {
+    const initGame = () => {
       // Reset the full game window before creating a new game
-      this.difficulty = this.gameState.difficulty[difficulty];
       resetGameWindow();
+<<<<<<< HEAD
       updateGameState(gameConfig.game);
       this.aiObjects = [];
+=======
+      updateGameState(gameConfig);
+      this.viruses = [];
+>>>>>>> bbb6adb400f5129fe9e05c73b641d51653da6e37
       // Start a new game
       this.player.setDraggable(true);
+      virusSpawner.start(spawnVirus, 500);
       updateGameState({
         ...this.gameState,
         hasStarted: true,
         playing: true,
-        maxViruses: this.difficulty.initViruses,
       });
+<<<<<<< HEAD
       virusSpawner.start(spawnVirus, this.difficulty.spawnInterval);
       powerupSpawner.start(spawnPowerup, 5000);
+=======
+>>>>>>> bbb6adb400f5129fe9e05c73b641d51653da6e37
       this.app.ticker.add(gameLoop);
     };
 
     // Global variables for the game
     updateGameState({
       ...this.gameState,
-      startGame: (difficulty) => { initGame(difficulty); },
+      startGame: () => { initGame(); },
       updateState: () => { updateGameState(); },
     });
     this.app = new PIXI.Application(gameConfig.window);

@@ -1,0 +1,159 @@
+.game__container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.game__body--body{
+    max-width: 40%;
+    max-height: 90%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whole__body{
+    width: 50%;
+    height: auto;
+
+}
+.organs{
+    cursor: pointer;
+
+}
+.organs__disable{
+    display: none;
+}
+
+.game__body--labels{
+    max-width: 40%;
+    max-height: 90%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whole__body--labels{
+    width: 80%;
+    height: auto;
+}
+
+.organs__labels{
+    cursor: pointer;
+}
+
+.organs__labels--disable{
+    display: none;
+}
+
+.body__info{
+    margin-bottom: 40px;
+    width: 20%;
+    align-self: flex-end;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// .organs:hover{
+//     path
+//         stroke-width: 2px;
+//         stroke: white;}
+
+// .organs__labels:hover{
+//     rect
+//         stroke-width: 4px;
+//         stroke: white;}
+
+// .organs:active{
+//     path
+//         stroke-width: 2px;
+//         stroke: white;}
+
+.flexbox{ 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    align-items: center;
+}
+
+.flexbox .board{ 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    padding: 5px;
+}
+
+.flexbox .board .card{
+    cursor: pointer;
+    padding: 5px;
+}
+
+.cards{
+    display: flex;
+}
+
+.fullbag{
+    display: none;
+}
+
+.false{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.containerfinished{
+    display: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#finished{
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
+
+#board-1{
+    margin: 40px
+};
+
+.title {
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+.bagGame{
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.board{
+    height: 50%;
+    width: auto; 
+}
+//     .bag
+//         svg
+//     .card
+//         svg
+//             width: 100%
+//             height: auto 
+// }      
+#bagsvg{
+    height: auto 
+}

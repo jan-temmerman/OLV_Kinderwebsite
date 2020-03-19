@@ -16,6 +16,12 @@ import Cons_WatGebeuren from './views/Consultatie/Cons_WatGebeuren';
 import GameMemoryView from './views/games/Memory';
 import GameMemoryInfoView from './views/games/Info';
 import VirusGame from './views/games/virus-game';
+import BagView from './views/games/rugzak-game/index';
+
+
+// 404
+import ErrorNotFound from './views/Error404';
+
 
 import Cons_Spelletjes from './views/Consultatie/Cons_Spelletjes';
 import Opna_Spelletjes from './views/Opname/Opna_Spelletjes';
@@ -52,6 +58,12 @@ export default function App() {
 
         <Route path="/game-memory-info" component={GameMemoryInfoView} exact />
 
+        <Route path="/opname" component={HomeView} exact />
+        <Route path="/games/memory" component={GameMemoryView} exact />
+        <Route path="/games/memory/info" component={GameMemoryInfoView} exact />
+        <Route path="/games/rugzak" component={BagView} exact/>
+        <Route path="/" component={HomeView} exact />
+        <ErrorNotFound path="*"/>
       </Switch>
     </Router>
   );

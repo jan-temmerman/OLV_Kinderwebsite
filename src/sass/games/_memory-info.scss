@@ -8,6 +8,7 @@ $rose: #FC6A76;
 $blue-light: #597386;
 $blue-dark: #385F78;
 $blue-dark-dark: #022746;
+$orange: #FF5E18;
 
 // BORDER
 $fat: 10px;
@@ -89,4 +90,10 @@ $height: 360px;
     border-radius: 50px;
     font-family: 'FredokaOne-Regular';
     font-weight: 200;
+}
+
+#title{
+    color: $orange;
+    text-transform: capitalize;
+    font-family: 'luckiestguy';
 }

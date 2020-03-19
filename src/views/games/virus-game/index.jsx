@@ -8,7 +8,7 @@ import { UI } from './components';
 import './sass/virusgame.scss';
 
 export default function VirusGame() {
-  const [gameState, setGameState] = useState(gameConfig.game);
+  const [gameState, setGameState] = useState(gameConfig);
   return (
     <div className="game__view">
       <GameContext.Provider value={gameState}>
