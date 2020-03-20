@@ -18,6 +18,10 @@ $small: 5px;
     box-sizing: border-box;
   }
 
+.navbar{
+  z-index: 99;
+}
+
 
 .memory-body-container{
   background-image: url('/background-planeet.svg');

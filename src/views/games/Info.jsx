@@ -88,7 +88,7 @@ export class Info extends Component {
             <div className="memory-info-body-container">
                 <a href="/games/memory"><img className="memory-icon" src="/games/memory/memory-icon.svg" alt="memory-icon"/></a>
                 <div className="navbar">
-                    <Link className="back" to="/games/memory"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                    <Link className="back back-btn" to="/games/memory"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 </div>
                 <div>
                     <div className="memory-cards-container">

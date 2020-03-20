@@ -36,6 +36,7 @@ $height: 360px;
     right: 0;
     top: 0;
     margin: 20px;
+    z-index: 99;
 }
 
 .memory-cards-container{
@@ -102,6 +103,14 @@ $height: 360px;
     display: none;
 }
 
+@media screen and (max-width: 600px){
+    .back-btn {
+        width: auto;
+        padding: 10px;
+    }  
+}
+
+
 @media only screen and (max-width: 850px) and (orientation: landscape){
     .memory-cards-container{
         display: none;
@@ -134,5 +143,26 @@ $height: 360px;
 
     .container-rotate-portrait{
         display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) and (orientation: portrait){
+    
+    .cards{
+        width: calc(#{$width}/ 1.5);
+        height: calc(#{$height}/ 1.5);
+        border: solid $small $red;
+        border-radius: 50px;
+        background-color: $white;
+        margin: 20px auto 0 auto;
+    }
+
+    #text-blok{
+        padding: 10px;
+        width: 250px;
+        background-color: white;
+        border-radius: 20px;
+        font-family: 'FredokaOne-Regular';
+        font-weight: 200;
     }
 }

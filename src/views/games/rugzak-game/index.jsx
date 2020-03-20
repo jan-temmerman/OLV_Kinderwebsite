@@ -99,7 +99,7 @@ export class index extends Component {
             <div className="container-rugzak-game">
                 <div className="container-rugzak">
                     <div className="navbar">
-                        <Link className="back" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                        <Link className="back back-btn" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
                     </div>
 
                     <div className="icons">

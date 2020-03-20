@@ -211,10 +211,12 @@ export class Memory extends Component {
 
     render() {
         return (
-            <div class="memory-body-container">
+            <div>
                 <div className="navbar">
-                    <Link className="back" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                    <Link className="back back-btn" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 </div>
+            <div class="memory-body-container">
+                
 
                 <div className="play-container">
                     <div className="playAgain-container hide">
@@ -273,6 +275,7 @@ export class Memory extends Component {
                     <img src="/rotate-screen.svg" alt="rotate-screen"/>
                 </div>
 
+                </div>
             </div>
         )
     }
