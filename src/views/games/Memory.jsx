@@ -41,7 +41,7 @@ export class Memory extends Component {
         let amountCards = this.state.cards / 2
         document.querySelector('.memory-game').innerHTML = "";
         for (let i = 0; i < amountCards; i++){
-            const div = `<div id="${i+count}" class="memory-card" data-framework="${cardsArrayRandom[i]}"> <img class="front-face" src="/games/memory/${cardsArrayRandom[i]}.svg" alt="${cardsArrayRandom[i]}" /> <div class="back-face"></div> </div>`;
+            const div = `<div id="${i+count}" class="memory-card" data-framework="${cardsArrayRandom[i]}"> <div class="front-face"><img src="/games/memory/${cardsArrayRandom[i]}.png" alt="${cardsArrayRandom[i]}" /></div> <div class="back-face"></div> </div>`;
             document.querySelector('.memory-game').insertAdjacentHTML('afterbegin', div);
             if (count === 0 && i +1 === amountCards) {
                 count++
