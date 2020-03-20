@@ -16,22 +16,136 @@ export default function Opna_WatGebeuren() {
         return
     }, [])
 
+    const playVoiceOver = (name) => {
+        let audio = undefined
+
+        switch(name) {
+            case "spelletjes":
+                audio = new Audio('/audio/spelletjes.wav');
+                audio.play();
+                break
+
+            case "watGebeuren":
+                audio = new Audio('/audio/wat_gebeuren.wav');
+                audio.play();
+                break
+
+            case "wieIsWie":
+                audio = new Audio('/audio/wie_is_wie.wav');
+                audio.play();
+                break
+
+            default:
+                return
+            
+        }
+    }
+
     const [modal, setModal] = useState("")
 
     const showModal = (imagePath, title) => {
+        let audio = undefined
+
         setModal(
             <div className="detail_modal">
                 <div>
                     <div className="modal_header">
                         <div className="cross"/>
                         <h2>{title}</h2>
-                        <img onClick={() => setModal("")} className="cross" src="/watGebeuren_page/kruisje.svg" alt="kruisje"/>
+                        <img onClick={() => setModal("")} id="cross" className="cross" src="/watGebeuren_page/kruisje.svg" alt="kruisje"/>
                     </div>
 
                     <div style={{backgroundImage: imagePath}} className="image_container"/>
                 </div>
             </div>
         )
+
+        switch(title) {
+            case "CT-SCAN":
+                audio = new Audio('/audio/ct.wav');
+                audio.play();
+                setTimeout(() => {
+                    audio = new Audio('/audio/ct_uitl.wav');
+                    audio.play();
+                }, 1500);
+                break
+
+            case "ECHO":
+                audio = new Audio('/audio/echo.wav');
+                audio.play();
+                setTimeout(() => {
+                    audio = new Audio('/audio/echo_uitl.wav');
+                    audio.play();
+                }, 1800);
+                break
+
+            case "EEG":
+                audio = new Audio('/audio/eeg.wav');
+                audio.play();
+                setTimeout(() => {
+                    audio = new Audio('/audio/eeg_uitl.wav');
+                    audio.play();
+                }, 1500);
+                break
+
+            case "KALINOX":
+                audio = new Audio('/audio/kalinox.wav');
+                audio.play();
+                setTimeout(() => {
+                    audio = new Audio('/audio/kalinox_uitl.wav');
+                    audio.play();
+                }, 1500);
+                break
+
+            case "MRI":
+                audio = new Audio('/audio/mri.wav');
+                audio.play();
+                setTimeout(() => {
+                    audio = new Audio('/audio/mri_uitl.wav');
+                    audio.play();
+                }, 1500);
+                break
+
+            case "NPA":
+                audio = new Audio('/audio/npa.wav');
+                audio.play();
+                setTimeout(() => {
+                    audio = new Audio('/audio/npa_uitl.wav');
+                    audio.play();
+                }, 1500);
+                break
+
+            case "INFUUS":
+                audio = new Audio('/audio/infuus.wav');
+                audio.play();
+                break
+
+            case "LACTOSETEST":
+                audio = new Audio('/audio/lactosetest.wav');
+                audio.play();
+                setTimeout(() => {
+                    audio = new Audio('/audio/lactosetest_uitl.wav');
+                    audio.play();
+                }, 2000);
+                break
+
+            case "RUGGENPRIK":
+                audio = new Audio('/audio/ruggenprik.wav');
+                audio.play();
+                setTimeout(() => {
+                    audio = new Audio('/audio/ruggenprik_uitl.wav');
+                    audio.play();
+                }, 600);
+                break
+
+
+            default:
+                return
+        }
+
+        setTimeout(() => {
+            document.getElementById('cross').addEventListener('click', () => {audio.pause()})
+        }, 50);
     }
 
     return(
