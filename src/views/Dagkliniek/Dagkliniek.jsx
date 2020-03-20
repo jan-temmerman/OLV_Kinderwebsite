@@ -7,6 +7,13 @@ import '../../sass/views/_consultatie.scss';
 
 export default function Dagkliniek() {
 
+    useEffect(() => {
+        let audio = new Audio('/audio/dagkliniek.wav');
+        audio.play();
+
+        return
+    }, [])
+
     return(
         <section className="container space" id="planets">
             {/*<div className="loading">

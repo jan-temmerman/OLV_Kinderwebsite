@@ -7,6 +7,15 @@ import '../../sass/views/_spelletjes.scss';
 
 export default function Opna_Spelletjes() {
 
+    useEffect(() => {
+        let audio = new Audio('/audio/spelletjes.wav');
+        audio.play();
+
+        localStorage.setItem("silencePreviousPage", true)
+
+        return
+    }, [])
+
     return(
         <section className="container space" id="planets">
             {/*<div className="loading">

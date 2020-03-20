@@ -14,8 +14,16 @@ export default function Cons_WieIsWie() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-	  };
+      };
+      
+    useEffect(() => {
+        let audio = new Audio('/audio/wie_is_wie.wav');
+        audio.play();
 
+        localStorage.setItem("silencePreviousPage", true)
+
+        return
+    }, [])
 
     return(
         <section className="container_WHO space_WHO" id="planets">
