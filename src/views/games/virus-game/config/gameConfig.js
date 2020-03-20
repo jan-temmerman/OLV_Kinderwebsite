@@ -1,6 +1,6 @@
 const gameConfig = {
   window: {
-    backgroundColor: 0x04162e,
+    transparent: true,
     width: window.innerWidth,
     height: window.innerHeight,
     autoResize: true,
