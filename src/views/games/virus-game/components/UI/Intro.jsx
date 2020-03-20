@@ -13,7 +13,7 @@ export default function Intro(props) {
   return (
     <div className="game__overlay">
       <BackButton style={{ position: 'absolute', top: '5%', left: '5%' }} />
-      <h1>Het virusspel</h1>
+      <h1 className="virus__title">Het virusspel</h1>
       <p>Kan jij alle virussen ontwijken?</p>
       <p>Tip: Sleep het karakter over het scherm met de muis om te spelen</p>
       <div className="btn__container">
@@ -26,7 +26,7 @@ export default function Intro(props) {
         </div>
         <div>
           <span>2.</span>
-          <img src="/games/virus/virusspel_svg2.svg" alt="Stap 2" />
+          <img src="/games/virus/viruspel_svg2.svg" alt="Stap 2" />
         </div>
         <div>
           <span>3.</span>
