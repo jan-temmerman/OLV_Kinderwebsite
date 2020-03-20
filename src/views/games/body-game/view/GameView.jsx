@@ -5,6 +5,7 @@ import { LabelConfig } from '../config';
 import { shuffle, removeSpaces } from '../helpers';
 import UIButton from '../components/UIButton';
 import BackButton from '../components/BackButton';
+import Title from '../components/Title';
 
 export default function GameView() {
   const [selectedLabel, setLabel] = useState(null);
@@ -150,8 +151,13 @@ export default function GameView() {
   return (
     <>
       {gameOver ? gameOverModal : ''}
+      <Title />
       <div className="body__background">
-        <div className="floor" />
+        {/* <div className="floor" />
+        <img src="/games/lichaam/kastje.svg" alt="kastje" className="body__background__kast" />
+        <img src="/games/lichaam/bed.svg" alt="bed" className="body__background__bed" />
+        <img src="/games/lichaam/deur.svg" alt="deur" className="body__background__deur" />
+        <img src="/games/lichaam/klok.svg" alt="klok" className="body__background__klok" /> */}
       </div>
       <BackButton />
       <div className="body__game">

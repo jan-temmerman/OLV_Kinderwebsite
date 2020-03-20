@@ -11,18 +11,36 @@ html, body {
   padding: 0;
 }
 
+.virus__title {
+  font-family: 'FredokaOne-Regular';
+  font-size: 30px;
+  font-weight: lighter;
+  color: #FFFFFF;
+  background-color: rgba(218, 122, 150, 0.781);
+  border: solid 10px rgba(85, 35, 47, 0.445);
+  border-radius: 15px;
+  padding: 5px 10px;
+  text-align: center;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%, 0);
+}
+
 .game {
   &__view {
     width: 100%;
     height: 100vh;
     font-size: 22px;
     color: #fefefe;
+    background: radial-gradient(rgb(197, 155, 171), #50001F);
     font-family: "FredokaOne-Regular", sans-serif;
   }
 
   &__overlay {
     position: absolute;
-    background: #04162e;
+    background: #50001F;
     color: #fefefe;
     height: 100%;
     width: 100%;
