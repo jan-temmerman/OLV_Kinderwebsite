@@ -247,11 +247,12 @@ $small: 5px;
   position: absolute;
   border-radius: 20px;
   background: $white;
-  transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  backface-visibility: hidden;
+  -moz-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
+  -moz-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
   border: solid $small $red;
   text-align: center;
 }
