@@ -33,8 +33,8 @@ export default function Dagkliniek() {
 
             <div className="container_content_dag">
                 <div className="container_action_dag">
-                    {/*<ReactPlayer url='https://vimeo.com/398967843' height={'100%'} />*/}
-                    <iframe src="https://player.vimeo.com/video/398967843" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <ReactPlayer url='https://vimeo.com/398967843' height={'100%'} />
+                    {/*<iframe src="https://player.vimeo.com/video/398967843" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>*/}
                 </div>
                 <div className="planet_bg">
                     <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
