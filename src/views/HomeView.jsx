@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { animated, useSpring } from 'react-spring';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Lottie from 'react-lottie';
 import animationData from './rocketAni_v2.json'
 import * as Scroll from 'react-scroll';
@@ -10,6 +10,9 @@ import '../sass/app.scss';
 import '../sass/views/_home.scss';
 
 export default function HomeView() {
+	var audio = new Audio('/audio/intro.wav');
+	let history = useHistory();
+	const [stopAudio, setStopAudio] = useState(false)
     const clouds = [];
 	const ref = useRef();
 	const rocketRef = useRef();
@@ -29,8 +32,14 @@ export default function HomeView() {
 	useEffect(() => {
 		setPauseAnimation(true)
 		document.body.classList.add("no-sroll")
+		audio.play();
+		document.getElementsByClassName('planet')[0].addEventListener('click', () => {audio.pause()})
+		document.getElementsByClassName('planet')[1].addEventListener('click', () => {audio.pause()})
+		document.getElementsByClassName('planet')[2].addEventListener('click', () => {audio.pause()})
+
 		return
 	}, [])
+
 
     const handleScroll = (event) => {
 		const posY = ref.current.getBoundingClientRect().top;	
@@ -40,8 +49,6 @@ export default function HomeView() {
         let scrollTop = event.srcElement.body.scrollTop,
         itemTranslate = Math.min(0, scrollTop/3 - 60);
         let devider = 10
-        console.log(posY)
-            //setBottomOffset(posY/devider + 12)
     }
 
     useEffect(() => {

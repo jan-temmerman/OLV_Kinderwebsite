@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 
@@ -6,6 +6,15 @@ import '../../sass/app.scss';
 import '../../sass/views/_spelletjes.scss';
 
 export default function Opna_WatGebeuren() {
+
+    useEffect(() => {
+        let audio = new Audio('/audio/wat_gebeuren.wav');
+        audio.play();
+
+        localStorage.setItem("silencePreviousPage", true)
+
+        return
+    }, [])
 
     const [modal, setModal] = useState("")
 

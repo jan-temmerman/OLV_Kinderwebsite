@@ -1,14 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 
 import '../../sass/app.scss';
 import '../../sass/views/_spelletjes.scss';
 
 export default function Cons_Spelletjes() {
-  return (
-    <section className="container space" id="planets">
-      {/* <div className="loading">
+
+    useEffect(() => {
+        let audio = new Audio('/audio/spelletjes.wav');
+        audio.play();
+
+        localStorage.setItem("silencePreviousPage", true)
+
+        return
+    }, [])
+    
+    return (
+        <section className="container space" id="planets">
+            {/* <div className="loading">
                 <div className="rocket_ani">
                     <Lottie options={defaultOptions}
                         height={200}
@@ -17,7 +28,7 @@ export default function Cons_Spelletjes() {
                 </div>
             </div>*/}
             <div className="heading_container">
-                <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <Link className="back" to="/consultatie"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 <h1 className="planetName">Spelletjes</h1>
                 <a href="https://www.olvz.be">
                     <img className="logo" src="/homepage/logolvp.svg" alt="logo" />

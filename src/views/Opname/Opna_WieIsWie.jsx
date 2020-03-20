@@ -16,6 +16,15 @@ export default function Opna_WieIsWie() {
         slidesToScroll: 1
       };
 
+    useEffect(() => {
+        let audio = new Audio('/audio/wie_is_wie.wav');
+        audio.play();
+
+        localStorage.setItem("silencePreviousPage", true)
+
+        return
+    }, [])
+
     return(
         <section className="container_WHO space_WHO" id="planets">
             <div className="heading_container">

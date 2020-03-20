@@ -7,6 +7,31 @@ import '../../sass/views/_consultatie.scss';
 
 export default function Opname() {
 
+    const getLSItem = async (key) => {
+        try {
+            const value = await localStorage.getItem(key)
+            if(value != null)
+                return JSON.parse(value)
+            else
+                return false
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+
+        getLSItem("silencePreviousPage").then((value) => {
+            console.log(value)
+            if(!value) {
+                let audio = new Audio('/audio/opname.wav');
+                audio.play();
+            }else localStorage.setItem("silencePreviousPage", false)
+        })
+
+        return
+    }, [])
+
     return(
         <section className="container space" id="planets">
             {/*<div className="loading">

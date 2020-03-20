@@ -6,6 +6,16 @@ import '../../sass/app.scss';
 import '../../sass/views/_watGebeuren.scss';
 
 export default function Cons_WatGebeuren() {
+
+    useEffect(() => {
+        let audio = new Audio('/audio/wat_gebeuren.wav');
+        audio.play();
+
+        localStorage.setItem("silencePreviousPage", true)
+
+        return
+    }, [])
+
     return (
         <div>
             <section className="container_WG space" id="planets">
