@@ -40,6 +40,7 @@ $bordeaux-dark: #B05C73;
     left: 50%;
     top: 20px;
     transform: translate(-50%, 0);
+    z-index: 11;
 }
 
 .container-rugzak-game{
@@ -98,26 +99,21 @@ $bordeaux-dark: #B05C73;
 
 
 .playAgain-container-rugzak{
-    top: 50%
+    top: 50%;
+    background-color: $bordeaux-light;
+    border-color: $bordeaux-dark;
 }
+
 // GSM PORTRAIT
 @media only screen and (max-width: 1024px) {
 
     .container-h2{
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        bottom: 20px;
-        left: 20px;
-        background-color: rgba(255, 255, 255, 0.5);
-        z-index: 12;
+        position: static;
+        
     }
-
     .container-h2 h2{
-        top: 50%;
-        transform: translate(-50%, 0);
+        width: 80%;
     }
-    
     // RUGZAK
     .rugzak{
         width: 100%;
@@ -143,24 +139,10 @@ $bordeaux-dark: #B05C73;
     }
   }
 
-// GSM LANDSCAP
-@media only screen and (max-width: 600px){
-    
+  @media only screen and (max-width: 800px) {
+
     .container-h2{
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        bottom: 20px;
-        left: 20px;
-        background-color: rgba(255, 255, 255, 0.5);
-        z-index: 12;
+       display: none;
+        
     }
-    
-    .container-h2 h2{
-        z-index: 13;
-        font-size: 20px;
-        width: 200px;
-        top: 50%;
-        transform: translate(-50%, 0);
-    }
-}
+  }

@@ -3,6 +3,8 @@ import '../../../sass/games/_fonts.scss'
 import '../../../sass/games/_rugzak.scss'
 import { Link } from "react-router-dom";
 
+import ExplainView from './explain';
+
 export class index extends Component {
 
     state = {
@@ -89,57 +91,56 @@ export class index extends Component {
         document.querySelector('.playAgain-container').classList.add('hide')
     }
 
-    hideTitle() {
-        document.querySelector('.container-h2').style.display = 'none'
-    }
-
 
     render() {
         return (
-            <div className="container-rugzak-game">
-                <div className="container-rugzak">
-                    <div className="navbar">
-                        <Link className="back" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
-                    </div>
+            <div>
+                <ExplainView />
+                <div className="container-rugzak-game">
+                    <div className="container-rugzak">
+                        <div className="navbar">
+                            <Link className="back back-btn" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                        </div>
 
-                    <div className="icons">
-                        <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
-                        <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
-                    </div>
+                        <div className="icons">
+                            <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
+                            <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
+                        </div>
 
-                    <div className="container-h2">
-                        <h2>Wat neem je mee in je rugzak?</h2>
-                    </div>
+                        <div className="container-h2">
+                            <h2>Wat neem je mee in je rugzak?</h2>
+                        </div>
 
-                    <div className="rugzak">
-                        <img src="/games/rugzakspel/rugzak.svg" alt="rugzak" />
-                    </div>
-                    
-                    {/* items */}
-                    <div className="container-icon-rugzak">
-                        <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/badgrief.svg" alt="badgrief" /></div>
-                        <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/beer.svg" alt="beer" /></div>
-                        <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/boek.svg" alt="boek" /></div>
-                        <div data-framework="wrong" class="icon-rugzak clickable"><img src="/games/rugzakspel/burger.svg" alt="burger" /></div>
-                        <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/games.svg" alt="games" /></div>
-                        <div data-framework="wrong" class="icon-rugzak clickable"><img src="/games/rugzakspel/kat.svg" alt="kat" /></div>
-                        <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/kledij.svg" alt="kledij" /></div>
-                        <div data-framework="wrong" class="icon-rugzak clickable"><img src="/games/rugzakspel/raket.svg" alt="raket" /></div>
-                        <div data-framework="wrong" class="icon-rugzak clickable"><img src="/games/rugzakspel/bal.svg" alt="bal" /></div>
-                    </div>
+                        <div className="rugzak">
+                            <img src="/games/rugzakspel/rugzak.svg" alt="rugzak" />
+                        </div>
+                        
+                        {/* items */}
+                        <div className="container-icon-rugzak">
+                            <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/badgrief.svg" alt="badgrief" /></div>
+                            <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/beer.svg" alt="beer" /></div>
+                            <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/boek.svg" alt="boek" /></div>
+                            <div data-framework="wrong" class="icon-rugzak clickable"><img src="/games/rugzakspel/burger.svg" alt="burger" /></div>
+                            <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/games.svg" alt="games" /></div>
+                            <div data-framework="wrong" class="icon-rugzak clickable"><img src="/games/rugzakspel/kat.svg" alt="kat" /></div>
+                            <div data-framework="right" class="icon-rugzak clickable"><img src="/games/rugzakspel/kledij.svg" alt="kledij" /></div>
+                            <div data-framework="wrong" class="icon-rugzak clickable"><img src="/games/rugzakspel/raket.svg" alt="raket" /></div>
+                            <div data-framework="wrong" class="icon-rugzak clickable"><img src="/games/rugzakspel/bal.svg" alt="bal" /></div>
+                        </div>
 
-                    <div className="footer-rugzak"></div>
+                        <div className="footer-rugzak"></div>
 
-                    <div className="audio-rugzak"></div>
-                    
-                    <div className="playAgain-container playAgain-container-rugzak hide">
-                    <div>
-                        <h3>Nog eens spelen?</h3>
-                        <button onClick={this.playAgain}>Ja</button>
-                        <button onClick={this.dontPlayAgain}>Nee</button>
-                        <p id="percentage"></p>
+                        <div className="audio-rugzak"></div>
+                        
+                        <div className="playAgain-container playAgain-container-rugzak hide">
+                        <div>
+                            <h3>Nog eens spelen?</h3>
+                            <button onClick={this.playAgain}>Ja</button>
+                            <button onClick={this.dontPlayAgain}>Nee</button>
+                            <p id="percentage"></p>
+                        </div>
                     </div>
-                </div>
+                    </div>
                 </div>
             </div>
         )

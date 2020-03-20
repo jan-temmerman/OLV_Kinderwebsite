@@ -37,7 +37,7 @@
     },
     {
         "id": 7,
-        "name": "Scanner",
+        "name": "scanner",
         "explanation": "In het ziekenhuis hebben wij 2 grote scanners. Een mri en een ct daarmee kunnen we in je lichaam kijken!",
         "audio": "/sound/memory/mri.mp3"
     },

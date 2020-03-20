@@ -9,6 +9,10 @@ $blue-light: #597386;
 $blue-dark: #385F78;
 $blue-dark-dark: #022746;
 
+$green: #344E00;
+$green-border: #5A7949;
+$green-light: #7A8B59; 
+
 // BORDER DIKTES
 $small: 5px;
 
@@ -18,10 +22,13 @@ $small: 5px;
     box-sizing: border-box;
   }
 
+.navbar{
+  z-index: 99;
+}
+
 
 .memory-body-container{
-  background-image: url('/background-planeet.svg');
-  // background-image: url(/OLV_Kinderwebsite/background-planeet.svg);
+  background: $green;
   background-position: bottom;
   background-repeat: no-repeat;
   position: relative;
@@ -39,6 +46,7 @@ $small: 5px;
       right: 0;
       top: 0;
       margin: 20px;
+      z-index: 3;
   }
 
   .speaker-icon:hover{
@@ -67,9 +75,9 @@ $small: 5px;
       -moz-transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
       z-index: 11;
-      border: solid 10px $yellow-dark;
+      border: solid 10px $green-border;
       border-radius: 20px;
-      background-color: $yellow-light;
+      background-color: $green-light;
       text-align: center;
     }
 
@@ -78,7 +86,7 @@ $small: 5px;
     }
 
     .playAgain-container p, h3, .explain-container p{
-      color: $red;
+      color: $white;
       font-family: 'FredokaOne-Regular';
     }
 
@@ -129,6 +137,15 @@ $small: 5px;
   transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.container-background-game{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: $green;
+  z-index: 1;
 }
 
 .heading{
@@ -136,14 +153,33 @@ $small: 5px;
   font-size: 30px;
   font-weight: lighter;
   color: $white;
-  background-color: $blue-light;
-  border: solid 10px $blue-dark;
-  border-radius: 50px;
+  background-color: $green-light;
+  border: solid 10px $green-border;
+  border-radius: 15px;
   padding: 5px 10px;
   width: 250px;
   text-align: center;
   text-transform: lowercase;
   margin: 20px auto 0 auto;
+  z-index: 11;
+}
+
+.h2-memory h2{
+  font-family: 'FredokaOne-Regular';
+  font-size: 30px;
+  font-weight: lighter;
+  color: $white;
+  background-color: $green-light;
+  border: solid 10px $green-border;
+  border-radius: 15px;
+  padding: 5px 10px;
+  text-align: center;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%, 0);
+  z-index: 11;
 }
   
 .lvl-btn-container{
@@ -189,7 +225,9 @@ $small: 5px;
   margin: 5px;
   position: relative;
   transform: scale(1);
+  -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: transform .5s;
 }
 
@@ -211,11 +249,14 @@ $small: 5px;
   position: absolute;
   border-radius: 20px;
   background: $white;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
+  -moz-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
   border: solid $small $red;
+  text-align: center;
 }
 
 .back-face{
@@ -223,7 +264,7 @@ $small: 5px;
   width: 100%;
   border-radius: 20px;
   border: solid $small $red;
-  background-color: $blue-dark-dark;
+  background-color: $green-light;
   background-image: url('/games/memory/card-back-red.svg');
   // background-image: url(/OLV_Kinderwebsite/games/memory/card-back-red.svg);
   background-repeat: no-repeat;
@@ -240,7 +281,7 @@ $small: 5px;
   display: none;
 }
 
-@media only screen and (min-width: 500px){
+@media only screen and (min-width: 500px) and (max-width: 900px){
     
   .play-container{
     display: block;
@@ -271,7 +312,10 @@ $small: 5px;
 
 // GSM LANDSCAP
 @media only screen and (max-width: 500px){
-    
+  .h2-memory h2{
+    width: 300px;
+  } 
+  
   .play-container{
     display: none;
   }

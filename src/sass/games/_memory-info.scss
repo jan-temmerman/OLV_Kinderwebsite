@@ -10,6 +10,10 @@ $blue-dark: #385F78;
 $blue-dark-dark: #022746;
 $orange: #FF5E18;
 
+$green: #344E00;
+$green-border: #5A7949;
+$green-light: #7A8B59; 
+
 // BORDER
 $fat: 10px;
 $small: 7.5px;
@@ -23,9 +27,7 @@ $height: 360px;
 }
 
 .memory-info-body-container{
-    background-image: url('/background-planeet.svg');
-    background-position: bottom;
-    background-repeat: no-repeat;
+    background-color: $green;
     height: 100vh;
     width: 100%;
 }
@@ -36,6 +38,7 @@ $height: 360px;
     right: 0;
     top: 0;
     margin: 20px;
+    z-index: 99;
 }
 
 .memory-cards-container{
@@ -93,7 +96,7 @@ $height: 360px;
 }
 
 #title{
-    color: $orange;
+    color: $green-border;
     text-transform: capitalize;
     font-family: 'luckiestguy';
 }
@@ -101,6 +104,14 @@ $height: 360px;
 .container-rotate-portrait{
     display: none;
 }
+
+@media screen and (max-width: 600px){
+    .back-btn {
+        width: auto;
+        padding: 10px;
+    }  
+}
+
 
 @media only screen and (max-width: 850px) and (orientation: landscape){
     .memory-cards-container{
@@ -134,5 +145,26 @@ $height: 360px;
 
     .container-rotate-portrait{
         display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) and (orientation: portrait){
+    
+    .cards{
+        width: calc(#{$width}/ 1.5);
+        height: calc(#{$height}/ 1.5);
+        border: solid $small $red;
+        border-radius: 50px;
+        background-color: $white;
+        margin: 20px auto 0 auto;
+    }
+
+    #text-blok{
+        padding: 10px;
+        width: 250px;
+        background-color: white;
+        border-radius: 20px;
+        font-family: 'FredokaOne-Regular';
+        font-weight: 200;
     }
 }
