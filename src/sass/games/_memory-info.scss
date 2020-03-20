@@ -10,6 +10,10 @@ $blue-dark: #385F78;
 $blue-dark-dark: #022746;
 $orange: #FF5E18;
 
+$green: #344E00;
+$green-border: #5A7949;
+$green-light: #7A8B59; 
+
 // BORDER
 $fat: 10px;
 $small: 7.5px;
@@ -23,9 +27,7 @@ $height: 360px;
 }
 
 .memory-info-body-container{
-    background-image: url('/background-planeet.svg');
-    background-position: bottom;
-    background-repeat: no-repeat;
+    background-color: $green;
     height: 100vh;
     width: 100%;
 }
@@ -94,7 +96,7 @@ $height: 360px;
 }
 
 #title{
-    color: $orange;
+    color: $green-border;
     text-transform: capitalize;
     font-family: 'luckiestguy';
 }

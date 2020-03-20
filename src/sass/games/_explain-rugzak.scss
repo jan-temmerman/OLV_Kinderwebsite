@@ -1,0 +1,91 @@
+$yellow-light: #F8FA94;
+$yellow-dark: #F9DF1B;
+$red: #E30104;
+$black: #000000;
+$white: #FFFFFF;
+$rose: #FC6A76;
+$blue-light: #597386;
+$blue-dark: #385F78;
+$blue-dark-dark: #022746;
+$green: #344E00;
+$green-border: #5A7949;
+$green-light: #7A8B59; 
+$small: 5px;
+
+.container-explain-rugzak{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: #B7223E;
+    z-index: 10;
+}
+
+.container-explain-memory{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: $green;
+    z-index: 10;
+}
+
+.container-explain-rugzak-child, .container-explain-memory-child{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 100%;
+}
+
+.container-explain-rugzak p, .container-explain-memory p{
+    font-family: 'FredokaOne-Regular';
+    font-weight: 200;
+    font-size: 19px;
+    color: white;
+    max-width: 700px;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container-explain-rugzak button, .container-explain-memory button{
+    margin: 10px auto;
+    padding: 5px 10px;
+    width: 200px;
+    text-transform: lowercase;
+    font-family: 'FredokaOne-Regular';
+    background-color: $yellow-light;
+    border: solid $small $yellow-dark;
+    border-radius: 50px;
+    color: $red;
+    transition: transform .2s;
+}
+.container-explain-rugzak button:hover, .container-explain-memory button:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: transform .2s;
+}
+
+.container-explain-rugzak-child div, .container-explain-memory div{
+    text-align: center;
+}
+
+.container-image-explain{
+    width: 50%;
+    margin: 50px auto 0 auto;
+}
+
+.image-explain{
+    width: 30%;
+    margin: 0 10%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .container-explain-rugzak p{
+        width: 80%;
+    }
+
+    .container-image-explain{
+        width: 80%;
+        margin: 50px auto 0 auto;
+    }
+  }

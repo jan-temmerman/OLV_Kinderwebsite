@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../../sass/games/_fonts.scss';
 import '../../sass/games/_memory.scss';
 
-// SVGS
+import MemoryExplainView from './MemoryExplain';
 
 
 export class Memory extends Component {
@@ -215,9 +215,11 @@ export class Memory extends Component {
                 <div className="navbar">
                     <Link className="back back-btn" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
                 </div>
+                <div className="h2-memory">
+                    <h2>memoryspel</h2>
+                </div>
+                <MemoryExplainView/>
             <div class="memory-body-container">
-                
-
                 <div className="play-container">
                     <div className="playAgain-container hide">
                         <div>
@@ -253,7 +255,8 @@ export class Memory extends Component {
                         <div className="memory-game-container">
                             <section className="memory-game"></section>
                         </div>
-                    </div>
+                        </div>
+                        <div className="container-background-game"></div>
                 </div>
 
                 
