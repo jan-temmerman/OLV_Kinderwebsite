@@ -247,16 +247,13 @@ $small: 5px;
   position: absolute;
   border-radius: 20px;
   background: $white;
-  backface-visibility: hidden;
   transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border: solid $small $red;
   text-align: center;
-}
-
-.front-face img{
-  height: 100%;
 }
 
 .back-face{
