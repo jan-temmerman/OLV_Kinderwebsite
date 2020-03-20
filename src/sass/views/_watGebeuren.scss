@@ -133,6 +133,19 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 1600px) {
+  .inside_container_WG {
+    width: 90% !important;
+    top: -60px !important;
+  }
+}
+
+@media screen and (max-width: 1424px) {
+  .inside_container_WG {
+    width: 96% !important;
+  }
+}
+
 .inside_container_WG {
   position: relative;
   top: -100px;

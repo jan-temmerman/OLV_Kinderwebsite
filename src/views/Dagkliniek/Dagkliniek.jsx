@@ -20,7 +20,7 @@ export default function Dagkliniek() {
 
             <div className="heading_container">
                 <Link className="back" to="/"><img src="/homepage/terug.svg" alt="terug" /></Link>
-                <h1 className="planetName">Opname</h1>
+                <h1 className="planetName">Dagkliniek</h1>
                 <a href="https://www.olvz.be">
                     <img className="logo" src="/homepage/logolvp.svg" alt="logo" />
                 </a>

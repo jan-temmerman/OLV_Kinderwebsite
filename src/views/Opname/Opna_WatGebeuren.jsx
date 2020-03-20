@@ -56,7 +56,7 @@ export default function Opna_WatGebeuren() {
                     <div>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/CT.jpg')", "CT-SCAN")} className="bel" src="/watGebeuren_page/bellen/CTSCAN.svg" alt="CTSCAN"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/ECHO.jpg')", "ECHO")} className="bel" src="/watGebeuren_page/bellen/ECHO.svg" alt="ECHO"/>
-                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/EKG.jpg')", "EKG")} className="bel" src="/watGebeuren_page/bellen/EKG.svg" alt="EKG"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/EEG.jpg')", "EEG")} className="bel" src="/watGebeuren_page/bellen/EEG.svg" alt="EEG"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/INFUUS.jpg')", "INFUUS")} className="bel" src="/watGebeuren_page/bellen/INFUUS.svg" alt="INFUUS"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/CT.jpg')", "KALINOX")} className="bel" src="/watGebeuren_page/bellen/KALINOX.svg" alt="KALINOX"/>
                         <img onClick={() => showModal("url('/watGebeuren_page/fotos/MRI.jpg')", "MRI")} className="bel" src="/watGebeuren_page/bellen/MRI.svg" alt="MRI"/>
