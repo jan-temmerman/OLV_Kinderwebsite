@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import * as Scroll from 'react-scroll';
 
 
 import '../../sass/app.scss';

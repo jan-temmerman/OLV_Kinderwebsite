@@ -1,11 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { Spring } from 'react-spring/renderprops';
-import { animated, useSpring } from 'react-spring';
 import { Link } from 'react-router-dom';
-import Lottie from 'react-lottie';
-import animationData from '../loadingAni.json'
-import * as Scroll from 'react-scroll';
 
 
 import '../../sass/app.scss';
