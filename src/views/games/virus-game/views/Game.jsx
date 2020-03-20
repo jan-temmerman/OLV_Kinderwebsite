@@ -165,18 +165,20 @@ export default class Game extends Component {
     /**
      * Initialize a new game
      */
-    const initGame = () => {
+    const initGame = (difficulty) => {
       // Reset the full game window before creating a new game
+      console.log(this.gameState.game.difficulty);
+      this.difficulty = this.gameState.game.difficulty[difficulty];
       resetGameWindow();
       updateGameState(gameConfig.game);
       this.aiObjects = [];
       // Start a new game
       this.player.setDraggable(true);
-      virusSpawner.start(spawnVirus, 500);
       updateGameState({
         ...this.gameState,
         hasStarted: true,
         playing: true,
+        maxViruses: this.difficulty.initViruses,
       });
       virusSpawner.start(spawnVirus, this.difficulty.spawnInterval);
       powerupSpawner.start(spawnPowerup, 5000);
@@ -186,7 +188,7 @@ export default class Game extends Component {
     // Global variables for the game
     updateGameState({
       ...this.gameState,
-      startGame: () => { initGame(); },
+      startGame: (difficulty) => { initGame(difficulty); },
       updateState: () => { updateGameState(); },
     });
     this.app = new PIXI.Application(gameConfig.window);
