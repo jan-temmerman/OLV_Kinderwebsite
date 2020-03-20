@@ -385,7 +385,7 @@ body {
 @media screen and (max-width: 1080px) {
 
   .inside_container_WG {
-    top: 0;
+    top: -60px !important;
   }
 
   .container_content_bellen {
@@ -419,6 +419,7 @@ body {
 
   .inside_container_WG {
     width: 100%;
+    top: -20px !important;
 
     .text-image_container {
       div {
@@ -432,6 +433,14 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .inside_container_WG {
+    .text-image_container {
+      p {
+        font-size: 100% !important;
+      }
+    }
+  }
+
   .container_action_bellen {
     div {
       height: 70%;
