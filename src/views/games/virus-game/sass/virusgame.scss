@@ -2,6 +2,15 @@ $yellow-light: #f8fa94;
 $yellow-dark: #f9df1b;
 $red: #e30104;
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .game {
   &__view {
     width: 100%;
