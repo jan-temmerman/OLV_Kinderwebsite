@@ -16,31 +16,6 @@ export default function Opna_WatGebeuren() {
         return
     }, [])
 
-    const playVoiceOver = (name) => {
-        let audio = undefined
-
-        switch(name) {
-            case "spelletjes":
-                audio = new Audio('/audio/spelletjes.wav');
-                audio.play();
-                break
-
-            case "watGebeuren":
-                audio = new Audio('/audio/wat_gebeuren.wav');
-                audio.play();
-                break
-
-            case "wieIsWie":
-                audio = new Audio('/audio/wie_is_wie.wav');
-                audio.play();
-                break
-
-            default:
-                return
-            
-        }
-    }
-
     const [modal, setModal] = useState("")
 
     const showModal = (imagePath, title) => {

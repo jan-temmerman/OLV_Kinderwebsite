@@ -150,6 +150,10 @@ body {
   }
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .inside_container_WG {
   position: relative;
   top: -100px;
@@ -171,6 +175,27 @@ body {
 
     &:nth-child(2n) {
       flex-direction: row-reverse;
+    }
+
+    .title-icon_container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      background-color: rgba($color: #000000, $alpha: 0);
+      margin: 0;
+      width: 100%;
+      height: auto;
+      margin-bottom: 14px;
+
+      .explain_icon {
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        background-color: rgba($color: #000000, $alpha: 0);
+        margin: 0;
+      }
     }
 
     div {
@@ -200,7 +225,6 @@ body {
       h2 {
         color: #FBDE21;
         text-align: center;
-        margin: 0px 0 20px 0;
       }
     }
   }
