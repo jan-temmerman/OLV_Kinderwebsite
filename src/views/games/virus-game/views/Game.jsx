@@ -91,13 +91,13 @@ export default class Game extends Component {
     /**
      * Resumes the game window
      */
-    const resumeGameWindow = () => {
+    /*const resumeGameWindow = () => {
       updateGameState({
         ...this.gameState,
         playing: true,
       });
       this.player.setDraggable(true);
-    };
+    };*/
 
     /**
      * Logic that has to be handled during every game loop.
