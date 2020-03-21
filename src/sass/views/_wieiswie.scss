@@ -178,8 +178,10 @@ body {
 
 .carousel_container {
   width: 36%;
+  min-width: 490px;
   align-self: center;
   margin-bottom: -1000px;
+  z-index: 12;
 }
 
 .carousel_arrow {
@@ -196,7 +198,8 @@ body {
 .person_card {
   background-color: rgba(255, 255, 255, 0.3);
   border: 12px solid rgba(0, 37, 69, 0.5);
-  padding: 40px 30px;
+  padding: 10px 4px;
+  min-width: 260px;
   border-radius: 30px;
   height: 100%;
   width: 80%;
@@ -205,7 +208,9 @@ body {
     text-align: center;
     font-family: 'Fredoka';
     color: white;
-    margin-bottom: 10px;
+    font-size: auto;
+    height: 30px;
+    margin-top: -40px;
   }
 }
 
@@ -223,6 +228,12 @@ body {
   width: 100%;
   min-height: 100vh;
   position: relative;
+}
+
+.explain_icon_opname {
+  height: 40px;
+  width: 40px;
+  margin-left: -30px;
 }
 
 @keyframes float2 {
@@ -244,7 +255,12 @@ body {
 
   .carousel_container {
     width: 90%;
+    min-width: 0px;
     align-self: center;
+
+    .person_card {
+      min-width: 0px;
+    }
   }
 
 }
@@ -270,6 +286,21 @@ body {
       width: 70%;
       margin-bottom: 20px;
     }
+  }
+
+  .explain_icon_opname {
+    height: 20px;
+    width: 20px;
+    margin-left: -28px;
+  }
+
+  .name {
+    text-align: center;
+    font-family: 'Fredoka';
+    color: white;
+    font-size: auto;
+    height: 20px !important;
+    margin-top: -25px !important;
   }
 
   .carousel_arrow {
