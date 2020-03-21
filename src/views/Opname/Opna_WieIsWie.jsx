@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 
@@ -8,6 +8,18 @@ import '../../sass/app.scss';
 import '../../sass/views/_wieiswie.scss';
 
 export default function Opna_WieIsWie() {
+    var verpleegkundige = new Audio('/audio/verpleger.wav');
+    var dokter = new Audio('/audio/dokter.wav');
+    var poetshulp = new Audio('/audio/schoonmaak.wav');
+    var psycholoog = new Audio('/audio/psycholoog.wav');
+    var cliniclown = new Audio('/audio/cliniclowns.wav');
+
+    const [verpleegkundige_uitl, setVerpleegkundige_uitl] = useState(new Audio('/audio/verpleger_uitlO.wav'))
+    const [dokter_uitl, setDokter_uitl] = useState(new Audio('/audio/dokter_uitl.wav'))
+    const [poetshulp_uitl, setPoetshulp_uitl] = useState(new Audio('/audio/schoonmaak_uitl.wav'))
+    const [psycholoog_uitl, setPsycholoog_uitl] = useState(new Audio('/audio/psycholoog_uitl.wav'))
+    const [cliniclown_uitl, setCliniclown_uitl] = useState(new Audio('/audio/cliniclowns_uitl.wav'))
+
     const [audio, setAudio] = useState("")
     const [icon1, setIcon1] = useState(<img onClick={() => {playVoiceOver("verpleegkundige")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
     const [icon2, setIcon2] = useState(<img onClick={() => {playVoiceOver("dokter")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
@@ -15,20 +27,30 @@ export default function Opna_WieIsWie() {
     const [icon4, setIcon4] = useState(<img onClick={() => {playVoiceOver("psycholoog")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
     const [icon5, setIcon5] = useState(<img onClick={() => {playVoiceOver("cliniclown")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      };
-
     useEffect(() => {
         setAudio(new Audio('/audio/wie_is_wie.wav'))
 
         localStorage.setItem("silencePreviousPage", true)
 
-        return
+        return () => {
+            setVerpleegkundige_uitl(new Audio())
+            setDokter_uitl(new Audio())
+            setPoetshulp_uitl(new Audio())
+            setPsycholoog_uitl(new Audio())
+            setCliniclown_uitl(new Audio())
+
+            verpleegkundige.pause()
+            dokter.pause()
+            poetshulp.pause()
+            psycholoog.pause()
+            cliniclown.pause()
+
+            verpleegkundige_uitl.pause()
+            dokter_uitl.pause()
+            poetshulp_uitl.pause()
+            psycholoog_uitl.pause()
+            cliniclown_uitl.pause()
+        }
     }, [])
 
     useEffect(() => {
@@ -38,110 +60,104 @@ export default function Opna_WieIsWie() {
     }, [audio])
 
     const playVoiceOver = (name) => {
-        console.log('playing sound')
-        let audio = undefined
 
         switch(name) {
             case "verpleegkundige":
-                audio = new Audio('/audio/verpleger.wav');
-                audio.play();
+                verpleegkundige.play();
 
                 setTimeout(() => {
-                    audio = new Audio('/audio/verpleger_uitlO.wav');
-                    audio.play();
+                    console.log(verpleegkundige)
+                    verpleegkundige_uitl.play();
 
                     setIcon1(
                         <img onClick={() => {
                             setIcon1(<img onClick={() => {playVoiceOver("verpleegkundige")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            verpleegkundige_uitl.pause();
+                            verpleegkundige_uitl.currentTime = 0
                         }} className="explain_icon_opname pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
 
-                    audio.onended = () => {
+                    verpleegkundige_uitl.onended = () => {
                         setIcon1(<img onClick={() => {playVoiceOver("verpleegkundige")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                     }
                 }, 1500);
                 break
 
             case "dokter":
-                audio = new Audio('/audio/dokter.wav');
-                audio.play();
+                dokter.play();
 
                 setTimeout(() => {
-                    audio = new Audio('/audio/dokter_uitl.wav');
-                    audio.play();
+                    dokter_uitl.play()
 
                     setIcon2(
                         <img onClick={() => {
                             setIcon2(<img onClick={() => {playVoiceOver("dokter")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            dokter_uitl.pause();
+                            dokter_uitl.currentTime = 0
                         }} className="explain_icon_opname pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
 
-                    audio.onended = () => {
+                    dokter_uitl.onended = () => {
                         setIcon2(<img onClick={() => {playVoiceOver("dokter")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                     }
                 }, 1500);
                 break
 
             case "poetshulp":
-                audio = new Audio('/audio/schoonmaak.wav');
-                audio.play();
+                poetshulp.play();
 
                 setTimeout(() => {
-                    audio = new Audio('/audio/schoonmaak_uitl.wav');
-                    audio.play();
+                    poetshulp_uitl.play()
 
                     setIcon3(
                         <img onClick={() => {
                             setIcon3(<img onClick={() => {playVoiceOver("poetshulp")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            poetshulp_uitl.pause();
+                            poetshulp_uitl.currentTime = 0
                         }} className="explain_icon_opname pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
 
-                    audio.onended = () => {
+                    poetshulp_uitl.onended = () => {
                         setIcon3(<img onClick={() => {playVoiceOver("poetshulp")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                     }
                 }, 1500);
                 break
 
             case "psycholoog":
-                audio = new Audio('/audio/psycholoog.wav');
-                audio.play();
+                psycholoog.play();
 
                 setTimeout(() => {
-                    audio = new Audio('/audio/psycholoog_uitl.wav');
-                    audio.play();
+                    psycholoog_uitl.play()
 
                     setIcon4(
                         <img onClick={() => {
                             setIcon4(<img onClick={() => {playVoiceOver("psycholoog")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            psycholoog_uitl.pause();
+                            psycholoog_uitl.currentTime = 0
                         }} className="explain_icon_opname pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
 
-                    audio.onended = () => {
+                    psycholoog_uitl.onended = () => {
                         setIcon4(<img onClick={() => {playVoiceOver("psycholoog")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                     }
                 }, 1500);
                 break
 
             case "cliniclown":
-                audio = new Audio('/audio/cliniclowns.wav');
-                audio.play();
+                cliniclown.play();
 
                 setTimeout(() => {
-                    audio = new Audio('/audio/cliniclowns_uitl.wav');
-                    audio.play();
+                    cliniclown_uitl.play()
 
                     setIcon5(
                         <img onClick={() => {
                             setIcon5(<img onClick={() => {playVoiceOver("cliniclown")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            cliniclown_uitl.pause();
+                            cliniclown_uitl.currentTime = 0
                         }} className="explain_icon_opname pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
 
-                    audio.onended = () => {
+                    cliniclown_uitl.onended = () => {
                         setIcon5(<img onClick={() => {playVoiceOver("cliniclown")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                     }
                 }, 1500);

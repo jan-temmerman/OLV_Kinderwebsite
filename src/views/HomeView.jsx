@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { animated, useSpring } from 'react-spring';
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
 import animationData from './rocketAni_v2.json'
 import * as Scroll from 'react-scroll';
@@ -11,11 +11,8 @@ import '../sass/views/_home.scss';
 
 export default function HomeView() {
 	var audio = new Audio('/audio/intro.wav');
-	let history = useHistory();
-	const [stopAudio, setStopAudio] = useState(false)
     const clouds = [];
 	const ref = useRef();
-	const rocketRef = useRef();
     const calc = (o) => `translateY(${o * 0.05}px)`;
     const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
     const defaultOptions = {
@@ -41,14 +38,10 @@ export default function HomeView() {
 	}, [])
 
 
-    const handleScroll = (event) => {
+    const handleScroll = () => {
 		const posY = ref.current.getBoundingClientRect().top;	
         const offset = window.pageYOffset - posY;
 		set({ offset });
-		
-        let scrollTop = event.srcElement.body.scrollTop,
-        itemTranslate = Math.min(0, scrollTop/3 - 60);
-        let devider = 10
     }
 
     useEffect(() => {

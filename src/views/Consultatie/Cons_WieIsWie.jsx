@@ -1,20 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
-import animationData from '../loadingAni.json'
 
 
 import '../../sass/app.scss';
 import '../../sass/views/_wieiswie.scss';
 
 export default function Cons_WieIsWie() {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true, 
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
-        }
-      };
       
     useEffect(() => {
         let audio = new Audio('/audio/wie_is_wie.wav');

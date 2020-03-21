@@ -1,20 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import animationData from '../loadingAni.json'
 
 
 import '../../sass/app.scss';
 import '../../sass/views/_consultatie.scss';
 
 export default function Consulatie() {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true, 
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
-        }
-    };
+
+    const [audio, setAudio] = useState("")
 
     const getLSItem = async (key) => {
         try {
@@ -31,15 +24,19 @@ export default function Consulatie() {
     useEffect(() => {
 
         getLSItem("silencePreviousPage").then((value) => {
-            console.log(value)
+            
             if(!value) {
-                let audio = new Audio('/audio/consultatie.wav');
-                audio.play();
+                setAudio(new Audio('/audio/consultatie.wav'))
             }else localStorage.setItem("silencePreviousPage", false)
         })
 
         return
     }, [])
+
+    useEffect(() => {
+        if(audio !== "")
+            audio.play();
+    }, [audio])
 
     return(
         <section className="container space" id="planets">

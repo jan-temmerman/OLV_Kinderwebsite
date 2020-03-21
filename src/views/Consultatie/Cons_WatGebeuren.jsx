@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -6,10 +6,20 @@ import '../../sass/app.scss';
 import '../../sass/views/_watGebeuren.scss';
 
 export default function Cons_WatGebeuren() {
-    const [icon1, setIcon1] = useState(<img onClick={() => {playVoiceOver("allergietest")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
-    const [icon2, setIcon2] = useState(<img onClick={() => {playVoiceOver("uroflow")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
-    const [icon3, setIcon3] = useState(<img onClick={() => {playVoiceOver("ekg")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
-    const [icon4, setIcon4] = useState(<img onClick={() => {playVoiceOver("lactosetest")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
+    var allergietest= new Audio('/audio/allergietest.wav');
+    var uroflow = new Audio('/audio/uroflow.wav');
+    var ekg = new Audio('/audio/ekg.wav');
+    var lactosetest= new Audio('/audio/lactosetest.wav');
+
+    const [allergietest_uitl, setAllergietest_uitl] = useState(new Audio('/audio/allergietest_uitl.wav'))
+    const [uroflow_uitl, setUroflow_uitl] = useState(new Audio('/audio/uroflow_uitl.wav'))
+    const [ekg_uitl, setEkg_uitl] = useState(new Audio('/audio/ekg_uitl.wav'))
+    const [lactosetest_uitl, setLactosetest_uitl] = useState(new Audio('/audio/lactosetest_uitl.wav'))
+
+    const [icon1, setIcon1] = useState(<img onClick={() => { playVoiceOver("allergietest") }} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
+    const [icon2, setIcon2] = useState(<img onClick={() => { playVoiceOver("uroflow") }} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
+    const [icon3, setIcon3] = useState(<img onClick={() => { playVoiceOver("ekg") }} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
+    const [icon4, setIcon4] = useState(<img onClick={() => { playVoiceOver("lactosetest") }} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
 
     useEffect(() => {
         let audio = new Audio('/audio/wat_gebeuren.wav');
@@ -18,77 +28,82 @@ export default function Cons_WatGebeuren() {
         localStorage.setItem("silencePreviousPage", true)
 
         return () => {
+            setAllergietest_uitl(new Audio())
+            setUroflow_uitl(new Audio())
+            setEkg_uitl(new Audio())
+            setLactosetest_uitl(new Audio())
+
             audio.pause()
+
+            allergietest.pause()
+            uroflow.pause()
+            ekg.pause()
+            lactosetest.pause()
+
+            allergietest_uitl.pause()
+            uroflow_uitl.pause()
+            ekg_uitl.pause()
+            lactosetest_uitl.pause()
         }
     }, [])
 
 
 
     const playVoiceOver = (name) => {
-        console.log('playing sound')
-        let audio = undefined
 
         switch(name) {
             case "allergietest":
-                audio = new Audio('/audio/allergietest.wav');
-                audio.play();
+                allergietest.play();
 
                 setTimeout(() => {
-                    audio = new Audio('/audio/allergietest_uitl.wav');
-                    audio.play();
+                        allergietest_uitl.play();
 
                     setIcon1(
                         <img onClick={() => {
                             setIcon1(<img onClick={() => {playVoiceOver("allergietest")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            allergietest_uitl.pause()
                         }} className="explain_icon pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
                 }, 1500);
                 break
 
             case "uroflow":
-                audio = new Audio('/audio/uroflow.wav');
-                audio.play();
+                uroflow.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/uroflow_uitl.wav');
-                    audio.play();
+                    uroflow_uitl.play();
 
                     setIcon2(
                         <img onClick={() => {
                             setIcon2(<img onClick={() => {playVoiceOver("uroflow")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            uroflow_uitl.pause()
                         }} className="explain_icon pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
                 }, 1500);
                 break
 
             case "ekg":
-                audio = new Audio('/audio/ekg.wav');
-                audio.play();
+                ekg.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/ekg_uitl.wav');
-                    audio.play();
+                    ekg_uitl.play();
 
                     setIcon3(
                         <img onClick={() => {
                             setIcon3(<img onClick={() => {playVoiceOver("ekg")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            ekg_uitl.pause()
                         }} className="explain_icon pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
                 }, 1500);
                 break
 
             case "lactosetest":
-                audio = new Audio('/audio/lactosetest.wav');
-                audio.play();
+                lactosetest.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/lactosetest_uitl.wav');
-                    audio.play();
+                    lactosetest_uitl.play();
 
                     setIcon4(
                         <img onClick={() => {
                             setIcon4(<img onClick={() => {playVoiceOver("lactosetest")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            audio.pause()
+                            lactosetest_uitl.pause()
                         }} className="explain_icon pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
                 }, 1500);
