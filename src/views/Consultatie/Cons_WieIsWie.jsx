@@ -9,16 +9,16 @@ export default function Cons_WieIsWie() {
 
     var verpleegkundige = new Audio('/audio/verpleger.wav');
     var dokter = new Audio('/audio/dokter.wav');
-    var poetshulp = new Audio('/audio/schoonmaak.wav');
+    var medewerker = new Audio('/audio/medewerker.wav');
 
     const [verpleegkundige_uitl, setVerpleegkundige_uitl] = useState(new Audio('/audio/verpleger_uitl_opname.wav'))
     const [dokter_uitl, setDokter_uitl] = useState(new Audio('/audio/dokter_uitl.wav'))
-    const [poetshulp_uitl, setPoetshulp_uitl] = useState(new Audio('/audio/schoonmaak_uitl.wav'))
+    const [medewerker_uitl, setMedewerker_uitl] = useState(new Audio('/audio/medewerker_uitl.wav'))
 
     //const [audio, setAudio] = useState("")
     const [icon1, setIcon1] = useState(<img onClick={() => {playVoiceOver("verpleegkundige")}} className="explain_icon_cons pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
     const [icon2, setIcon2] = useState(<img onClick={() => {playVoiceOver("dokter")}} className="explain_icon_cons pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
-    const [icon3, setIcon3] = useState(<img onClick={() => {playVoiceOver("poetshulp")}} className="explain_icon_cons pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
+    const [icon3, setIcon3] = useState(<img onClick={() => {playVoiceOver("medewerker")}} className="explain_icon_cons pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
       
     useEffect(() => {
         let audio = new Audio('/audio/wie_is_wie.wav');
@@ -29,15 +29,15 @@ export default function Cons_WieIsWie() {
         return () => {
             setVerpleegkundige_uitl(new Audio())
             setDokter_uitl(new Audio())
-            setPoetshulp_uitl(new Audio())
+            setMedewerker_uitl(new Audio())
 
             verpleegkundige.pause()
             dokter.pause()
-            poetshulp.pause()
+            medewerker.pause()
 
             verpleegkundige_uitl.pause()
             dokter_uitl.pause()
-            poetshulp_uitl.pause()
+            medewerker_uitl.pause()
         }
     }, [])
 
@@ -85,22 +85,22 @@ export default function Cons_WieIsWie() {
                 }, 1500);
                 break
 
-            case "poetshulp":
-                poetshulp.play();
+            case "medewerker":
+                medewerker.play();
 
                 setTimeout(() => {
-                    poetshulp_uitl.play()
+                    medewerker_uitl.play()
 
                     setIcon3(
                         <img onClick={() => {
-                            setIcon3(<img onClick={() => {playVoiceOver("poetshulp")}} className="explain_icon_cons pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
-                            poetshulp_uitl.pause();
-                            poetshulp_uitl.currentTime = 0
+                            setIcon3(<img onClick={() => {playVoiceOver("medewerker")}} className="explain_icon_cons pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
+                            medewerker_uitl.pause();
+                            medewerker_uitl.currentTime = 0
                         }} className="explain_icon_cons pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
 
-                    poetshulp_uitl.onended = () => {
-                        setIcon3(<img onClick={() => {playVoiceOver("poetshulp")}} className="explain_icon_cons pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
+                    medewerker_uitl.onended = () => {
+                        setIcon3(<img onClick={() => {playVoiceOver("medewerker")}} className="explain_icon_cons pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                     }
                 }, 1500);
                 break

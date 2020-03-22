@@ -13,12 +13,16 @@ export default function Opna_WieIsWie() {
     var poetshulp = new Audio('/audio/schoonmaak.wav');
     var psycholoog = new Audio('/audio/psycholoog.wav');
     var cliniclown = new Audio('/audio/cliniclowns.wav');
+    var medewerker = new Audio('/audio/medewerker.wav');
+    var slaapdokter = new Audio('/audio/slaapdokter.wav');
 
     const [verpleegkundige_uitl, setVerpleegkundige_uitl] = useState(new Audio('/audio/verpleger_uitl_opname.wav'))
     const [dokter_uitl, setDokter_uitl] = useState(new Audio('/audio/dokter_uitl.wav'))
     const [poetshulp_uitl, setPoetshulp_uitl] = useState(new Audio('/audio/schoonmaak_uitl.wav'))
     const [psycholoog_uitl, setPsycholoog_uitl] = useState(new Audio('/audio/psycholoog_uitl.wav'))
     const [cliniclown_uitl, setCliniclown_uitl] = useState(new Audio('/audio/cliniclowns_uitl.wav'))
+    const [medewerker_uitl, setMedewerker_uitl] = useState(new Audio('/audio/medewerker_uitl.wav'))
+    const [slaapdokter_uitl, setSlaapdokter_uitl] = useState(new Audio('/audio/slaapdokter_uitl.wav'))
 
     const [audio, setAudio] = useState("")
     const [icon1, setIcon1] = useState(<img onClick={() => {playVoiceOver("verpleegkundige")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
@@ -26,6 +30,8 @@ export default function Opna_WieIsWie() {
     const [icon3, setIcon3] = useState(<img onClick={() => {playVoiceOver("poetshulp")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
     const [icon4, setIcon4] = useState(<img onClick={() => {playVoiceOver("psycholoog")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
     const [icon5, setIcon5] = useState(<img onClick={() => {playVoiceOver("cliniclown")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
+    const [icon6, setIcon6] = useState(<img onClick={() => {playVoiceOver("medewerker")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
+    const [icon7, setIcon7] = useState(<img onClick={() => {playVoiceOver("slaapdokter")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />)
 
     useEffect(() => {
         setAudio(new Audio('/audio/wie_is_wie.wav'))
@@ -38,18 +44,24 @@ export default function Opna_WieIsWie() {
             setPoetshulp_uitl(new Audio())
             setPsycholoog_uitl(new Audio())
             setCliniclown_uitl(new Audio())
+            setMedewerker_uitl(new Audio())
+            setSlaapdokter_uitl(new Audio())
 
             verpleegkundige.pause()
             dokter.pause()
             poetshulp.pause()
             psycholoog.pause()
             cliniclown.pause()
+            medewerker.pause()
+            slaapdokter.pause()
 
             verpleegkundige_uitl.pause()
             dokter_uitl.pause()
             poetshulp_uitl.pause()
             psycholoog_uitl.pause()
             cliniclown_uitl.pause()
+            medewerker_uitl.pause()
+            slaapdokter_uitl.pause()
         }
     }, [])
 
@@ -163,6 +175,46 @@ export default function Opna_WieIsWie() {
                 }, 1500);
                 break
 
+            case "medewerker":
+                medewerker.play();
+
+                setTimeout(() => {
+                    medewerker_uitl.play()
+
+                    setIcon6(
+                        <img onClick={() => {
+                            setIcon6(<img onClick={() => {playVoiceOver("medewerker")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
+                            medewerker_uitl.pause();
+                            medewerker_uitl.currentTime = 0
+                        }} className="explain_icon_opname pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
+                    )
+
+                    medewerker_uitl.onended = () => {
+                        setIcon6(<img onClick={() => {playVoiceOver("medewerker")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
+                    }
+                }, 1500);
+                break
+
+            case "slaapdokter":
+                slaapdokter.play();
+
+                setTimeout(() => {
+                    slaapdokter_uitl.play()
+
+                    setIcon7(
+                        <img onClick={() => {
+                            setIcon7(<img onClick={() => {playVoiceOver("slaapdokter")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
+                            slaapdokter_uitl.pause();
+                            slaapdokter_uitl.currentTime = 0
+                        }} className="explain_icon_opname pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
+                    )
+
+                    medewerker_uitl.onended = () => {
+                        setIcon7(<img onClick={() => {playVoiceOver("slaapdokter")}} className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
+                    }
+                }, 1500);
+                break
+
             default:
                 return
             
@@ -206,6 +258,13 @@ export default function Opna_WieIsWie() {
                             </div>
                         </div>
                         <div className="person_card">
+                            {icon7}
+                            <h2 className="name">Slaapdokter</h2>
+                            <div>
+                                <img src="/wieiswie_page/vrouwelijkedokter.svg" alt="doctor" />
+                            </div>
+                        </div>
+                        <div className="person_card">
                             {icon3}
                             <h2 className="name">Poetshulp</h2>
                             <div>
@@ -213,7 +272,7 @@ export default function Opna_WieIsWie() {
                             </div>
                         </div>
                         <div className="person_card">
-                            <img className="explain_icon_opname pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />
+                            {icon6}
                             <h2 className="name">Medewerker</h2>
                             <div>
                                 <img src="/wieiswie_page/medewerker.svg" alt="employee" />
@@ -221,7 +280,7 @@ export default function Opna_WieIsWie() {
                         </div>
                         <div className="person_card">
                             {icon4}
-                            <h2 className="name">Psycho - sociaal begeleider</h2>
+                            <h2 className="name">Psycholoog</h2>
                             <div>
                                 <img src="/wieiswie_page/vrijwilliger.svg" alt="voulunteer" />
                             </div>
