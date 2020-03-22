@@ -66,7 +66,7 @@ export default function Opna_WieIsWie() {
                 verpleegkundige.play();
 
                 setTimeout(() => {
-                    console.log(verpleegkundige)
+                    console.log(verpleegkundige_uitl)
                     verpleegkundige_uitl.play();
 
                     setIcon1(
