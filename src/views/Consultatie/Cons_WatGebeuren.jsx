@@ -62,6 +62,7 @@ export default function Cons_WatGebeuren() {
                         <img onClick={() => {
                             setIcon1(<img onClick={() => {playVoiceOver("allergietest")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                             allergietest_uitl.pause()
+                            allergietest_uitl.currentTime = 0
                         }} className="explain_icon pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
                 }, 1500);
@@ -76,6 +77,7 @@ export default function Cons_WatGebeuren() {
                         <img onClick={() => {
                             setIcon2(<img onClick={() => {playVoiceOver("uroflow")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                             uroflow_uitl.pause()
+                            uroflow_uitl.currentTime = 0
                         }} className="explain_icon pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
                 }, 1500);
@@ -90,6 +92,7 @@ export default function Cons_WatGebeuren() {
                         <img onClick={() => {
                             setIcon3(<img onClick={() => {playVoiceOver("ekg")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                             ekg_uitl.pause()
+                            ekg_uitl.currentTime = 0
                         }} className="explain_icon pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
                 }, 1500);
@@ -104,6 +107,7 @@ export default function Cons_WatGebeuren() {
                         <img onClick={() => {
                             setIcon4(<img onClick={() => {playVoiceOver("lactosetest")}} className="explain_icon pointer" src="/watGebeuren_page/explain-icon.svg" alt="explain icon" />);
                             lactosetest_uitl.pause()
+                            lactosetest_uitl.currentTime = 0
                         }} className="explain_icon pointer" src="/watGebeuren_page/kruisje.svg" alt="explain icon" />
                     )
                 }, 1500);
