@@ -14,7 +14,7 @@ export default function Opna_WieIsWie() {
     var psycholoog = new Audio('/audio/psycholoog.wav');
     var cliniclown = new Audio('/audio/cliniclowns.wav');
 
-    const [verpleegkundige_uitl, setVerpleegkundige_uitl] = useState(new Audio('/audio/verpleger_uitlO.wav'))
+    const [verpleegkundige_uitl, setVerpleegkundige_uitl] = useState(new Audio('/audio/verpleger_uitl_opname.wav'))
     const [dokter_uitl, setDokter_uitl] = useState(new Audio('/audio/dokter_uitl.wav'))
     const [poetshulp_uitl, setPoetshulp_uitl] = useState(new Audio('/audio/schoonmaak_uitl.wav'))
     const [psycholoog_uitl, setPsycholoog_uitl] = useState(new Audio('/audio/psycholoog_uitl.wav'))
