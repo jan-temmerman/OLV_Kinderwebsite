@@ -7,19 +7,58 @@ import '../../sass/views/_spelletjes.scss';
 
 export default function Opna_WatGebeuren() {
 
+    var ctScan = new Audio('/audio/ct.wav');
+    var echo = new Audio('/audio/echo.wav');
+    var eeg = new Audio('/audio/eeg.wav');
+    var kalinox = new Audio('/audio/kalinox.wav');
+    var mri = new Audio('/audio/mri.wav');
+    var npa = new Audio('/audio/npa.wav');
+    var lactosetest = new Audio('/audio/lactosetest.wav');
+    var ruggenprik = new Audio('/audio/ruggenprik.wav');
+
+    const [ctScan_uitl, setCtScan_uitl] = useState(new Audio('/audio/ct_uitl.wav'))
+    const [echo_uitl, setEcho_uitl] = useState(new Audio('/audio/echo_uitl.wav'))
+    const [eeg_uitl, setEeg_uitl] = useState(new Audio('/audio/eeg_uitl.wav'))
+    const [kalinox_uitl, setKalinox_uitl] = useState(new Audio('/audio/kalinox_uitl.wav'))
+    const [mri_uitl, setMri_uitl] = useState(new Audio('/audio/mri_uitl.wav'))
+    const [npa_uitl, setNpa_uitl] = useState(new Audio('/audio/npa_uitl.wav'))
+    const [infuus, setInfuus] = useState(new Audio('/audio/infuus.wav'))
+    const [lactosetest_uitl, setLactosetest_uitl] = useState(new Audio('/audio/lactosetest_uitl.wav'))
+    const [ruggenprik_uitl, setRuggenprik_uitl] = useState(new Audio('/audio/ruggenprik_uitl.wav'))
+
+    const [audio, setAudio] = useState("")
+
     useEffect(() => {
-        let audio = new Audio('/audio/wat_gebeuren.wav');
-        audio.play();
+        setAudio(new Audio('/audio/wat_gebeuren.wav'))
 
         localStorage.setItem("silencePreviousPage", true)
 
-        return
+        return () => {
+            stopAudio()
+        }
     }, [])
+
+    const stopAudio = () => {
+        ctScan_uitl.pause()
+        echo_uitl.pause()
+        eeg_uitl.pause()
+        kalinox_uitl.pause()
+        mri_uitl.pause()
+        npa_uitl.pause()
+        lactosetest_uitl.pause()
+        ruggenprik_uitl.pause()
+        infuus.pause()
+    }
+
+    useEffect(() => {
+        if(audio !== "")
+            audio.play();
+        return
+    }, [audio])
 
     const [modal, setModal] = useState("")
 
     const showModal = (imagePath, title) => {
-        let audio = undefined
 
         setModal(
             <div className="detail_modal">
@@ -37,79 +76,71 @@ export default function Opna_WatGebeuren() {
 
         switch(title) {
             case "CT-SCAN":
-                audio = new Audio('/audio/ct.wav');
-                audio.play();
+                ctScan.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/ct_uitl.wav');
-                    audio.play();
+                    ctScan_uitl.currentTime = 0
+                    ctScan_uitl.play();
                 }, 1500);
                 break
 
             case "ECHO":
-                audio = new Audio('/audio/echo.wav');
-                audio.play();
+                echo.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/echo_uitl.wav');
-                    audio.play();
+                    echo_uitl.currentTime = 0
+                    echo_uitl.play();
                 }, 1800);
                 break
 
             case "EEG":
-                audio = new Audio('/audio/eeg.wav');
-                audio.play();
+                eeg.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/eeg_uitl.wav');
-                    audio.play();
+                    eeg_uitl.currentTime = 0
+                    eeg_uitl.play();
                 }, 1500);
                 break
 
             case "KALINOX":
-                audio = new Audio('/audio/kalinox.wav');
-                audio.play();
+                kalinox.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/kalinox_uitl.wav');
-                    audio.play();
+                    kalinox_uitl.currentTime = 0
+                    kalinox_uitl.play();
                 }, 1500);
                 break
 
             case "MRI":
-                audio = new Audio('/audio/mri.wav');
-                audio.play();
+                mri.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/mri_uitl.wav');
-                    audio.play();
+                    mri_uitl.currentTime = 0
+                    mri_uitl.play();
                 }, 1500);
                 break
 
             case "NPA":
-                audio = new Audio('/audio/npa.wav');
-                audio.play();
+                npa.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/npa_uitl.wav');
-                    audio.play();
+                    npa_uitl.currentTime = 0
+                    npa_uitl.play();
                 }, 1500);
                 break
 
             case "INFUUS":
-                audio = new Audio('/audio/infuus.wav');
-                audio.play();
+                infuus.currentTime = 0
+                infuus.play();
                 break
 
             case "LACTOSETEST":
-                audio = new Audio('/audio/lactosetest.wav');
-                audio.play();
+                lactosetest.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/lactosetest_uitl.wav');
-                    audio.play();
+                    lactosetest_uitl.currentTime = 0
+                    lactosetest_uitl.play();
                 }, 2000);
                 break
 
             case "RUGGENPRIK":
-                audio = new Audio('/audio/ruggenprik.wav');
-                audio.play();
+                ruggenprik.play();
                 setTimeout(() => {
-                    audio = new Audio('/audio/ruggenprik_uitl.wav');
-                    audio.play();
+                    ruggenprik_uitl.currentTime = 0
+                    ruggenprik_uitl.play();
                 }, 600);
                 break
 
@@ -119,7 +150,7 @@ export default function Opna_WatGebeuren() {
         }
 
         setTimeout(() => {
-            document.getElementById('cross').addEventListener('click', () => {audio.pause()})
+            document.getElementById('cross').addEventListener('click', stopAudio)
         }, 50);
     }
 
