@@ -51,6 +51,7 @@
       bottom: 0;
       width: 100%;
       background: #B7CCD4;
+      display: none;
     }
 
     &__bed {
@@ -204,4 +205,54 @@
   color: #e30104;
   transition: transform 0.2s;
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .body__container h1.body__title {
+    left: 60%;
+  }
+
+  .body__game {
+    padding-top: 5%;
+    height: 60%;
+  }
+
+  .body__background {
+    background: none;
+  }
+
+  .body__background .floor {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .body__container {
+    overflow: hidden;
+  }
+
+  .body__game {
+    flex-flow: column nowrap;
+    height: 60%;
+    justify-content: center;
+    margin-top: 15%;
+  }
+
+  .body__body {
+    width: 50%;
+    flex: 0 0 25%;
+  }
+
+  .body__labels {
+    flex: 0 0 25%;
+  
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .body__labels button {
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin: 0 20px;
+  }
 }
