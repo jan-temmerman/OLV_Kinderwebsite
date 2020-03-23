@@ -5,15 +5,14 @@ export default function Intro(props) {
   const { game: { startGame, game: { difficulty } } } = props;
 
   const difficultyBtns = [];
+  const gameTitleAudio = new Audio('/audio/virusspel.wav');
+  const audio = new Audio('/audio/virusspel_uitl.wav');
 
   for (let i = 0; i < Object.keys(difficulty).length; i += 1) {
     difficultyBtns.push(<button type="button" key={Object.keys(difficulty)[i]} className="btn" onClick={() => { startGame(Object.keys(difficulty)[i]); }}>{difficulty[Object.keys(difficulty)[i]].buttonText}</button>);
   }
 
   useEffect(() => {
-    const gameTitleAudio = new Audio('/audio/virusspel.wav');
-    const audio = new Audio('/audio/virusspel_uitl.wav');
-
     gameTitleAudio.play();
     gameTitleAudio.addEventListener('ended', () => {
       audio.play();
