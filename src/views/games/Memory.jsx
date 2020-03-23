@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import '../../sass/games/_fonts.scss';
 import '../../sass/games/_memory.scss';
+import BackButton from './rugzak-game/components/BackButton';
 
 import MemoryExplainView from './MemoryExplain';
 
@@ -196,8 +197,8 @@ export class Memory extends Component {
     render() {
         return (
             <div>
-                <div className="navbar">
-                    <Link className="back back-btn" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <div className="back-btn">
+                    <BackButton />
                 </div>
                 <div className="h2-memory">
                     <h2>memoryspel</h2>

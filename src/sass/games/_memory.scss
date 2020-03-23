@@ -310,6 +310,10 @@ $small: 5px;
   }
 }
 
+.backButton{
+  z-index: 2;
+}
+
 // GSM LANDSCAP
 @media only screen and (max-width: 500px){
   .h2-memory h2{

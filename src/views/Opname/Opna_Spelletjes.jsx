@@ -39,7 +39,7 @@ export default function Opna_Spelletjes() {
             <div className="container_content_spel">
                 <div className="container_action_spel">
 
-                    <Link className="game" to="/consultatie/spelletjes/rugzak" >
+                    <Link className="game" to="/opname/spelletjes/rugzak" >
                         <h2>Rugzakspel</h2>
                         <img src="/spelletjes_page/rugzak.svg" alt="game" />
                     </Link>
@@ -54,7 +54,7 @@ export default function Opna_Spelletjes() {
                         <img src="/spelletjes_page/lichaamspel.svg" alt="game" />
                     </Link>
 
-                    <Link className="game" to="/consultatie/spelletjes/memory" >
+                    <Link className="game" to="/opname/spelletjes/memory" >
                         <h2>Memory</h2>
                         <img src="/spelletjes_page/memory.svg" alt="game" />
                     </Link>

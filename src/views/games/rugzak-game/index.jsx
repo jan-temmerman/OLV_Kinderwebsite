@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import '../../../sass/games/_fonts.scss'
 import '../../../sass/games/_rugzak.scss'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import BackButton from './components/BackButton'
 
 import ExplainView from './explain';
 
@@ -91,16 +92,13 @@ export class index extends Component {
         document.querySelector('.playAgain-container').classList.add('hide')
     }
 
-
     render() {
         return (
             <div>
                 <ExplainView />
                 <div className="container-rugzak-game">
                     <div className="container-rugzak">
-                        <div className="navbar">
-                            <Link className="back back-btn" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
-                        </div>
+                        <BackButton />
 
                         <div className="icons">
                             <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
