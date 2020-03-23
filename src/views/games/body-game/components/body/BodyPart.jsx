@@ -7,6 +7,7 @@ import { removeSpaces } from '../../helpers';
 export default function BodyPart(props) {
   const { part, specs, target: clickFunction } = props;
 
+
   const handleClick = () => {
     clickFunction(part);
   };
