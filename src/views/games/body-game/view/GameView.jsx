@@ -16,6 +16,8 @@ export default function GameView() {
   const [totalClicks, setTotalClicks] = useState(0);
 
   const organAmount = LabelConfig.organs.length;
+  const gameTitleAudio = new Audio('/audio/lichaamsspel.wav');
+  const audio = new Audio('/audio/lichaamsspel_uitl.wav');
 
   const setMatchedVisual = (label) => {
     const id = removeSpaces(label, '_');
@@ -61,6 +63,8 @@ export default function GameView() {
     if (selectedLabel && selectedOrgan) {
       setTotalClicks((prevTotal) => prevTotal + 1);
       if (selectedOrgan === selectedLabel) {
+        const matchAudio = new Audio(`/audio/${removeSpaces(selectedLabel, '')}.wav`);
+        matchAudio.play();
         setMatchedOrgans((prevCount) => prevCount + 1);
         setMatchedVisual(selectedLabel);
         resetSelection();
@@ -128,12 +132,22 @@ export default function GameView() {
   }, [matchedOrgans, organAmount]);
 
   if (gameOver && matchedOrgans === 0) {
+    gameTitleAudio.play();
+    gameTitleAudio.addEventListener('ended', () => {
+      audio.play();
+    });
     return (
       <div className="body__intro">
         <BackButton />
         <h1>Het Lichaamspel</h1>
         <p>Kan jij de verschillende lichaamsdelen aanduiden?</p>
-        <UIButton action={() => { setGameOver(false); }} text="Start het spel" />
+        <UIButton
+          action={() => {
+            audio.pause();
+            setGameOver(false);
+          }}
+          text="Start het spel"
+        />
         <div className="body__instructions">
           <div>
             <span>1.</span>
