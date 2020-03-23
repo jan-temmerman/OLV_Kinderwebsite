@@ -193,22 +193,6 @@ export class Memory extends Component {
         }
     }
 
-    explainTheGame = () => {
-        document.querySelector('.explain-container').classList.remove('hide')
-        if (this.state.sound) {
-            document.getElementById('explain-the-game').play()
-        }
-        setTimeout(() => {
-            document.querySelector('.explain-container').classList.add('hide')
-        }, 13000);
-    }
-
-    closeExplain = () => {
-        document.querySelector('.explain-container').classList.add('hide')
-        document.getElementById('explain-the-game').pause()
-        document.getElementById('explain-the-game').currentTime = 0
-    }
-
     render() {
         return (
             <div>
@@ -241,7 +225,6 @@ export class Memory extends Component {
                         <a href="/games/memory/info"><img id="info-icon" onClick={this.info} src="/games/memory/info-icon.svg" alt="info"/></a>
                         <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
                         <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
-                        <img onClick={this.explainTheGame} id="handleiding-icon" src="/games/memory/handleiding-icon.svg" alt="handleiding"/>
                     </div>
                     
                     <div className="game-container">

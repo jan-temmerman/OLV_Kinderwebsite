@@ -4,7 +4,14 @@ import '../../sass/games/_explain-rugzak.scss'
 
 export class MemoryExplain extends Component {
 
+    componentDidMount = () => {
+        document.getElementById('explain-the-game').currentTime = 0
+        document.getElementById('explain-the-game').play()
+    }
+
     hideStartScreen = () => {
+        document.getElementById('explain-the-game').pause()
+        document.getElementById('explain-the-game').currentTime = 0
         document.querySelector('.container-explain-memory').classList.add('hide')
     }
 
@@ -19,6 +26,9 @@ export class MemoryExplain extends Component {
                         <img className="image-explain" src="/games/memory/true.svg" alt="juist"/>
                     </div>
                 </div>
+                <audio id="explain-the-game">
+                    <source src="/sound/memory/memory.mp3" type="audio/ogg"/>
+                </audio>
             </div>
         )
     }
