@@ -1,17 +1,36 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { Spring } from 'react-spring/renderprops';
-import { animated, useSpring } from 'react-spring';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
-import Lottie from 'react-lottie';
-import animationData from '../loadingAni.json'
-import * as Scroll from 'react-scroll';
 
 
 import '../../sass/app.scss';
 import '../../sass/views/_consultatie.scss';
 
 export default function Opname() {
+
+    const getLSItem = async (key) => {
+        try {
+            const value = await localStorage.getItem(key)
+            if(value != null)
+                return JSON.parse(value)
+            else
+                return false
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+
+        getLSItem("silencePreviousPage").then((value) => {
+            console.log(value)
+            if(!value) {
+                let audio = new Audio('/audio/opname.wav');
+                audio.play();
+            }else localStorage.setItem("silencePreviousPage", false)
+        })
+
+        return
+    }, [])
 
     return(
         <section className="container space" id="planets">

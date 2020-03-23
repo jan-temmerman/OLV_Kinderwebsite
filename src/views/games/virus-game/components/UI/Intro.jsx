@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BackButton from './BackButton';
 
 export default function Intro(props) {
-  const { game: { startGame, difficulty } } = props;
+  const { game: { startGame, game: { difficulty } } } = props;
 
   const difficultyBtns = [];
+  const gameTitleAudio = new Audio('/audio/virusspel.wav');
+  const audio = new Audio('/audio/virusspel_uitl.wav');
 
   for (let i = 0; i < Object.keys(difficulty).length; i += 1) {
     difficultyBtns.push(<button type="button" key={Object.keys(difficulty)[i]} className="btn" onClick={() => { startGame(Object.keys(difficulty)[i]); }}>{difficulty[Object.keys(difficulty)[i]].buttonText}</button>);
   }
 
+  useEffect(() => {
+    gameTitleAudio.play();
+    gameTitleAudio.addEventListener('ended', () => {
+      audio.play();
+    });
+  });
+
   return (
     <div className="game__overlay">
       <BackButton style={{ position: 'absolute', top: '5%', left: '5%' }} />
-      <h1>Het virusspel</h1>
+      <h1 className="virus__title">Het virusspel</h1>
       <p>Kan jij alle virussen ontwijken?</p>
       <p>Tip: Sleep het karakter over het scherm met de muis om te spelen</p>
       <div className="btn__container">
@@ -26,7 +35,7 @@ export default function Intro(props) {
         </div>
         <div>
           <span>2.</span>
-          <img src="/games/virus/virusspel_svg2.svg" alt="Stap 2" />
+          <img src="/games/virus/viruspel_svg2.svg" alt="Stap 2" />
         </div>
         <div>
           <span>3.</span>

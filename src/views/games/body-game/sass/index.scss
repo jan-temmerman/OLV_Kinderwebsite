@@ -15,6 +15,26 @@
 
     h1 {
       margin-bottom: 16px;
+      font-family: 'FredokaOne-Regular';
+      font-size: 30px;
+      font-weight: lighter;
+      color: #FFFFFF;
+      background-color: rgba(207, 207, 207, 0.473);
+      border: solid 10px rgba(70, 76, 109, 0.445);
+      border-radius: 15px;
+      padding: 5px 10px;
+      text-align: center;
+      width: 500px;
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      transform: translate(-50%, 0);
+
+        &.body__title {
+          right: 0%;
+          left: 80%;
+          z-index: 99;
+        }
     }
   }
 
@@ -23,12 +43,44 @@
     height: 100%;
     position: absolute;
     z-index: 0;
+    background-image: url("/games/lichaam/achtergrond.svg");
+    background-size: cover;
     .floor {
       height: 25%;
       position: absolute;
       bottom: 0;
       width: 100%;
       background: #B7CCD4;
+      display: none;
+    }
+
+    &__bed {
+      width: 45%;
+      position: absolute;
+      bottom: 5%;
+      left: -10%;
+    }
+
+    &__kast {
+      width: 15%;
+      position: absolute;
+      bottom: 20%;
+      left: 2%;
+    }
+
+    &__deur {
+      width: 20%;
+      position: absolute;
+      right: 5%;
+      bottom: 25%;
+      opacity: 0.5;
+    }
+
+    &__klok {
+      width: 10%;
+      position: absolute;
+      right: 35%;
+      top: 5%;
     }
   }
 
@@ -80,7 +132,7 @@
   }
 
   &__game {
-    height: 60%;
+    height: 50%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -95,6 +147,15 @@
 
   &__part {
     cursor: pointer;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+
+    &.selected {
+      z-index: 999;
+      transform: scale(1.1);
+      transition: all .2s ease-in-out;
+
+    }
   }
 
   &__labels {
@@ -118,6 +179,7 @@
     font-family: "FredokaOne-Regular", sans-serif;
     font-size: 22px;
     background: none;
+    text-transform: lowercase;
 
     &.selected {
       border: 4px solid #fefefe;
@@ -143,4 +205,54 @@
   color: #e30104;
   transition: transform 0.2s;
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .body__container h1.body__title {
+    left: 60%;
+  }
+
+  .body__game {
+    padding-top: 5%;
+    height: 60%;
+  }
+
+  .body__background {
+    background: none;
+  }
+
+  .body__background .floor {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .body__container {
+    overflow: hidden;
+  }
+
+  .body__game {
+    flex-flow: column nowrap;
+    height: 60%;
+    justify-content: center;
+    margin-top: 15%;
+  }
+
+  .body__body {
+    width: 50%;
+    flex: 0 0 25%;
+  }
+
+  .body__labels {
+    flex: 0 0 25%;
+  
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .body__labels button {
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin: 0 20px;
+  }
 }

@@ -19,8 +19,8 @@ export class Error404 extends Component {
                             <a class="btn-back" href="/">Ga terug naar de startpagina</a>
                         </div>
                     </div>
-                    <img src="/Olivia_Astronaut.svg" class="astronaut" />
-                <img src="/Raket_gecrashed.svg" class="spaceship" />
+                    <img src="/Olivia_Astronaut.svg" class="astronaut" alt="olivia"/>
+                <img src="/Raket_gecrashed.svg" class="spaceship" alt="raket"/>
             </div>
         )
     }

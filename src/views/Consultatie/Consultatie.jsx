@@ -1,25 +1,42 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { Spring } from 'react-spring/renderprops';
-import { animated, useSpring } from 'react-spring';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import Lottie from 'react-lottie';
-import animationData from '../loadingAni.json'
-import * as Scroll from 'react-scroll';
 
 
 import '../../sass/app.scss';
 import '../../sass/views/_consultatie.scss';
 
 export default function Consulatie() {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true, 
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice'
+
+    const [audio, setAudio] = useState("")
+
+    const getLSItem = async (key) => {
+        try {
+            const value = await localStorage.getItem(key)
+            if(value != null)
+                return JSON.parse(value)
+            else
+                return false
+        } catch (error) {
+            console.log(error)
         }
-      };
+    }
+
+    useEffect(() => {
+
+        getLSItem("silencePreviousPage").then((value) => {
+            
+            if(!value) {
+                setAudio(new Audio('/audio/consultatie.wav'))
+            }else localStorage.setItem("silencePreviousPage", false)
+        })
+
+        return
+    }, [])
+
+    useEffect(() => {
+        if(audio !== "")
+            audio.play();
+    }, [audio])
 
     return(
         <section className="container space" id="planets">
@@ -64,7 +81,7 @@ export default function Consulatie() {
                 </div>
                 <div className="planet_bg">
                     <img className="olivia" src="/homepage/oliviaMetRaket.svg" alt="olivia" />
-                    <img src="/homepage/consultatie_bg.svg" alt="planet" />
+                    <img src="/homepage/planeet_consultatie.svg" alt="planet" />
                 </div>
             </div>
         </section>

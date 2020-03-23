@@ -5,6 +5,7 @@ import { LabelConfig } from '../config';
 import { shuffle, removeSpaces } from '../helpers';
 import UIButton from '../components/UIButton';
 import BackButton from '../components/BackButton';
+import Title from '../components/Title';
 
 export default function GameView() {
   const [selectedLabel, setLabel] = useState(null);
@@ -12,9 +13,11 @@ export default function GameView() {
   const [gameOver, setGameOver] = useState(true);
   const [labels, setLabels] = useState(null);
   const [matchedOrgans, setMatchedOrgans] = useState(0);
+  const [totalClicks, setTotalClicks] = useState(0);
 
   const organAmount = LabelConfig.organs.length;
-  const labelColors = LabelConfig.colors;
+  const gameTitleAudio = new Audio('/audio/lichaamsspel.wav');
+  const audio = new Audio('/audio/lichaamsspel_uitl.wav');
 
   const setMatchedVisual = (label) => {
     const id = removeSpaces(label, '_');
@@ -46,12 +49,22 @@ export default function GameView() {
     setLabel(label);
   };
 
+  const updateSelectedOrgan = (organ) => {
+    removeSelectionFromLabel();
+    const newSelected = document.querySelector(`#organ__${removeSpaces(organ, '_')}`);
+    newSelected.classList.add('selected');
+    setOrgan(organ);
+  };
+
   /**
    * Hook that checks if there is a match between label and organ
    */
   useEffect(() => {
     if (selectedLabel && selectedOrgan) {
+      setTotalClicks((prevTotal) => prevTotal + 1);
       if (selectedOrgan === selectedLabel) {
+        const matchAudio = new Audio(`/audio/${removeSpaces(selectedLabel, '')}.wav`);
+        matchAudio.play();
         setMatchedOrgans((prevCount) => prevCount + 1);
         setMatchedVisual(selectedLabel);
         resetSelection();
@@ -99,7 +112,12 @@ export default function GameView() {
           <UIButton action={() => { setMatchedOrgans(0); setGameOver(false); }} text="Ja" />
           <a href="/consultatie/spelletjes" className="UIButton">Nee</a>
         </div>
-        <p>Jouw score: 100%</p>
+        <p>
+          Jouw score:
+          {' '}
+          { ((LabelConfig.organs.length / totalClicks) * 100).toFixed(2) }
+          %
+        </p>
       </div>
     </div>
   );
@@ -114,12 +132,22 @@ export default function GameView() {
   }, [matchedOrgans, organAmount]);
 
   if (gameOver && matchedOrgans === 0) {
+    gameTitleAudio.play();
+    gameTitleAudio.addEventListener('ended', () => {
+      audio.play();
+    });
     return (
       <div className="body__intro">
         <BackButton />
         <h1>Het Lichaamspel</h1>
         <p>Kan jij de verschillende lichaamsdelen aanduiden?</p>
-        <UIButton action={() => { setGameOver(false); }} text="Start het spel" />
+        <UIButton
+          action={() => {
+            audio.pause();
+            setGameOver(false);
+          }}
+          text="Start het spel"
+        />
         <div className="body__instructions">
           <div>
             <span>1.</span>
@@ -137,26 +165,24 @@ export default function GameView() {
   return (
     <>
       {gameOver ? gameOverModal : ''}
+      <Title />
       <div className="body__background">
         <div className="floor" />
+        {/* <img src="/games/lichaam/kastje.svg" alt="kastje" className="body__background__kast" />
+        <img src="/games/lichaam/bed.svg" alt="bed" className="body__background__bed" />
+        <img src="/games/lichaam/deur.svg" alt="deur" className="body__background__deur" />
+        <img src="/games/lichaam/klok.svg" alt="klok" className="body__background__klok" /> */}
       </div>
       <BackButton />
       <div className="body__game">
         <div className="body__labels --left">
           {labels ? labels[0] : ''}
         </div>
-        <Body pickOrgan={setOrgan} />
+        <Body pickOrgan={updateSelectedOrgan} />
         <div className="body__labels --right">
           {labels ? labels[1] : ''}
         </div>
       </div>
     </>
   );
-
-  // return (
-  //   <div>
-  //     <h1>Game Over!</h1>
-  //     <UIButton action={() => { setMatchedOrgans(0); setGameOver(false); }} text="Speel opnieuw" />
-  //   </div>
-  // );
 }

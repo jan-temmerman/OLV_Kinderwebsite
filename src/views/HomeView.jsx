@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { Spring } from 'react-spring/renderprops';
 import { animated, useSpring } from 'react-spring';
 import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
@@ -12,9 +10,9 @@ import '../sass/app.scss';
 import '../sass/views/_home.scss';
 
 export default function HomeView() {
+	var audio = new Audio('/audio/intro.wav');
     const clouds = [];
 	const ref = useRef();
-	const rocketRef = useRef();
     const calc = (o) => `translateY(${o * 0.05}px)`;
     const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
     const defaultOptions = {
@@ -31,19 +29,19 @@ export default function HomeView() {
 	useEffect(() => {
 		setPauseAnimation(true)
 		document.body.classList.add("no-sroll")
+		audio.play();
+		document.getElementsByClassName('planet')[0].addEventListener('click', () => {audio.pause()})
+		document.getElementsByClassName('planet')[1].addEventListener('click', () => {audio.pause()})
+		document.getElementsByClassName('planet')[2].addEventListener('click', () => {audio.pause()})
+
 		return
 	}, [])
 
-    const handleScroll = (event) => {
+
+    const handleScroll = () => {
 		const posY = ref.current.getBoundingClientRect().top;	
         const offset = window.pageYOffset - posY;
 		set({ offset });
-		
-        let scrollTop = event.srcElement.body.scrollTop,
-        itemTranslate = Math.min(0, scrollTop/3 - 60);
-        let devider = 10
-        console.log(posY)
-            //setBottomOffset(posY/devider + 12)
     }
 
     useEffect(() => {

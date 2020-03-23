@@ -1,11 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { Spring } from 'react-spring/renderprops';
-import { animated, useSpring } from 'react-spring';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import Lottie from 'react-lottie';
-import animationData from '../loadingAni.json'
-import * as Scroll from 'react-scroll';
 
 
 import '../../sass/app.scss';
@@ -13,14 +7,157 @@ import '../../sass/views/_spelletjes.scss';
 
 export default function Opna_WatGebeuren() {
 
+    var ctScan = new Audio('/audio/ct.wav');
+    var echo = new Audio('/audio/echo.wav');
+    var eeg = new Audio('/audio/eeg.wav');
+    var kalinox = new Audio('/audio/kalinox.wav');
+    var mri = new Audio('/audio/mri.wav');
+    var npa = new Audio('/audio/npa.wav');
+    var lactosetest = new Audio('/audio/lactosetest.wav');
+    var ruggenprik = new Audio('/audio/ruggenprik.wav');
+
+    const [ctScan_uitl, setCtScan_uitl] = useState(new Audio('/audio/ct_uitl.wav'))
+    const [echo_uitl, setEcho_uitl] = useState(new Audio('/audio/echo_uitl.wav'))
+    const [eeg_uitl, setEeg_uitl] = useState(new Audio('/audio/eeg_uitl.wav'))
+    const [kalinox_uitl, setKalinox_uitl] = useState(new Audio('/audio/kalinox_uitl.wav'))
+    const [mri_uitl, setMri_uitl] = useState(new Audio('/audio/mri_uitl.wav'))
+    const [npa_uitl, setNpa_uitl] = useState(new Audio('/audio/npa_uitl.wav'))
+    const [infuus, setInfuus] = useState(new Audio('/audio/infuus.wav'))
+    const [lactosetest_uitl, setLactosetest_uitl] = useState(new Audio('/audio/lactosetest_uitl.wav'))
+    const [ruggenprik_uitl, setRuggenprik_uitl] = useState(new Audio('/audio/ruggenprik_uitl.wav'))
+
+    const [audio, setAudio] = useState("")
+
+    useEffect(() => {
+        setAudio(new Audio('/audio/wat_gebeuren.wav'))
+
+        localStorage.setItem("silencePreviousPage", true)
+
+        return () => {
+            stopAudio()
+        }
+    }, [])
+
+    const stopAudio = () => {
+        ctScan_uitl.pause()
+        echo_uitl.pause()
+        eeg_uitl.pause()
+        kalinox_uitl.pause()
+        mri_uitl.pause()
+        npa_uitl.pause()
+        lactosetest_uitl.pause()
+        ruggenprik_uitl.pause()
+        infuus.pause()
+    }
+
+    useEffect(() => {
+        if(audio !== "")
+            audio.play();
+        return
+    }, [audio])
+
+    const [modal, setModal] = useState("")
+
+    const showModal = (imagePath, title) => {
+
+        setModal(
+            <div className="detail_modal">
+                <div>
+                    <div className="modal_header">
+                        <div className="cross"/>
+                        <h2>{title}</h2>
+                        <img onClick={() => setModal("")} id="cross" className="cross" src="/watGebeuren_page/kruisje.svg" alt="kruisje"/>
+                    </div>
+
+                    <div style={{backgroundImage: imagePath}} className="image_container"/>
+                </div>
+            </div>
+        )
+
+        switch(title) {
+            case "CT-SCAN":
+                ctScan.play();
+                setTimeout(() => {
+                    ctScan_uitl.currentTime = 0
+                    ctScan_uitl.play();
+                }, 1500);
+                break
+
+            case "ECHO":
+                echo.play();
+                setTimeout(() => {
+                    echo_uitl.currentTime = 0
+                    echo_uitl.play();
+                }, 1800);
+                break
+
+            case "EEG":
+                eeg.play();
+                setTimeout(() => {
+                    eeg_uitl.currentTime = 0
+                    eeg_uitl.play();
+                }, 1500);
+                break
+
+            case "KALINOX":
+                kalinox.play();
+                setTimeout(() => {
+                    kalinox_uitl.currentTime = 0
+                    kalinox_uitl.play();
+                }, 1500);
+                break
+
+            case "MRI":
+                mri.play();
+                setTimeout(() => {
+                    mri_uitl.currentTime = 0
+                    mri_uitl.play();
+                }, 1500);
+                break
+
+            case "NPA":
+                npa.play();
+                setTimeout(() => {
+                    npa_uitl.currentTime = 0
+                    npa_uitl.play();
+                }, 1500);
+                break
+
+            case "INFUUS":
+                infuus.currentTime = 0
+                infuus.play();
+                break
+
+            case "LACTOSETEST":
+                lactosetest.play();
+                setTimeout(() => {
+                    lactosetest_uitl.currentTime = 0
+                    lactosetest_uitl.play();
+                }, 2000);
+                break
+
+            case "RUGGENPRIK":
+                ruggenprik.play();
+                setTimeout(() => {
+                    ruggenprik_uitl.currentTime = 0
+                    ruggenprik_uitl.play();
+                }, 600);
+                break
+
+
+            default:
+                return
+        }
+
+        setTimeout(() => {
+            document.getElementById('cross').addEventListener('click', stopAudio)
+        }, 50);
+    }
+
     return(
         <section className="container space" id="planets">
 
-            <div className="detail_modal">
-                <div>
-                    <h2>CT-SCAN</h2>
-                </div>
-            </div>
+            {modal}
 
             {/*<div className="loading">
                 <div className="rocket_ani">
@@ -46,15 +183,15 @@ export default function Opna_WatGebeuren() {
             <div className="container_content_bellen">
                 <div className="container_action_bellen">
                     <div>
-                        <img className="bel" src="/watGebeuren_page/CTSCAN.svg" alt="CTSCAN"/>
-                        <img className="bel" src="/watGebeuren_page/ECHO.svg" alt="ECHO"/>
-                        <img className="bel" src="/watGebeuren_page/EKG.svg" alt="EKG"/>
-                        <img className="bel" src="/watGebeuren_page/INFUUS.svg" alt="INFUUS"/>
-                        <img className="bel" src="/watGebeuren_page/KALINOX.svg" alt="KALINOX"/>
-                        <img className="bel" src="/watGebeuren_page/MRI.svg" alt="MRI"/>
-                        <img className="bel" src="/watGebeuren_page/NPA.svg" alt="NPA"/>
-                        <img className="bel" src="/watGebeuren_page/LACTOSETEST.svg" alt="LACTOSETEST"/>
-                        <img className="bel" src="/watGebeuren_page/RUGGENPRIK.svg" alt="RUGGENPRIK"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/CT.jpg')", "CT-SCAN")} className="bel" src="/watGebeuren_page/bellen/CTSCAN.svg" alt="CTSCAN"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/ECHO.jpg')", "ECHO")} className="bel" src="/watGebeuren_page/bellen/ECHO.svg" alt="ECHO"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/EEG.jpg')", "EEG")} className="bel" src="/watGebeuren_page/bellen/EEG.svg" alt="EEG"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/INFUUS.jpg')", "INFUUS")} className="bel" src="/watGebeuren_page/bellen/INFUUS.svg" alt="INFUUS"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/CT.jpg')", "KALINOX")} className="bel" src="/watGebeuren_page/bellen/KALINOX.svg" alt="KALINOX"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/MRI.jpg')", "MRI")} className="bel" src="/watGebeuren_page/bellen/MRI.svg" alt="MRI"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/NPA.jpg')", "NPA")} className="bel" src="/watGebeuren_page/bellen/NPA.svg" alt="NPA"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/LACTOSETEST.jpg')", "LACTOSETEST")} className="bel" src="/watGebeuren_page/bellen/LACTOSETEST.svg" alt="LACTOSETEST"/>
+                        <img onClick={() => showModal("url('/watGebeuren_page/fotos/RUGGENPRIK.jpg')", "RUGGENPRIK")} className="bel" src="/watGebeuren_page/bellen/RUGGENPRIK.svg" alt="RUGGENPRIK"/>
                     </div>
 
                     <img className="olivia_bellenblaas" src="/watGebeuren_page/olivia_belleblaas.svg" alt="Olivia"/>

@@ -4,6 +4,7 @@ import BackButton from './BackButton';
 import Lives from './Lives';
 import Score from './Score';
 import GameOver from './GameOver';
+import Title from './Title';
 
 export default function UI(props) {
   const {
@@ -19,6 +20,7 @@ export default function UI(props) {
     uiView = (
       <div className="game__ui">
         <BackButton />
+        <Title />
         <div className="top-right">
           <Lives lives={lives} />
           <Score score={score} />
