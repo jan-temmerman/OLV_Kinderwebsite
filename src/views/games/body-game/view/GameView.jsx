@@ -153,8 +153,8 @@ export default function GameView() {
       {gameOver ? gameOverModal : ''}
       <Title />
       <div className="body__background">
-        {/* <div className="floor" />
-        <img src="/games/lichaam/kastje.svg" alt="kastje" className="body__background__kast" />
+        <div className="floor" />
+        {/* <img src="/games/lichaam/kastje.svg" alt="kastje" className="body__background__kast" />
         <img src="/games/lichaam/bed.svg" alt="bed" className="body__background__bed" />
         <img src="/games/lichaam/deur.svg" alt="deur" className="body__background__deur" />
         <img src="/games/lichaam/klok.svg" alt="klok" className="body__background__klok" /> */}
