@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import '../../sass/games/_fonts.scss';
 import '../../sass/games/_memory.scss';
+import BackButton from './rugzak-game/components/BackButton';
 
 import MemoryExplainView from './MemoryExplain';
 
@@ -193,27 +194,11 @@ export class Memory extends Component {
         }
     }
 
-    explainTheGame = () => {
-        document.querySelector('.explain-container').classList.remove('hide')
-        if (this.state.sound) {
-            document.getElementById('explain-the-game').play()
-        }
-        setTimeout(() => {
-            document.querySelector('.explain-container').classList.add('hide')
-        }, 13000);
-    }
-
-    closeExplain = () => {
-        document.querySelector('.explain-container').classList.add('hide')
-        document.getElementById('explain-the-game').pause()
-        document.getElementById('explain-the-game').currentTime = 0
-    }
-
     render() {
         return (
             <div>
-                <div className="navbar">
-                    <Link className="back back-btn" to="/consultatie/spelletjes"><img src="/homepage/terug.svg" alt="terug" /></Link>
+                <div className="back-btn">
+                    <BackButton />
                 </div>
                 <div className="h2-memory">
                     <h2>memoryspel</h2>
@@ -241,7 +226,6 @@ export class Memory extends Component {
                         <a href="/games/memory/info"><img id="info-icon" onClick={this.info} src="/games/memory/info-icon.svg" alt="info"/></a>
                         <img id="soundOn" onClick={this.editSoundLevel} className="speaker-icon" src="/games/memory/sound_on.svg" alt="sound on" />
                         <img id="soundOff" onClick={this.editSoundLevel} className="speaker-icon hide" src="/games/memory/sound_off.svg" alt="sound off" />
-                        <img onClick={this.explainTheGame} id="handleiding-icon" src="/games/memory/handleiding-icon.svg" alt="handleiding"/>
                     </div>
                     
                     <div className="game-container">

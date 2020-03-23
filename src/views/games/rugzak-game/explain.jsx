@@ -4,7 +4,14 @@ import '../../../sass/games/_explain-rugzak.scss'
 
 export class explain extends Component {
 
+    componentDidMount = () => {
+        document.getElementById('explain-the-game-rugzak').currentTime = 0
+        document.getElementById('explain-the-game-rugzak').play()
+    }
+
     hideStartScreen = () => {
+        document.getElementById('explain-the-game-rugzak').pause()
+        document.getElementById('explain-the-game-rugzak').currentTime = 0
         document.querySelector('.container-explain-rugzak').classList.add('hide')
     }
 
@@ -19,6 +26,9 @@ export class explain extends Component {
                         <img className="image-explain" src="/games/rugzakspel/rugzak_juist.svg" alt="rugzak juist"/>
                     </div>
                 </div>
+                <audio id="explain-the-game-rugzak">
+                    <source src="/sound/rugzak_uitleg.mp3" type="audio/ogg"/>
+                </audio>
             </div>
         )
     }
