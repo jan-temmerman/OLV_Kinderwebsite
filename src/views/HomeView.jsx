@@ -26,17 +26,35 @@ export default function HomeView() {
 	  
 	const [pauseAnimation, setPauseAnimation] = useState(false)
 
+	const getLSItem = async (key) => {
+        try {
+            const value = await localStorage.getItem(key)
+            if(value != null)
+                return JSON.parse(value)
+            else
+                return false
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 	useEffect(() => {
 		setPauseAnimation(true)
 		document.body.classList.add("no-sroll")
-		audio.play();
+
+		getLSItem("introPlayed").then((value) => {
+			if(!value) {
+				audio.play();
+				localStorage.setItem("introPlayed", true)
+			}
+		})
+
 		document.getElementsByClassName('planet')[0].addEventListener('click', () => {audio.pause()})
 		document.getElementsByClassName('planet')[1].addEventListener('click', () => {audio.pause()})
 		document.getElementsByClassName('planet')[2].addEventListener('click', () => {audio.pause()})
 
 		return
 	}, [])
-
 
     const handleScroll = () => {
 		const posY = ref.current.getBoundingClientRect().top;	
@@ -136,6 +154,10 @@ export default function HomeView() {
 				<section className="container earth" onLoad={generateClouds(8)}>
 					<div className="ground" />
 					<img className="skyline" src="/homepage/skyline_1.svg" alt="Skyline" />
+					<img className="tree" src="/homepage/boom.svg" alt="tree" />
+					<img className="tree2" src="/homepage/boom.svg" alt="tree" />
+					<img className="tree3" src="/homepage/boom.svg" alt="tree" />
+					<img className="tree4" src="/homepage/bomen.svg" alt="tree" />
 					<img className="hospital" src="/homepage/ziekenhuis.svg" alt="Ziekenhuis" />
 					<img className="olivia_home" src="/homepage/Olivia_small.svg" alt="Olivia" />
 					<Scroll.Link className="launch_button" activeClass="active" to="test1" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
