@@ -156,9 +156,98 @@ html {
 }
 
 .logo_fixed {
+  z-index: 100;
   position: fixed;
   width: 100px;
   height: 100px;
+  right: 0;
+  transition: all .2s ease-in-out;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.info_modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 20px;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  div {
+    width: 600px;
+    max-width: 90vw;
+    background-color: #B3B3B3;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Fredoka';
+    color: white;
+
+    .modal_header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: none;
+      height: 30px;
+      padding: 0;
+
+      .cross {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+      }
+    }
+
+    .modal_content {
+      margin: 20px 0 10px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background-color: none;
+      border-radius: 0;
+      padding: 0;
+      width: 100%;
+
+      p {
+        font-size: 20px;
+      }
+
+      button {
+        background-color: #6BD3D3;
+        padding: 4px 6px;
+        font-size: 20px;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Fredoka';
+        border: 6px solid rgb(89, 170, 170);
+      }
+    }
+  }
+}
+
+.info_icon {
+  z-index: 101;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  margin: 30px;
+  top: 80px;
   right: 0;
   transition: all .2s ease-in-out;
   
@@ -205,6 +294,14 @@ html {
 }
 
 @media screen and (max-width: 1080px) {
+  .info_modal {
+    justify-content: center;
+    
+    h2 {
+      font-size: 20px;
+    }
+  }
+
   .planet_container{
     width: 90%;
     height: 40%;
@@ -242,7 +339,7 @@ html {
 
   .siteName {
     font-size: 34px;
-    margin-top: 120px;
+    margin-top: 150px;
   }
 }
 
@@ -296,5 +393,28 @@ html {
 
   .planet_container {
     margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .hospital {
+    width: 260px;
+    bottom: -50px;
+  }
+
+  .rocket {
+    bottom: 56px;
+  }
+
+  .olivia_home {
+    display: none;
+  }
+
+  .ground {
+    height: 60px;
+  }
+
+  .planet_container {
+    margin-top: 140px;
   }
 }

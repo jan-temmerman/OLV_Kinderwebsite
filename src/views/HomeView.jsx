@@ -25,6 +25,8 @@ export default function HomeView() {
 	  };
 	  
 	const [pauseAnimation, setPauseAnimation] = useState(false)
+	const [infoModal, setInfoModal] = useState("")
+	const [audioIsPlaying, setAudioIsPlaying] = useState(false)
 
 	const getLSItem = async (key) => {
         try {
@@ -117,6 +119,61 @@ export default function HomeView() {
 		}, 5000);
 	}
 
+	const toggleInfoModel = () => {
+		if(audio.currentTime === 0) {
+			if(infoModal === "") {
+				setInfoModal(
+					<div className="info_modal" >
+						<div>
+							<div className="modal_header">
+								<div className="cross"/>
+								<h2>Audio</h2>
+								<img onClick={() => setInfoModal("")} id="cross" className="cross" src="/watGebeuren_page/kruisje.svg" alt="kruisje"/>
+							</div>
+							<div className="modal_content">
+								<p>Intro opnieuw afspelen?</p>
+								<button onClick={() => {
+									audio.currentTime = 0
+									audio.play()
+									setPlayPauseButton(
+										<img className="info_icon" onClick={() => {
+											audio.pause()
+											setPlayPauseButton(<img className="info_icon" onClick={toggleInfoModel} src="homepage/play.svg" alt="info" />)
+										}} src="homepage/pause.svg" alt="info" />
+									)
+									setAudioIsPlaying(true)
+									audio.onended = () => {
+										audio.currentTime = 0
+										setAudioIsPlaying(false)
+										setPlayPauseButton(<img className="info_icon" onClick={toggleInfoModel} src="homepage/play.svg" alt="info" />)
+									}
+									
+									setInfoModal("")
+
+								}}>Ja!</button>
+							</div>
+						</div>
+					</div>)
+			} else
+				setInfoModal("")
+		} else {
+			audio.play()
+			setPlayPauseButton(
+				<img className="info_icon" onClick={() => {
+					audio.pause()
+					setPlayPauseButton(<img className="info_icon" onClick={toggleInfoModel} src="homepage/play.svg" alt="info" />)
+				}} src="homepage/pause.svg" alt="info" />
+			)
+			audio.onended = () => {
+				audio.currentTime = 0
+				setAudioIsPlaying(false)
+				setPlayPauseButton(<img className="info_icon" onClick={toggleInfoModel} src="homepage/play.svg" alt="info" />)
+			}
+		}
+	}
+
+	const [playPauseButton, setPlayPauseButton] = useState(<img className="info_icon" onClick={toggleInfoModel} src="homepage/play.svg" alt="info" />)
+
     return (
         <div className="background">
 			<Scroll.Element name="test1" className="element">
@@ -125,6 +182,9 @@ export default function HomeView() {
 					<a href="https://www.olvz.be">
 						<img className="logo_fixed" src="homepage/logolvp.svg" alt="logo" />
 					</a>
+					{playPauseButton}
+
+					{infoModal}
 					
 					<div className="planet_container">
 						<Link className="planet" to="/dagkliniek">
@@ -161,7 +221,7 @@ export default function HomeView() {
 					<img className="hospital" src="/homepage/ziekenhuis.svg" alt="Ziekenhuis" />
 					<img className="olivia_home" src="/homepage/Olivia_small.svg" alt="Olivia" />
 					<Scroll.Link className="launch_button" activeClass="active" to="test1" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
-						Opstijgen!
+						<p>Opstijgen!</p>
 					</Scroll.Link>
 					<section className="clouds" id="cloudContainer" ref={ref}>
 						<h1 className="siteName">Welkom bij het OLV!</h1>
