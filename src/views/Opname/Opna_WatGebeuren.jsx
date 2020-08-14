@@ -76,51 +76,51 @@ export default function Opna_WatGebeuren() {
 
         switch(title) {
             case "CT-SCAN":
-                ctScan.play();
-                setTimeout(() => {
+                ctScan.onended = () => {
                     ctScan_uitl.currentTime = 0
                     ctScan_uitl.play();
-                }, 1500);
+                };
+                ctScan.play();
                 break
 
             case "ECHO":
-                echo.play();
-                setTimeout(() => {
+                echo.onended = () => {
                     echo_uitl.currentTime = 0
                     echo_uitl.play();
-                }, 1800);
+                };
+                echo.play();
                 break
 
             case "EEG":
-                eeg.play();
-                setTimeout(() => {
+                eeg.onended = () => {
                     eeg_uitl.currentTime = 0
                     eeg_uitl.play();
-                }, 1500);
+                };
+                eeg.play();
                 break
 
             case "KALINOX":
-                kalinox.play();
-                setTimeout(() => {
+                kalinox.onended = () => {
                     kalinox_uitl.currentTime = 0
                     kalinox_uitl.play();
-                }, 1500);
+                };
+                kalinox.play();
                 break
 
             case "MRI":
-                mri.play();
-                setTimeout(() => {
+                mri.onended = () => {
                     mri_uitl.currentTime = 0
                     mri_uitl.play();
-                }, 1500);
+                };
+                mri.play();
                 break
 
             case "NPA":
-                npa.play();
-                setTimeout(() => {
+                npa.onended = () => {
                     npa_uitl.currentTime = 0
                     npa_uitl.play();
-                }, 1500);
+                };
+                npa.play();
                 break
 
             case "INFUUS":
@@ -129,19 +129,19 @@ export default function Opna_WatGebeuren() {
                 break
 
             case "LACTOSETEST":
-                lactosetest.play();
-                setTimeout(() => {
+                lactosetest.onended = () => {
                     lactosetest_uitl.currentTime = 0
                     lactosetest_uitl.play();
-                }, 2000);
+                };
+                lactosetest.play();
                 break
 
             case "RUGGENPRIK":
-                ruggenprik.play();
-                setTimeout(() => {
+                ruggenprik.onended = () => {
                     ruggenprik_uitl.currentTime = 0
                     ruggenprik_uitl.play();
-                }, 600);
+                };
+                ruggenprik.play();
                 break
 
 

@@ -220,7 +220,7 @@ export default function HomeView() {
 					<img className="tree4" src="/homepage/bomen.svg" alt="tree" />
 					<img className="hospital" src="/homepage/ziekenhuis.svg" alt="Ziekenhuis" />
 					<img className="olivia_home" src="/homepage/Olivia_small.svg" alt="Olivia" />
-					<Scroll.Link className="launch_button" activeClass="active" to="test1" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={false} duration={4000} delay={0}>
+					<Scroll.Link className="launch_button" activeClass="active" to="test1" smooth="easeInOutQuart" onClick={handleClick} offset={0} isDynamic={true} duration={4000} delay={0}>
 						<p>Opstijgen!</p>
 					</Scroll.Link>
 					<section className="clouds" id="cloudContainer" ref={ref}>
