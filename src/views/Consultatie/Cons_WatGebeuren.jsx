@@ -164,9 +164,9 @@ export default function Cons_WatGebeuren() {
                            </div>
                             <p>
                                 Eerst ga je plassen op ons speciaal toilet, die meet hoeveel en hoe snel je plast. 
-                                Daarna kijken we nog even hoeveel pipi er in je buik is achtergebleven
+                                Daarna kijken we nog even hoeveel pipi er in je buik is achtergebleven.
                                 Daarvoor komt er eerst een beetje koude gel op je buik.
-                                Met een cameratje kunnen we zien of er nog pipi in je buik zit, dit doet allemaal geen pijn tenzij de dokter een beetje te hard duwt natuurlijk
+                                Met een cameratje kunnen we zien of er nog pipi in je buik zit. Dit doet allemaal geen pijn tenzij de dokter een beetje te hard duwt natuurlijk.
                                 Op die manier kunnen we kijken of je problemen hebt met plassen.
                             </p>
                         </div>
